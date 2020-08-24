@@ -15,8 +15,11 @@
 }
 
 .columns {
-  min-height: 100vh;
   display: flex;
+}
+
+.banner.columns {
+  min-height: 100vh;
 }
 
 .banner .column {
@@ -65,6 +68,18 @@
 
 .banner nav ul {
   list-style-type: none;
+  display: flex;
+  margin: 0 2em 0 0;
+  min-width: 50%;
+  align-items: center;
+  justify-content: right;
+  height: 5em;
+  
+}
+
+.banner li {
+  margin: 0 1em;
+  font-weight: 500;
 }
 
 

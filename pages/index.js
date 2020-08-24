@@ -33,7 +33,7 @@ export default function Home() {
           <div className={styles.column}>
             <div className={styles.navbar}>
               <nav role="navigation">
-                <ul className={styles.columns}>
+                <ul >
                   <li>About Us</li>
                   <li>Services</li>
                   <li>Blog</li>
