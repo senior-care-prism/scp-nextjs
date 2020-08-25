@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import cn from 'classnames'
 
 
@@ -11,26 +11,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <section className={cn(styles.banner, styles.columns)}>
           <div className={cn(styles.column, styles.left)}>
             <div className={styles.logo}>
               <img src="images/logo-transparent.png" alt="Senior Care Prism logo" />
             </div>
+            
             <div className={styles.tagline}>
+              <div>
               <h1>
-              Amplifying the Voice of the Ageing Population in Minority Groups.
-              </h1>
-              <p>
-                We bridge the gap between the needs of the elderly in minority
-                groups and senior care policy. No organization is too small for
-                inclusivity, we work with small, medium and large businesses and
-                organizations in both the private and public sectors.
-              </p>
-              <button className={cn(styles.button, styles.primary)}>About Us</button>
-            </div>
+                Amplifying the Voice of the Ageing Population in Minority Groups.
+                </h1>
+                <p>
+                  We bridge the gap between the needs of the elderly in minority
+                  groups and senior care policy. No organization is too small for
+                  inclusivity, we work with small, medium and large businesses and
+                  organizations in both the private and public sectors.
+                </p>
+                <button className={cn(styles.button, styles.primary)}>About Us</button>
+              </div>
+                
+              </div>
           </div>
-          <div className={styles.column}>
+         
+          <div className={cn(styles.column, styles.right)}>
             <div className={styles.navbar}>
               <nav role="navigation">
                 <ul >
