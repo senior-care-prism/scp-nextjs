@@ -1,0 +1,6 @@
+.columns {
+  display: flex;
+  .column {
+    width: calc(100% / 3);
+  }  
+}
