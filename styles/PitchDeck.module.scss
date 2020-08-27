@@ -1,0 +1,37 @@
+.pitch {
+  background: var(--scp-color-blush);
+  color: var(--scp-color-oxford);
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    flex: 1;
+    padding-bottom: 3em;
+  }
+  h2 {
+    font-size: 2em;
+    max-width: 50%;
+  }
+}
+
+.button {
+  font-family: 'Heebo', sans-serif;
+  padding: 8px 50px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  
+}
+
+.button.inverted {
+  background-color: none;
+  font-weight: bold;
+  border: .2em solid  var(--scp-color-oxford);
+}
