@@ -32,3 +32,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.blackandwhite {
+  filter: gray;
+  filter: grayscale(100%);
+}
