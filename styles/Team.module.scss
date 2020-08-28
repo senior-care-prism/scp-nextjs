@@ -8,6 +8,16 @@
     padding-top: 2em;
   }
 
+  .heading {
+    display: flex;
+    div {
+      font-size: .9em;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
   h2 {
     font-size: 2em;
     padding-left: 9px;

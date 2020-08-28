@@ -42,17 +42,28 @@ const Collapsible = (props) => {
 }
 
 export default function Team(props) {
+  const [bw, setBw] = useState(false)
 
+  const toggleBw = (e) => {
+    // e.preventDefault()
+    setBw(!bw)
+  } 
   return (
     <section className={styles.team}>
       <div className={styles.content}>
-        <div>
-          <h2>{props.heading}</h2>
+        <div className={styles.heading}>
+          <h2 >{props.heading}</h2>
+          <div>
+            Toggle B/W 
+            <label>
+              <input type="checkbox" onClick={toggleBw} checked={bw}/>
+            </label>
+          </div>
         </div>
         <div className={styles.cards}>
           {props.members.map((member, i) => (
             <div className={cn(styles.member, styles.card)} key={member.id}>
-                <img src={`images/${member.avatar}`} alt={member.position} />
+                <img className={cn({blackandwhite: bw})} src={`images/${member.avatar}`} alt={member.position} />
               <div className={cn(styles.container, styles.text)}>
                 <h4>
                   {member.name}{" "}
