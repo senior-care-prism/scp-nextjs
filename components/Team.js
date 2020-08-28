@@ -49,8 +49,10 @@ export default function Team(props) {
   } 
   return (
     <section className={styles.team}>
+      
       <div className={styles.content}>
         <div className={styles.heading}>
+          
           <h2 >{props.heading}</h2>
           <div>
             Toggle B/W 
@@ -76,6 +78,7 @@ export default function Team(props) {
           ))}
         </div>
       </div>
+      <div className={styles.motif}/>
     </section>
   );
 }

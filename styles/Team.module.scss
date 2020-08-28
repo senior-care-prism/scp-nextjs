@@ -2,6 +2,11 @@
   margin: 0;
   background: var(--scp-color-eggplant);
   color: var(--scp-color-light-amber);
+  .motif {
+    height: 4em;
+    background: url("/images/team-logo-motif.jpg") center center no-repeat;
+    background-size: cover;
+  }
   .content {
     max-width: 80%;
     margin: 0 auto;
