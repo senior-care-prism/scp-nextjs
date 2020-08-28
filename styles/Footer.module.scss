@@ -1,8 +1,45 @@
 .footer {
+  padding: 2em 0;
   background: var(--scp-color-light-amber);
+  color: var(--scp-color-eggplant);
   h2 {
-    color: var(--scp-color-eggplant);
-    margin: 0 0 0 0;
+    margin: 0;
   }
+  h4 {
+    font-size: 1.2em;
+    margin: 1.5em 0 .5em 0;
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .columns {
+    display: flex;
+  }
+  .column {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  
+  .contact {
+    .col{
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-right: 2em;
+  }
+}
+.contact.columns {
+  flex-wrap: wrap;
+
+}
+  .map {
+    img {
+      max-width: 100%;
+    }
+  }
+  .icon {
+    margin-right: .8em;
+  }
+
 }
 
