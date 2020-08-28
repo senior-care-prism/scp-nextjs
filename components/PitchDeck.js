@@ -2,6 +2,7 @@ import styles from "../styles/PitchDeck.module.scss";
 import cn from "classnames";
 
 export default function PitchDeck(props) {
+  console.log(this)
   return (
     <section className={styles.pitch}>
       <div className={styles.container}>

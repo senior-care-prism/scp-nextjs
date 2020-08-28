@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^1.0.43",
     "classnames": "^2.2.6",
     "next": "9.5.2",
     "next-on-netlify": "^2.3.2",
