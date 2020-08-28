@@ -57,5 +57,43 @@
     margin-top: 0;
     margin-bottom: 1rem;
   }
+
+  button {
+    display: flex;
+    background: none;
+    text-transform: uppercase;
+    border: none;
+    padding: 0;
+    border-top: 1px solid var(--scp-color-light-amber);
+    padding-top: .2em;
+    font-size: 1em;
+    width: 100%;
+    color: var(--scp-color-light-amber);
+    .text {
+      flex-shrink: 1;
+    }
+    .icon {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    
+
+  }
+
+  .team-bio {
+    display: none;
+    overflow: hidden;
+    // TODO: resolve transition
+    // max-height: 0;
+    // transition: max-height 0.2s ease-out;
+  }
+
+  .expanded.team-bio {
+    // transition: max-height 0.2s ease-out;
+    display: block;
+    // max-height: 5em;
+    
+  }
   
 }
