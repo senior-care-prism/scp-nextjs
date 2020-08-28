@@ -10,7 +10,6 @@ const Collapsible = (props) => {
     console.log()
     setExpanded(!expanded)
   }
-  console.log("key", props.num)
 
   const bioId = `bio-${props.num + 1}`
   const btnId = `btn-${props.num + 1}`
@@ -31,7 +30,7 @@ const Collapsible = (props) => {
       <p 
         id={bioId}
         role="region" 
-        aria-labeledby={btnId}
+        aria-labelledby={btnId}
         aria-label={`${props.name}'s bio`}
         className={cn({ [styles.expanded]: expanded }, styles['team-bio'])}
       >
