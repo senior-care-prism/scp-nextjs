@@ -17,4 +17,32 @@
     margin: 0 auto;
     width: calc(100% / 6);
   }  
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    margin: 2em auto;
+   flex-direction: column;
+   text-align: center;
+   h2 {
+     display: flex;
+      justify-content: center;
+   }
+   
+     
+   
+   .column {
+     margin: 1.5em auto;
+    width: 80%;
+  } 
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    font-size: 2.2em;
+    padding: 0 .2em 0;
+    display: inline-block;
+  }
+  }
 }
