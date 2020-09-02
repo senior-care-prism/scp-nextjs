@@ -48,7 +48,7 @@ export default function Team(props) {
     setBw(!bw)
   } 
   return (
-    <section className={styles.team}>
+    <section id="our-team" className={styles.team}>
       
       <div className={styles.content}>
         <div className={styles.heading}>

@@ -15,10 +15,21 @@
 
   .column {
     margin: 0 auto;
-    width: calc(100% / 6);
+    width: calc(100% / 5);
   }  
   .mobile {
     display: none;
+  }
+
+  @media (max-width: 1000px) {
+    .column {
+      width: calc(100% / 4);
+    }  
+  }
+  @media (max-width: 850px) {
+   
+      font-size: .9em;
+    
   }
 
   @media (max-width: 600px) {

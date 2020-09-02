@@ -23,7 +23,7 @@ const SocialLinks = () => {
 export default function Team(props) {
   
   return (
-    <footer className={styles.footer}>
+    <footer id="contact" className={styles.footer}>
       <div className={cn(styles.container, styles.columns)}>
         <div className={styles.column}>
           <h2>Stay Up to Date</h2>
