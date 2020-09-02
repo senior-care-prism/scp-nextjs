@@ -4,7 +4,7 @@ import cn from "classnames";
 
 export default function ThreeColumn(props) {
   return (
-    <section className={styles['about-us']}>
+    <section id="about-us" className={styles['about-us']}>
       <div className={styles.columns}>
       {props.columns.map(item => (
         <div key={item.id} className={styles.column}>
