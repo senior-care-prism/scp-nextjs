@@ -1,9 +1,66 @@
 .quotes {
-  min-height: 50vh;
+  min-height: 30vh;
+  .provider{
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    div {
+      margin-top: 1.2em;
+    }
+    .quote {
+      font-size: 2.4em;
+      line-height: 1.2em;
+    }
+    .byline {
+      font-size: 1.4em;
+      font-style: oblique;
+      text-align: right;
+    }
+
+    @media (max-width: 1200px) {
+      max-width: 100%;
+      .quote {
+        font-size: 2.3em;
+      }
+    }
+    
+    @media (max-width: 950px) {
+      .quote {
+        font-size: 2em;
+        line-height: 1.15em;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .quote {
+        font-size: 1.9em;
+        line-height: 1.15em;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .quote {
+        font-size: 1.7em;
+        line-height: 1.15em;
+      }
+    }
+    @media (max-width: 600px) {
+      .quote {
+        font-size: 1.5em;
+        line-height: 1.15em;
+      }
+      .byline {
+        font-size: 1.1em;
+
+      }
+    }
+  }
 }
 
-.quote {
-  font-size: 2.5em;
-  line-height: 1em;
-  max-width: 40%;
-}
