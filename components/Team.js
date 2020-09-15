@@ -50,7 +50,15 @@ export default function Team(props) {
         <div className={styles.cards}>
           {props.members.map((member, i) => (
             <div className={cn(styles.member, styles.card)} key={member.id}>
-                <img src={`images/${member.avatar}`} alt={member.position} />
+                <picture>
+                  <source srcset={`images/${member.avatar}.webp`} type="image/webp" />
+                  <source srcset={`images/${member.avatar}.jpg`} type="image/jpeg" /> 
+                  <img
+                    width="1000"
+                    height="670"
+                    src={`images/${member.avatar}.jpg`} 
+                    alt={member.position} />
+                </picture>
               <div className={cn(styles.container, styles.text)}>
                 <h4>
                   {member.name}{" "}
