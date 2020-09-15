@@ -5,13 +5,16 @@ import NavLinks from "./NavLinks";
 
 
 export default function Hero(props) {
+  const headerTheme = {
+    foreground: 'oxford'
+  }
   return (
     <>
-    <Header home />
+    <Header home theme={headerTheme}/>
     <section className={cn(styles.banner, styles.columns)}>
       <div className={cn(styles.column, styles.left)}>
         <div className={styles.logo}>
-          <img src="images/logo-transparent.png" alt="Senior Care Prism logo" />
+          <img src="images/logo/scp--light-amber.svg" alt="Senior Care Prism logo" />
         </div>
         <div className={styles.tagline}>
           <div>
