@@ -6,37 +6,45 @@ import styles from "../styles/Quotes.module.scss";
 //  { ssr: false },
 // );
 
-import { CarouselProvider, Slider, Slide, DotGroup, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { 
+  CarouselProvider, 
+  Slider, 
+  Slide, 
+  DotGroup, 
+  ButtonBack, 
+  ButtonNext 
+} from 'pure-react-carousel';
 import { useState } from "react"
 
 export default function Quotes(props) {
 
   const quotes = props.quotes.map((quote) => (
-    <Slide index={quote.id} key={quote.id}>
+    <Slide index={quote.id} key={quote.id} className={styles.slide}>
       <div className={styles.container}>
         <div className={styles.quote}>{quote.text}</div>
         <div className={styles.byline}>- {quote.byline}</div>
       </div>
     </Slide>
-    
   ));
 
 
   return (
     <section className={styles.quotes}>
-      
-      <CarouselProvider naturalSlideWidth={100}
+      <div className={styles.carouselScaler}>
+      <CarouselProvider naturalSlideWidth={1}
         className={styles.provider}
-        naturalSlideHeight={70}
+        naturalSlideHeight={1}
         totalSlides={3}
         interval={3000}
         isPlaying={true}
       >
-        <Slider>
+        <Slider >
           {quotes}
         </Slider>
         <DotGroup />
       </CarouselProvider>
+      </div>
+      
     </section>
   );
 }

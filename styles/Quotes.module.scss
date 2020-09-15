@@ -23,7 +23,7 @@
   .slide {
     border: 1em solid white;
     
-    background: url("/images/quote-card2.png") no-repeat center center fixed;
+    background: url("/images/quote-card-band.png") no-repeat center center fixed;
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -38,11 +38,13 @@
     height: 100%;
     max-width: 80%;
     margin: 0 auto;
+    padding: 12% .3em 0 .3em;
+    overflow: hidden;
     div {
       margin-top: 1.2em;
     }
     .quote {
-      font-size: 2.4em;
+      font-size: 2.2em;
       line-height: 1.2em;
     }
     .byline {

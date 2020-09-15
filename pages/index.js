@@ -72,9 +72,9 @@ const teamMembers = [
 ]
 
 const quotes = [
-  {"id": 1, "byline": "Uknown", "text": "Connecting with Senior Care Prism allows us to provide culturally competent and informed care for all seniors, from all walks of life."},
-  {"id": 2, "byline": "Uknown", "text": "We’re able to access expert voices of queer, racially diverse seniors and senior sector experts across generations and geographies to learn and discuss what it means to face the challenges of an aging Canadian Population."},
-  {"id": 3, "byline": "Uknown", "text": "Senior Care Prism creates space for our community of communities to put their experience out there in a way that makes life better for anyone who’s struggled to be seen and heard"}
+  {"id": 1, "byline": "Jake", "text": "Connecting with Senior Care Prism allows us to provide culturally competent and informed care for all seniors, from all walks of life."},
+  {"id": 2, "byline": "Sandra", "text": "We’re able to access expert voices of queer, racially diverse seniors and senior sector experts across generations and geographies to learn and discuss what it means to face the challenges of an aging Canadian Population."},
+  {"id": 3, "byline": "Bill", "text": "Senior Care Prism creates space for our community of communities to put their experience out there in a way that makes life better for anyone who’s struggled to be seen and heard"}
 ]
 
 export default function Home() {
