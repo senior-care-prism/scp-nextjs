@@ -10,3 +10,9 @@
   # detects NextJS and redirects do not work.
   # Read more: https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
   framework = "#static"
+
+[[redirects]]
+  from = "https://dazzling-bartik-f66e7e.netlify.app/*"
+  to = "https://seniorcareprism.com/:splat"
+  status = 301
+  force = true # ensure that we always redirect
