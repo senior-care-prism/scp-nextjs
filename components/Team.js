@@ -78,7 +78,7 @@ export default function Team(props) {
           ))}
         </div>
       </div>
-      <div className={styles.motif}/>
+      {/* <div className={styles.motif}/> TODO: remove CSS style*/}
     </section>
   );
 }
