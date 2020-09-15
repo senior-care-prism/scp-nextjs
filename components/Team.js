@@ -41,25 +41,11 @@ const Collapsible = (props) => {
 }
 
 export default function Team(props) {
-  const [bw, setBw] = useState(false)
-
-  const toggleBw = (e) => {
-    // e.preventDefault()
-    setBw(!bw)
-  } 
   return (
     <section id="our-team" className={styles.team}>
-      
       <div className={styles.content}>
         <div className={styles.heading}>
-          
           <h2 >{props.heading}</h2>
-          <div>
-            Toggle B/W 
-            <label>
-              <input type="checkbox" onClick={toggleBw} checked={bw}/>
-            </label>
-          </div>
         </div>
         <div className={styles.cards}>
           {props.members.map((member, i) => (
@@ -67,14 +53,12 @@ export default function Team(props) {
                 <picture>
                   <source srcset={`images/${member.avatar}.webp`} type="image/webp" />
                   <source srcset={`images/${member.avatar}.jpg`} type="image/jpeg" /> 
-                  <img 
-                    className={cn({blackandwhite: bw})} 
+                  <img
                     width="1000"
                     height="670"
                     src={`images/${member.avatar}.jpg`} 
                     alt={member.position} />
                 </picture>
-                
               <div className={cn(styles.container, styles.text)}>
                 <h4>
                   {member.name}{" "}
@@ -82,13 +66,11 @@ export default function Team(props) {
                 </h4>
                 <div className={styles.position}>{member.position}</div>
               </div>
-              <Collapsible bio={member.bio} num={i} name={member.name}/>
-              
+              <Collapsible bio={member.bio} num={i} name={member.name}/> 
             </div>
           ))}
         </div>
       </div>
-      <div className={styles.motif}/>
     </section>
   );
 }

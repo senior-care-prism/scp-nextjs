@@ -33,12 +33,14 @@ $logo-margin: 2em;
     width: 80%;
     img {
       margin: 2em 0;
+      padding: .25em 0;
       height: 6em;
     }
     @media (max-width: 600px) {
       img {
         margin: 2em 0;
         height: 5em;
+        padding: .35em 0;
       }
     }
   }
