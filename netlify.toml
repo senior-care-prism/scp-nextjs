@@ -12,7 +12,7 @@
   framework = "#static"
 
 [[redirects]]
-  from = "https://dazzling-bartik-f66e7e.netlify.app/*"
-  to = "https://seniorcareprism.com/:splat"
-  status = 301
-  force = true # ensure that we always redirect
+  from = "/lambda/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
