@@ -8,7 +8,7 @@ $logo-margin: 2em;
   z-index: 9;
   top: 0;
   left: 0;
-  background: var(--scp-color-mint);
+  background: var(--scp-color-sacramento);
   background-size: cover;
   transition: all 0.6s ease 0s;
   -webkit-transition: all 0.6s ease 0s;
@@ -30,12 +30,15 @@ $logo-margin: 2em;
     }
   }
   .navbar {
-    color: var(--scp-color-oxford);
+    color: white; //var(--scp-color-oxford);
     margin:0;
     padding: 0;
     height: $nav-bar-height;
     text-transform: uppercase;
     flex: 1;
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   nav ul {
@@ -49,6 +52,16 @@ $logo-margin: 2em;
     li {
       margin: 0 1.5em;
       font-weight: 500;
+    }
+    @media (max-width: 1000px) {
+      li {
+        margin: 0 1em;
+      }
+    }
+    @media (max-width: 800px) {
+      .navlink {
+        display: none;
+      }
     }
   }
   

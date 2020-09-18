@@ -18,7 +18,7 @@ $logo-margin: 2em;
     background: var(--scp-color-sacramento);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .left {
       width: 100%;
       background: url("/images/seniors-in-the-park-background.jpg") top center no-repeat;
@@ -35,6 +35,11 @@ $logo-margin: 2em;
       margin: 2em 0;
       padding: .25em 0;
       height: 6em;
+    }
+    @media (max-width: 1000px) {
+      img {
+        height: 5.5em;
+      }
     }
     @media (max-width: 600px) {
       img {
@@ -119,6 +124,21 @@ $logo-margin: 2em;
     li {
       margin: 0 1.5em;
       font-weight: 500;
+    }
+
+    @media (max-width: 1200px) {
+      li {
+        margin: 0 1.25em;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      li:first-child {
+        display: none;
+      }
+      li {
+        margin: 0 1.15em;
+      }
     }
   }
 
