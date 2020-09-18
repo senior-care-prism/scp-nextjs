@@ -6,7 +6,7 @@ import NavLinks from "./NavLinks";
 
 export default function Hero(props) {
   const headerTheme = {
-    foreground: 'oxford'
+    foreground: 'white'
   }
   return (
     <>
