@@ -19,6 +19,9 @@
   .column {
     margin: 0 auto;
     max-width: 50%;
+    @media (max-width: 800px) {
+      max-width: 85%;
+    }
   }
   
   .contact {
@@ -26,6 +29,10 @@
       flex: 0 0 50%;
       max-width: 50%;
       margin-right: 2em;
+      @media (max-width: 800px) {
+        flex: 1;
+        max-width: 100%;
+      }
   }
 }
 .contact.columns {
@@ -41,12 +48,15 @@
       // margin: 0 auto;
       max-width: 300px;
     }
-    .attribution {
-      font-size: .75em;
-    }
   }
   .icon {
     margin-right: .8em;
+  }
+  
+  .desktop {
+    @media (max-width: 800px) {
+      display: none; 
+    }
   }
 
 }

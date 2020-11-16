@@ -26,7 +26,7 @@ export default function Team(props) {
     <footer id="contact" className={styles.footer}>
       <div className={cn(styles.container, styles.columns)}>
         <div className={styles.column}>
-          <h2>Stay Up to Date</h2>
+          <h2>Stay Up To Date</h2>
           <p>
             Sign up to our newsletter for updates on our network with inclusivity
             tips from our experts
@@ -39,7 +39,7 @@ export default function Team(props) {
               <h4>Contact Us</h4>
               <div>t. 613 407 8858</div>
               <div>e. info@seniorcareprism.com</div>
-              <div>Address TBD</div>
+              <div>101-1111 Seymour Street<br/>Vancouver BC V6B 0R2</div>
             </div>
             <div>
             <h4>Follow Us</h4>
@@ -50,12 +50,9 @@ export default function Team(props) {
             
           </div>
         </div>
-        <div className={styles.column}>
+        <div className={cn(styles.column, styles.desktop)}>
           <div className={styles.map}>
-            <img src="images/map-canada.svg" widthalt="Map of Canada"/>
-            <div className={styles.attribution}>
-              Map by <a href="https://freevectormaps.com/canada/CA-EPS-01-0003?ref=atr">Free Vector Maps</a>
-            </div>
+            <img src="images/map-canada.png" alt="Map of Canada"/>
           </div>
         </div>
         
