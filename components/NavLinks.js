@@ -4,8 +4,7 @@ export default function  NavLinks(props)  {
   const navLinks = [
     {"id": 1, "to": "about-us", "scroll": true},
     {"id": 2, "to": "our-team", "scroll": true}, 
-    {"id": 3, "to": "pitch-deck", "scroll": true }, 
-    {"id": 4, "to": "contact", "scroll": true}
+    {"id": 3, "to": "contact", "scroll": true}
   ]
   return (
     <div className={props.styles.navbar}>

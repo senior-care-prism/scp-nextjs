@@ -133,9 +133,9 @@ $logo-margin: 2em;
     }
 
     @media (max-width: 1000px) {
-      li:first-child {
-        display: none;
-      }
+      // li:first-child {
+      //   display: none;
+      // }
       li {
         margin: 0 1.15em;
       }
