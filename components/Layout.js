@@ -9,8 +9,8 @@ const introText = "We bridge the gap between the needs of equity seeking seniors
 
 export default function Layout({ children, home }) {
   const theme = {
-    foreground: 'oxford',
-    background: 'mint'
+    foreground: 'sacramento',
+    background: 'sacramento'
   }
 
   return (

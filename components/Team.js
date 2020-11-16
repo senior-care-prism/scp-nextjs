@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { Slide } from "pure-react-carousel";
+import SlideProvider from "./SlideProvider"
 import styles from "../styles/Team.module.scss";
 import cn from "classnames";
+
 
 const Collapsible = (props) => {
   const [expanded, setExpanded] = useState(false)
@@ -40,6 +43,57 @@ const Collapsible = (props) => {
   );
 }
 
+const BioCards = (props) => (
+  <div className={styles.cards}>
+  {props.members.map((member, i) => (
+    <div className={cn(styles.member, styles.card)} key={member.id}>
+        <picture>
+          <source srcset={`images/${member.avatar}.webp`} type="image/webp" />
+          <source srcset={`images/${member.avatar}.jpg`} type="image/jpeg" /> 
+          <img
+            width="1000"
+            height="670"
+            src={`images/${member.avatar}.jpg`} 
+            alt={member.position} />
+        </picture>
+      <div className={cn(styles.container, styles.text)}>
+        <h4>
+          {member.name}{" "}
+          {member.titles && ", " + member.titles.join(", ")}
+        </h4>
+        <div className={styles.position}>{member.position}</div>
+      </div>
+      <Collapsible bio={member.bio} num={i} name={member.name}/> 
+    </div>
+  ))}
+</div>
+)
+
+const BioSlides = (props) => {
+  const members = props.members.map((member, i) => (
+    <div className={cn(styles.member, styles.card)} key={member.id}>
+        <picture>
+          <source srcset={`images/${member.avatar}.webp`} type="image/webp" />
+          <source srcset={`images/${member.avatar}.jpg`} type="image/jpeg" /> 
+          <img
+            width="1000"
+            height="670"
+            src={`images/${member.avatar}.jpg`} 
+            alt={member.position} />
+        </picture>
+      <div className={cn(styles.container, styles.text)}>
+        <h4>
+          {member.name}{" "}
+          {member.titles && ", " + member.titles.join(", ")}
+        </h4>
+        <div className={styles.position}>{member.position}</div>
+      </div>
+      <Collapsible bio={member.bio} num={i} name={member.name}/> 
+    </div>
+  ))
+  return <SlideProvider slides={quotes} styles={styles}/>
+}
+
 export default function Team(props) {
   return (
     <section id="our-team" className={styles.team}>
@@ -47,29 +101,8 @@ export default function Team(props) {
         <div className={styles.heading}>
           <h2 >{props.heading}</h2>
         </div>
-        <div className={styles.cards}>
-          {props.members.map((member, i) => (
-            <div className={cn(styles.member, styles.card)} key={member.id}>
-                <picture>
-                  <source srcset={`images/${member.avatar}.webp`} type="image/webp" />
-                  <source srcset={`images/${member.avatar}.jpg`} type="image/jpeg" /> 
-                  <img
-                    width="1000"
-                    height="670"
-                    src={`images/${member.avatar}.jpg`} 
-                    alt={member.position} />
-                </picture>
-              <div className={cn(styles.container, styles.text)}>
-                <h4>
-                  {member.name}{" "}
-                  {member.titles && ", " + member.titles.join(", ")}
-                </h4>
-                <div className={styles.position}>{member.position}</div>
-              </div>
-              <Collapsible bio={member.bio} num={i} name={member.name}/> 
-            </div>
-          ))}
-        </div>
+        <BioCards members={props.members} />
+        {/* <BioSlides members={props.members} styles={styles}/> */}
       </div>
     </section>
   );
