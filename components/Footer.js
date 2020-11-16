@@ -31,14 +31,9 @@ export default function Team(props) {
             Sign up to our newsletter for updates on our network with inclusivity
             tips from our experts
           </p>
-          <form>
-            <label>
-              Email
-              <input name="email" />
-            </label>
+          <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/5SaI/F4d" width="100%"></iframe>
 
-            <button>Sign Up</button>
-          </form>
+<script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
           <div className={cn(styles.columns, styles.contact)}>
             <div className={styles.col}>
               <h4>Contact Us</h4>
@@ -55,10 +50,12 @@ export default function Team(props) {
             
           </div>
         </div>
-
         <div className={styles.column}>
           <div className={styles.map}>
-            <img src="images/map-vancouver.jpg" alt="Map of Vancouver"/>
+            <img src="images/map-canada.svg" widthalt="Map of Canada"/>
+            <div className={styles.attribution}>
+              Map by <a href="https://freevectormaps.com/canada/CA-EPS-01-0003?ref=atr">Free Vector Maps</a>
+            </div>
           </div>
         </div>
         
