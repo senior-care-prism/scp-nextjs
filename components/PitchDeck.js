@@ -8,7 +8,7 @@ export default function PitchDeck(props) {
       <div className={styles.container}>
         <h2>{props.heading}</h2>
         <a href="/uploads/SCP-Pitch-Deck.pdf" className={cn(styles.button, styles.inverted)} download>
-          Download Our Pitch and Find Out Why
+          Download Our Pitch and Find Out How
         </a>
       </div>
     </section>
