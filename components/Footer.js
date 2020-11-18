@@ -52,7 +52,7 @@ export default function Team(props) {
         </div>
         <div className={cn(styles.column, styles.desktop)}>
           <div className={styles.map}>
-            <img src="images/map-canada.png" alt="Map of Canada"/>
+            <img src="images/map-canada.png" alt="Map of Canada" width="800px" height="658px"/>
           </div>
         </div>
         

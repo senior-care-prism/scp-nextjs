@@ -20,9 +20,9 @@ export default function Hero(props) {
           <div>
             <h1>{props.tagline}</h1>
             <p>{props.intro}</p>
-            <button className={cn(styles.button, styles.primary)}>
+            <a href="/uploads/SCP-Pitch-Deck.pdf" className={cn(styles.button, styles.primary)} download>
               About Us
-            </button>
+            </a>
           </div>
         </div>
       </div>
