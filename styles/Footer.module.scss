@@ -43,9 +43,12 @@
     margin: 0 auto;
     display: flex;
     padding: 2em 0 0 .5em;
+    height: auto;
     img {
       // margin: 0 auto;
+      align-self: flex-start;
       max-width: 450px;
+      height: auto;
     }
     @media (max-width: 1200px) {
       padding: 3em 0 0 1em;
