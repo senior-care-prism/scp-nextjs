@@ -19,7 +19,7 @@ body {
   line-height: 1.5em;
 }
 
-h1,h2,h3,h4,h5,h6,nav,button {
+h1,h2,h3,h4,h5,h6,nav,button,a.button {
   line-height: 1.3em;
   font-family: 'Heebo', sans-serif;
 }
