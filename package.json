@@ -12,13 +12,13 @@
     "@datapunt/matomo-tracker-react": "^0.2.0",
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "classnames": "^2.2.6",
-    "next": "9.5.2",
-    "next-on-netlify": "^2.3.2",
-    "pure-react-carousel": "^1.27.1",
+    "next": "^10.0.9",
+    "next-on-netlify": "^2.9.0",
+    "pure-react-carousel": "^1.27.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-scroll": "^1.8.1",
+    "react-scroll": "^1.8.2",
     "remixicon": "^2.5.0",
-    "sass": "^1.26.10"
+    "sass": "^1.32.8"
   }
 }
