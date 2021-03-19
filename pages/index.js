@@ -19,7 +19,7 @@ const columnContent = [
 const teamMembers = [
   {
     id: "1", 
-    name: "Cass Elliot", 
+    name: "Cass Elliott", 
     pronouns: ["he", "him", "his"],
     position: "Executive Director", 
     avatar: "our-team/cass-elliott", 
@@ -29,7 +29,7 @@ const teamMembers = [
     id: "2", 
     name: "Martin Krajcik", 
     pronouns: ["he", "him", "his"],
-    position: "Director, Development", 
+    position: "Director, Development & Education", 
     avatar: "our-team/martin-krajcik", 
     bio: "Martin is a Human Rights activist and educator. He studies, breaks-down, and teaches the ways governments, institutions, and individuals can take action to improve the well-being of diverse communities across the globe."
   },
@@ -37,7 +37,7 @@ const teamMembers = [
     id: "3", 
     name: "Peter Chiu", 
     pronouns: ["he", "him", "his"],
-    position: "community engagement chair", 
+    position: "Events & Development Advisor", 
     avatar: "our-team/peter-chiu", 
     bio: "Peter’s passion for global citizenship can be witnessed by his commitment to connecting people through memorable events and creating shared experiences that better the community and society through philanthropic giving."
   },
