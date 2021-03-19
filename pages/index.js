@@ -20,47 +20,33 @@ const teamMembers = [
   {
     id: "1", 
     name: "Cass Elliot", 
-    position: "chief executive officer", 
+    pronouns: ["he", "him", "his"],
+    position: "Executive Director", 
     avatar: "our-team/cass-elliott", 
-    bio:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    bio: "Cass is a change leader committed to developing people and organizations to do what they do better. By helping teams find their place of engagement and leveraging opportunities for growth, he positions organizations where they need to be to stay adaptive and thrive."
   },
   {
     id: "2", 
-    name: "Sara Yates", 
-    position: "chief technology officer", 
-    avatar: "our-team/sara-yates", 
-    titles: ["CPA", "CA"], 
-    bio:"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    name: "Martin Krajcik", 
+    pronouns: ["he", "him", "his"],
+    position: "Director, Development", 
+    avatar: "our-team/martin-krajcik", 
+    bio: "Martin is a Human Rights activist and educator. He studies, breaks-down, and teaches the ways governments, institutions, and individuals can take action to improve the well-being of diverse communities across the globe."
   },
   {
     id: "3", 
-    name: "Morgan Bass", 
+    name: "Peter Chiu", 
+    pronouns: ["he", "him", "his"],
     position: "community engagement chair", 
-    avatar: "our-team/morgan-bass", 
-    bio:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    avatar: "our-team/peter-chiu", 
+    bio: "Peter’s passion for global citizenship can be witnessed by his commitment to connecting people through memorable events and creating shared experiences that better the community and society through philanthropic giving."
   },
   {
     id: "4", 
-    name: "Reed Taft", 
-    position: "coastal health advisor", 
-    avatar: "our-team/reed-taft", 
-    titles: ["B.Sc", "P.Geo"], 
-    bio:"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  {
-    id: "5", 
-    name: "Kathryn Lowell", 
-    position: "Marketing consultant", 
-    avatar: "our-team/kathryn-lowell", 
-    bio:"Lectus arcu bibendum at varius vel pharetra. "
-  },
-  {
-    id: "6", 
-    name: "Tobin Pierre", 
-    position: "advisor", 
-    avatar: "our-team/tobin-pierre", 
-    bio:"Fusce ut placerat orci nulla pellentesque dignissim enim sit amet."
-  },
+    name: "Advisory Members",  
+    avatar: "our-team/advisory-members", 
+    bio: "Check back later to see more bios and photos of our Senior Sector Advisors and Community Champions."
+  }
 ]
 
 const quotes = [
