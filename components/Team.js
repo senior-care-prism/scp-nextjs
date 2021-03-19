@@ -59,7 +59,9 @@ const BioCards = (props) => (
       <div className={cn(styles.container, styles.text)}>
         <h4>
           {member.name}{" "}
-          {member.titles && ", " + member.titles.join(", ")}
+          { member.pronouns &&
+          <span className={styles.pronouns}>{member.pronouns.join(" / ")}</span>
+          }
         </h4>
         <div className={styles.position}>{member.position}</div>
       </div>
@@ -84,7 +86,7 @@ const BioSlides = (props) => {
       <div className={cn(styles.container, styles.text)}>
         <h4>
           {member.name}{" "}
-          {member.titles && ", " + member.titles.join(", ")}
+          {member.titles && ", " + member.titles.join("/")}
         </h4>
         <div className={styles.position}>{member.position}</div>
       </div>
