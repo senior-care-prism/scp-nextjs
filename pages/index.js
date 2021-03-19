@@ -58,7 +58,7 @@ const quotes = [
 export default function Home() {
   const { trackPageView } = useMatomo()
  
-  React.useEffect(() => {
+  useEffect(() => {
     trackPageView()
   }, [])
 
