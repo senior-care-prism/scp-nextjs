@@ -1,0 +1,31 @@
+.news-feed {
+  margin: 0;
+  > .content {
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 2em;
+
+    > .heading {
+      color: var(--scp-color-sacramento);
+    }
+
+    > .card-container {
+      display: flex;
+
+      > .news-card {
+        background-color: var(--scp-color-mint);
+        margin: 1em;
+        width: 300px;
+
+        > .content {
+          margin: 0 1em;
+        }
+      }
+
+      > .news-card:first-child {
+        margin-left: 0;
+      }
+    }
+  
+  }
+}
