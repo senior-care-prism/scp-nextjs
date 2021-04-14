@@ -8,6 +8,7 @@
   --scp-color-sacramento: #023534;
   --scp-color-oxford: #0e263f;
   --scp-color-eggplant: #30173a;
+  --scp-color-light-grey: #b8b8b8;
 }
 
 html,
@@ -37,5 +38,3 @@ a {
   filter: gray;
   filter: grayscale(100%);
 }
-
-
