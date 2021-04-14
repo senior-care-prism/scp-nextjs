@@ -10,7 +10,7 @@ const introText = 'We bridge the gap between the needs of equity seeking seniors
 
 function Layout({ children, home }) {
   const theme = {
-    foreground: 'sacramento',
+    foreground: 'white',
     background: 'sacramento',
   };
 

@@ -20,7 +20,7 @@ const SocialLinks = () => {
   );
 };
 
-const Team = () => (
+const Footer = () => (
   <footer id="contact" className={styles.footer}>
     <div className={cn(styles.container, styles.columns)}>
       <div className={styles.column}>
@@ -62,11 +62,11 @@ const Team = () => (
       </div>
       <div className={cn(styles.column, styles.desktop)}>
         <div className={styles.map}>
-          <img src="images/map-canada.png" alt="Map of Canada" width="800px" height="658px" />
+          <img src="/images/map-canada.png" alt="Map of Canada" width="800px" height="658px" />
         </div>
       </div>
     </div>
   </footer>
 );
 
-export default Team;
+export default Footer;
