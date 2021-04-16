@@ -1,0 +1,9 @@
+.news-article {
+    margin: 0;
+    > .content {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2em 0;
+        max-width: 1350px;
+    }
+}

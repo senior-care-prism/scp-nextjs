@@ -4,7 +4,7 @@ import { ARTICLE_SHAPE } from '../shared/constants';
 
 function NewsArticle({ article }) {
   return (
-    <section id="news-article" className={styles.team}>
+    <section id="news-article" className={styles['news-article']}>
       <div className={styles.content}>
         <div className={styles.heading}>
           <h2>{article?.headline}</h2>
