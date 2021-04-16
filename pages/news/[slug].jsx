@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '../../components/Layout';
 import NewsArticle from '../../components/NewsArticle';
 import { getNewsEntryBySlug, getAllNewsEntriesWithSlug } from '../../lib/api';
+import { ARTICLE_SHAPE } from '../../shared/constants';
 
 export default function News({ article }) {
   return (
@@ -15,6 +16,10 @@ export default function News({ article }) {
     </Layout>
   );
 }
+
+News.propTypes = {
+  article: ARTICLE_SHAPE.isRequired,
+};
 
 export async function getStaticPaths() {
   const articles = await getAllNewsEntriesWithSlug();

@@ -4,11 +4,14 @@
 :root {
   --scp-color-blush: #f2b3b1;
   --scp-color-light-amber: #f9cf74;
-  --scp-color-mint: #98d4c5;
+  --scp-color-mint: #54a18e;
   --scp-color-sacramento: #023534;
   --scp-color-oxford: #0e263f;
+  --scp-color-oxford-light: #4d91d7;
   --scp-color-eggplant: #30173a;
+  --scp-color-grey: #949494;
   --scp-color-light-grey: #b8b8b8;
+  --focus-color: var(--scp-color-mint);
 }
 
 html,

@@ -16,6 +16,68 @@
       }
     }
 
+    > .page-controls {
+      display: flex;
+      margin-right: 2.5em;
+      > .search-form {
+        max-height: 34px;
+        margin: 1em 3em 0 auto;
+        border-radius: 2px;
+        max-width: 230px;
+        border: 2px solid var(--focus-color);
+  
+        &:focus-within {
+          --focus-color: var(--scp-color-oxford-light);
+        }
+  
+        > i {
+          color: var(--scp-color-grey);
+          position: absolute;
+          margin-left: .5em;
+          margin-top: .2em;
+        }
+        input {
+          margin: .5em;
+          margin-left: 2em;
+          border: none;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      > nav .pagination {
+        display: flex;
+        flex-grow: 2;
+        padding-left: 0;
+        list-style: none;
+        border-radius: .5rem;
+        
+        > .page-item {
+          color: black;
+          padding: 8px 16px;
+          transition: background-color .5s;
+        }
+  
+        > .page-item.active {
+          background-color: var(--scp-color-mint);
+          color: white;
+        }
+  
+        > .page-item.disabled {
+          color: var(--scp-color-light-grey);
+        }
+  
+        > .page-item:hover:not(.active):not(.disabled) {
+          background-color: #ddd;
+        }
+      }
+  
+    }
+
+    
+   
+
     > .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -75,33 +137,24 @@
         }
       }
     }
-    > nav .pagination {
-      display: flex;
-      flex-grow: 2;
-      padding-left: 0;
-      list-style: none;
-      border-radius: .5rem;
-      
-      > .page-item {
-        color: black;
-        padding: 8px 16px;
-        transition: background-color .5s;
+    > .no-results {
+      padding-top: 5em;
+      // vertical-align: ce;
+      i {
+        font-size: 1.5em;
+        margin: 0 .5em;
+        vertical-align: bottom;
       }
-
-      > .page-item.active {
-        background-color: var(--scp-color-mint);
-        color: white;
-      }
-
-      > .page-item.disabled {
-        color: var(--scp-color-light-grey);
-      }
-
-      > .page-item:hover:not(.active):not(.disabled) {
-        background-color: #ddd;
+      min-height: 400px;
+      font-size: 1.7em;
+      color: var(--scp-color-grey);
+      text-align: center;
+      > .help-text {
+        padding-top: .5em;
+        font-size: .7em;
       }
     }
-  
+
   }
 }
 

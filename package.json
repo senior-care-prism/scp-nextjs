@@ -19,6 +19,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scroll": "^1.8.2",
+    "react-spinners": "^0.10.6",
     "remixicon": "^2.5.0",
     "sass": "^1.32.8"
   },
