@@ -10,7 +10,7 @@ const introText = 'We bridge the gap between the needs of equity seeking seniors
 
 function Layout({ children, home }) {
   const theme = {
-    foreground: 'sacramento',
+    foreground: 'white',
     background: 'sacramento',
   };
 
@@ -23,7 +23,7 @@ function Layout({ children, home }) {
             intro={introText}
           />
         )
-        : <Header theme={theme} />}
+        : <Header theme={theme} home={home} />}
       <main className={cn({ [styles['not-home']]: !home })}>{children}</main>
 
       <Footer />
@@ -31,9 +31,13 @@ function Layout({ children, home }) {
   );
 }
 
+Layout.defaultProps = {
+  home: false,
+};
+
 Layout.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
-  home: PropTypes.bool.isRequired,
+  home: PropTypes.bool,
 };
 
 export default Layout;

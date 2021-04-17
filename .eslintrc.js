@@ -25,6 +25,6 @@ module.exports = {
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'object-curly-newline': ['error', { multiline: true }],
+    'object-curly-newline': ['error', { consistent: true }],
   },
 };
