@@ -75,68 +75,6 @@
   
     }
 
-    
-   
-
-    > .card-container {
-      display: flex;
-      flex-wrap: wrap;
-
-      > .news-card {
-        border: 3px solid var(--scp-color-mint);
-        border-radius: .3em;
-        margin: 1em;
-        width: 300px;
-
-        > .card-title {
-          color: white;
-          padding: .75em 1.5em;
-          min-height: 120px;
-          h3 {
-            margin: 0;
-          }
-          background-color: var(--scp-color-mint);
-        }
-        > .content {
-          padding: 0 1.5em;
-          > .excerpt {
-            min-height: 170px;
-          }
-        }
-        > .card-end {
-          display: flex;
-          font-size: 90%;
-          color: white;
-          padding: .5em 1.5em;
-          background-color: var(--scp-color-mint);
-
-          a {
-            font-family: 'Heebo', sans-serif;
-            padding: 3px 10px;
-            text-transform: uppercase;
-            
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-          
-            background-color: none;
-            font-weight: bold;
-            border: .2em solid  white;
-          }
-          a:focus {
-            color: var(--scp-color-mint);
-            background-color: white;
-          }
-          
-          > .published-date {
-            vertical-align: center;
-            margin-left: auto;
-            font-weight: bold;
-          }
-        }
-      }
-    }
     > .no-results {
       padding-top: 5em;
       // vertical-align: ce;

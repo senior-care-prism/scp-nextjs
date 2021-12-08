@@ -18,9 +18,10 @@ function PitchDeck({ heading }) {
         <h2>{heading}</h2>
         <a
           href="/uploads/SCP-Pitch-Deck.pdf"
+          target="_blank"
           className={cn(styles.button, styles.inverted)}
           onClick={trackDownload}
-          download
+          
         >
           Download Our Pitch and Find Out How
         </a>

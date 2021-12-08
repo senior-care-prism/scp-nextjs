@@ -29,7 +29,7 @@ function Header({ home, theme }) {
         <div className={styles.logo}>
           <img src={`/images/logo/scp--${theme.foreground}.svg`} alt="Senior Care Prism logo" />
         </div>
-        <NavLinks styles={styles} />
+        <NavLinks styles={styles} home={home} />
       </div>
     </header>
   );

@@ -1,8 +1,9 @@
 import { Link, animateScroll as scroll } from 'react-scroll';
 import PropTypes from 'prop-types';
 
-function NavLinks({ styles }) {
+function NavLinks({ styles, home }) {
   const navLinks = [
+    // TODO: handle nav-links from non-home locations.
     { id: 1, to: 'about-us', scroll: true },
     { id: 2, to: 'news', scroll: true },
     { id: 3, to: 'our-team', scroll: true },

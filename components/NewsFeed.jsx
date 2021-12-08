@@ -2,52 +2,12 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import cn from 'classnames';
 import PulseLoader from 'react-spinners/PulseLoader';
-import useWindowSize from '../hooks/useWindowSize';
+import ArticleCard from './ArticleCard';
+import { cleanupQuery, formatQuerystring } from '../lib/utils';
+import { ARTICLE_SHAPE } from '../shared/constants';
 import styles from '../styles/NewsFeed.module.scss';
-
-function getColumnCount(viewportWidth) {
-  if (viewportWidth < 654) {
-    return 1;
-  }
-
-  if (viewportWidth < 975) {
-    return 2;
-  }
-
-  if (viewportWidth < 1311) {
-    return 3;
-  }
-
-  return 4;
-}
-
-// function isLeftEdgeNoMargin(nodeCount, columnCount) {
-//   if (columnCount === 1) {
-//     return true;
-//   }
-//   return nodeCount % columnCount === 1;
-// }
-
-// function isRightEdgeNoMargin(nodeCount, columnCount) {
-//   return nodeCount % columnCount === 0;
-// }
-
-function cleanupQuery(query, newItem) {
-  const result = newItem === undefined ? { ...query } : { ...query, ...newItem };
-  Object.keys(result).forEach((key) => {
-    if (result[key] === '' || (key === 'p' && result[key] === '1')) {
-      delete result[key];
-    }
-  });
-  return result;
-}
-
-function formatQuerystring(query) {
-  return `?${Object.entries(query).map((keyValue) => keyValue.join('=')).join('&')}`;
-}
 
 const Paginator = ({ pageNum, maxPage }) => {
   const router = useRouter();
@@ -94,53 +54,6 @@ Paginator.propTypes = {
   maxPage: PropTypes.number.isRequired,
 };
 
-const Card = ({ entry, idx }) => {
-  const { width } = useWindowSize();
-  const columnCount = getColumnCount(width);
-  const nodeCount = idx + 1;
-
-  // console.log('looo', width, columnCount);
-  const articleRef = {
-    pathname: '/news/[slug]',
-    query: { slug: entry.slug },
-  };
-  return (
-    <div
-      className={styles['news-card']}
-    >
-      <div className={styles['card-title']}>
-        <h3>
-          <Link href={articleRef}>
-            {entry.headline}
-          </Link>
-        </h3>
-      </div>
-      <div className={styles.content}>
-        <p className={styles.excerpt}>{entry.excerpt}</p>
-      </div>
-      <div className={styles['card-end']}>
-        <Link href={articleRef}>
-          Read&nbsp;more
-        </Link>
-        <div className={styles['published-date']}>
-          {moment(entry.publishedDate).format('LL')}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-Card.propTypes = {
-  entry: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    tags: PropTypes.array.isRequired,
-    headline: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    publishedDate: PropTypes.string.isRequired,
-    excerpt: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
 const Search = () => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
@@ -169,7 +82,7 @@ const Search = () => {
   return (
     <>
       <form className={styles['search-form']}>
-        <i class="ri-search-line"></i>
+        <i className="ri-search-line" />
         <input
           type="text"
           value={searchQuery}
@@ -196,15 +109,15 @@ function NewsFeed({ entries, pageNum, maxPage }) {
           ? (
             <>
               <div className={styles['card-container']}>
-                {entries.map((entry, idx) => (
-                  <Card entry={entry} key={entry.id} idx={idx} />
+                {entries.map((newsEntry) => (
+                  <ArticleCard key={newsEntry.id} entry={newsEntry} />
                 ))}
               </div>
             </>
           )
           : (
             <div className={styles['no-results']}>
-              <i class="ri-alert-fill" />
+              <i className="ri-alert-fill" />
               No results
               <p className={styles['help-text']}>Please try a different search.</p>
             </div>
@@ -219,7 +132,7 @@ function NewsFeed({ entries, pageNum, maxPage }) {
 }
 
 NewsFeed.propTypes = {
-  entries: PropTypes.arrayOf(Card.propTypes.entry).isRequired,
+  entries: PropTypes.arrayOf(ARTICLE_SHAPE).isRequired,
   pageNum: PropTypes.number.isRequired,
   maxPage: PropTypes.number.isRequired,
 };

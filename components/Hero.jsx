@@ -5,13 +5,13 @@ import styles from '../styles/Hero.module.scss';
 import Header from './Header';
 import NavLinks from './NavLinks';
 
-function Hero({ tagline, intro }) {
+function Hero({ tagline, intro, home }) {
   const headerTheme = {
     foreground: 'white',
   };
   return (
     <>
-      <Header home theme={headerTheme} />
+      <Header home={home} theme={headerTheme} />
       <section className={cn(styles.banner, styles.columns)}>
         <div className={cn(styles.column, styles.left)}>
           <div className={styles.logo}>

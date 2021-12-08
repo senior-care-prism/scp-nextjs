@@ -21,6 +21,7 @@ function Layout({ children, home }) {
           <Hero
             tagline="Amplifying Inclusive Voices for All Seniors in Canada"
             intro={introText}
+            home={home}
           />
         )
         : <Header theme={theme} home={home} />}
