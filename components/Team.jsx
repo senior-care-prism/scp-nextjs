@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { Slide } from 'pure-react-carousel';
 import cn from 'classnames';
 
 import styles from '../styles/Team.module.scss';
-import SlideProvider from './SlideProvider';
 
 const Collapsible = ({ num, name, bio }) => {
   const [expanded, setExpanded] = useState(false);
@@ -47,12 +45,11 @@ const BioCards = ({ members }) => (
     {members.map((member, i) => (
       <div className={cn(styles.member, styles.card)} key={member.id}>
         <picture>
-          <source srcSet={`images/${member.avatar}.webp`} type="image/webp" />
-          <source srcSet={`images/${member.avatar}.jpg`} type="image/jpeg" />
+          <source srcSet={member.photo.url} type="image/jpeg" />
           <img
             width="1000"
             height="670"
-            src={`images/${member.avatar}.jpg`}
+            src={member.photo.url}
             alt={member.position}
           />
         </picture>
@@ -70,52 +67,6 @@ const BioCards = ({ members }) => (
   </div>
 );
 
-const BioSlides = (props) => {
-  const members = props.members.map((member, i) => (
-    <Slide index={quote.id} key={quote.id} className={styles.slide}>
-      <div className={cn(styles.member, styles.card)} key={member.id}>
-        <picture>
-          <source srcset={`images/${member.avatar}.webp`} type="image/webp" />
-          <source srcset={`images/${member.avatar}.jpg`} type="image/jpeg" /> 
-          <img
-            width="1000"
-            height="670"
-            src={`images/${member.avatar}.jpg`} 
-            alt={member.position} />
-        </picture>
-      <div className={cn(styles.container, styles.text)}>
-        <h4>
-          {member.name}{" "}
-          {member.titles && ", " + member.titles.join("/")}
-        </h4>
-        <div className={styles.position}>{member.position}</div>
-      </div>
-      <Collapsible bio={member.bio} num={i} name={member.name}/> 
-    </div>
-    </Slide>
-  ))
-  return <SlideProvider slides={quotes} styles={styles}/>
-}
-
-function Quotes(props) {
-  const quotes = props.quotes.map((quote) => (
-    <Slide index={quote.id} key={quote.id} className={styles.slide}>
-      <div className={styles.container}>
-        <div className={styles.quote}>{quote.text}</div>
-        <div className={styles.byline}>- {quote.byline}</div>
-      </div>
-    </Slide>
-    
-  ));
-
-  return (
-    <section className={styles.quotes}>
-      <SlideProvider slides={quotes} styles={styles}/>
-    </section>
-  );
-}
-
-
 export default function Team(props) {
   return (
     <section id="our-team" className={styles.team}>
@@ -124,7 +75,6 @@ export default function Team(props) {
           <h2 >{props.heading}</h2>
         </div>
         <BioCards members={props.members} />
-        {/* <BioSlides members={props.members} styles={styles}/> */}
       </div>
     </section>
   );
