@@ -18,24 +18,3 @@ export const columnContent = [
 		subtitle : 'We help you collaborate with our community of communities'
 	}
 ];
-
-export const quotes = [
-	{
-		id     : 1,
-		byline : 'Jake',
-		text   :
-			'Connecting with Senior Care Prism allows us to provide culturally competent and informed care for all seniors, from all walks of life.'
-	},
-	{
-		id     : 2,
-		byline : 'Sandra',
-		text   :
-			'We’re able to access expert voices of queer, racially diverse seniors across generations and geographies to discuss the challenges of an aging Canadian Population.'
-	},
-	{
-		id     : 3,
-		byline : 'Aarushi',
-		text   :
-			'Senior Care Prism creates space for our community of communities to put their experience out there in a way that makes life better for anyone who’s struggled to be seen and heard'
-	}
-];
