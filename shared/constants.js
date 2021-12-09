@@ -34,3 +34,11 @@ export const TEAM_MEMBER_SHAPE = PropTypes.shape({
 });
 
 export const TEAM_MEMBERS_SHAPE = PropTypes.arrayOf(TEAM_MEMBER_SHAPE);
+
+export const QUOTE_SHAPE = PropTypes.shape({
+	id     : PropTypes.number.isRequired,
+	byline : PropTypes.string.isRequired,
+	text   : PropTypes.string.isRequired
+});
+
+export const QUOTES_SHAPE = PropTypes.arrayOf(QUOTE_SHAPE);
