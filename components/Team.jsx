@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import cn from 'classnames';
+import Image from 'next/image';
 
 import styles from '../styles/Team.module.scss';
 
@@ -46,7 +47,7 @@ const BioCards = ({ members }) => (
       <div className={cn(styles.member, styles.card)} key={member.id}>
         <picture>
           <source srcSet={member.photo.url} type="image/jpeg" />
-          <img
+          <Image
             width="1000"
             height="670"
             src={member.photo.url}

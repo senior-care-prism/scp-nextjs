@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import Script from 'next/script'
 import styles from '../styles/Footer.module.scss';
+import Image from 'next/image';
 
 const SocialLinks = () => {
   const iconSize = 'ri-lg';
@@ -62,7 +63,7 @@ const Footer = () => (
       </div>
       <div className={cn(styles.column, styles.desktop)}>
         <div className={styles.map}>
-          <img src="/images/map-canada.png" alt="Map of Canada" width="800px" height="658px" />
+          <Image src="/images/map-canada.png" alt="Map of Canada" width="800px" height="658px" />
         </div>
       </div>
     </div>
