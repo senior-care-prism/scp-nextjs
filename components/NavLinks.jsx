@@ -34,7 +34,7 @@ function NavLinks({ styles, path, offset }) {
 					<ul>
 						{navLinks.map((link) => (
 							<li key={link.id} className={styles.navlink}>
-								<Link href={link.href}>
+								<Link href={link.href} passHref>
 									<a>{link.to.replace('-', '\u00a0')}</a>
 								</Link>
 							</li>

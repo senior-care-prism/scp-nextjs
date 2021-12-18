@@ -41,7 +41,7 @@ function Header({ path }) {
 		window.onscroll = () => {
 			setOffset(window.pageYOffset);
 		};
-		!path.includes('news') && tw.current.getGSAP().progress((offset/2) / 100.0);
+		!path.includes('news') && tw.current.getGSAP().progress(offset / 2 / 100.0);
 
 		console.log('Current path is ', path);
 		path.includes('news') && tw.current.getGSAP().progress(1);
@@ -51,7 +51,7 @@ function Header({ path }) {
 		<header className={cn(styles.header, styles.columns)}>
 			<div className={cn(styles.column, styles.left)}>
 				<div className={styles.logocontainer}>
-					<Link href="/#">
+					<Link href="/#" passHref>
 						<div className={styles.logo}>{tween}</div>
 					</Link>
 				</div>
