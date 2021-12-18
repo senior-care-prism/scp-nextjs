@@ -2,20 +2,13 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import styles from '../styles/Hero.module.scss';
-import Header from './Header';
-import NavLinks from './NavLinks';
 
 function Hero({ tagline, intro, home }) {
-  const headerTheme = {
-    foreground: 'white',
-  };
   return (
     <>
-      <Header home={home} theme={headerTheme} />
-      <section className={cn(styles.banner, styles.columns)}>
+      <section  id="about-us" className={cn(styles.banner, styles.columns)}>
         <div className={cn(styles.column, styles.left)}>
           <div className={styles.logo}>
-            <img src="images/logo/scp--light-amber.svg" alt="Senior Care Prism logo" />
           </div>
           <div className={styles.tagline}>
             <div>
@@ -28,7 +21,7 @@ function Hero({ tagline, intro, home }) {
           </div>
         </div>
         <div className={cn(styles.column, styles.right)}>
-          <NavLinks styles={styles} />
+          <div className={styles.spacer}></div>
           <div className={styles.hero} />
         </div>
       </section>

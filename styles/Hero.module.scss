@@ -18,7 +18,7 @@ $logo-margin: 2em;
     background: var(--scp-color-sacramento);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .left {
       width: 100%;
       background: url("/images/seniors-in-the-park-background.jpg") top center no-repeat;
@@ -57,7 +57,6 @@ $logo-margin: 2em;
     align-items: flex-start;
     justify-content: center;
     margin: 0em auto;
-    padding-bottom: $nav-bar-height;
     max-width: 80%;
     color: white; 
     h1 {
@@ -102,45 +101,10 @@ $logo-margin: 2em;
         line-height: 1.3em;
         font-size: 1.1em;
       }
-      padding-bottom: $nav-bar-height + $logo-margin;
     }
   }
   
-  .navbar {
-    margin:0;
-    padding: 0;
-    height: $nav-bar-height;
-    background: var(--scp-color-mint);
-    text-transform: uppercase;
-  }
 
-  nav ul {
-    display: flex;
-    height: $nav-bar-height;
-    list-style-type: none;
-    margin: 0 2em 0 0;
-    align-items: center;
-    justify-content: flex-end;
-    li {
-      margin: 0 1.5em;
-      font-weight: 500;
-    }
-
-    @media (max-width: 1200px) {
-      li {
-        margin: 0 1.25em;
-      }
-    }
-
-    @media (max-width: 1000px) {
-      // li:first-child {
-      //   display: none;
-      // }
-      li {
-        margin: 0 1.15em;
-      }
-    }
-  }
 
   .hero {
     display: grid;
@@ -151,6 +115,9 @@ $logo-margin: 2em;
   }
 }
 
+.spacer {
+  height: 96px;
+}
 
 .button {
   line-height: 1.3em;

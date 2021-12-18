@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export const ARTICLE_SHAPE = PropTypes.shape({
 	id                        : PropTypes.string.isRequired,
-	tags                      : PropTypes.arrayOf(PropTypes.string).isRequired,
+	tags                      : PropTypes.arrayOf(PropTypes.object).isRequired,
 	headline                  : PropTypes.string.isRequired,
 	slug                      : PropTypes.string.isRequired,
 	publishedDate             : PropTypes.string.isRequired,
@@ -11,13 +11,13 @@ export const ARTICLE_SHAPE = PropTypes.shape({
 		photo : PropTypes.shape({
 			url : PropTypes.string
 		})
-	}).isRequired,
-	attributeOriginalAuthor   : PropTypes.bool.isRequired,
+	}),
+	attributeOriginalAuthor   : PropTypes.bool,
 	originalAuthor            : PropTypes.string,
-	content                   : PropTypes.string.isRequired,
+	content                   : PropTypes.string,
 	relatedArticlesCollection : PropTypes.shape({
 		items : PropTypes.arrayOf(PropTypes.string)
-	}).isRequired
+	})
 });
 
 export const ARTICLE_FEED_SHAPE = PropTypes.arrayOf(ARTICLE_SHAPE);

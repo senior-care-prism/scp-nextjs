@@ -2,42 +2,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&display=swap');
 
 :root {
-  --scp-color-blush: #f2b3b1;
-  --scp-color-light-amber: #f9cf74;
-  --scp-color-mint: #54a18e;
-  --scp-color-sacramento: #023534;
-  --scp-color-oxford: #0e263f;
-  --scp-color-oxford-light: #4d91d7;
-  --scp-color-eggplant: #30173a;
-  --scp-color-grey: #949494;
-  --scp-color-light-grey: #b8b8b8;
-  --focus-color: var(--scp-color-mint);
+	--scp-color-blush: #f2b3b1;
+	--scp-color-light-amber: #f9cf74;
+	--scp-color-mint: #54a18e;
+	--scp-color-sacramento: #023534;
+	--scp-color-oxford: #0e263f;
+	--scp-color-oxford-light: #4d91d7;
+	--scp-color-eggplant: #30173a;
+	--scp-color-grey: #949494;
+	--scp-color-light-grey: #b8b8b8;
+	--focus-color: var(--scp-color-mint);
+}
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 300;
-  line-height: 1.5em;
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	line-height: 1.5em;
 }
 
-h1,h2,h3,h4,h5,h6,nav,button,a.button {
-  line-height: 1.3em;
-  font-family: 'Heebo', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+button,
+a.button {
+	line-height: 1.3em;
+	font-family: 'Heebo', sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .blackandwhite {
-  filter: gray;
-  filter: grayscale(100%);
+	filter: gray;
+	filter: grayscale(100%);
 }

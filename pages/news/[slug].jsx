@@ -7,13 +7,13 @@ import { ARTICLE_SHAPE } from '../../shared/constants';
 
 export default function News({ article }) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Senior Care Prism - News</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NewsArticle article={article} />
-    </Layout>
+    </>
   );
 }
 

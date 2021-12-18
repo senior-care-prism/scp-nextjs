@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as gtag from '../lib/gtag';
+import Layout from '../components/layout';
 
 import '../styles/globals.css';
 import 'remixicon/fonts/remixicon.css';
@@ -20,13 +21,17 @@ function App({ Component, pageProps }) {
   }, [router.events]);
 
   /* eslint-disable react/jsx-props-no-spreading */
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 /* eslint-disable react/forbid-prop-types */
-App.propTypes = {
+/*App.propTypes = {
   Component: PropTypes.func.isRequired,
   pageProps: PropTypes.object.isRequired,
-};
+};*/
 
 export default App;

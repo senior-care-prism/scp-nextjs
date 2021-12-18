@@ -1,38 +1,39 @@
 .news-preview {
-  max-width: 80%;
-  margin: 4rem auto;
+	max-width: 80%;
+	margin: 4rem auto;
 
-  h2 {
-    margin-bottom: 1rem ;
-  }
+	h2 {
+		margin-bottom: 1rem;
+	}
 
-  .button::before {
-    content: '>>';
-    padding-right: .5em;
-  }
-  .button {
-    font-family: 'Heebo', sans-serif;
-    padding: 8px 20px;
-    text-transform: uppercase;
-    
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-  
-    background-color: var(--scp-color-mint);
-    color: white;
-    font-weight: bold;
-    border: .2em solid  white;
+	.button::before {
+		content: '>>';
+		padding-right: .5em;
+	}
+	.button {
+		font-family: 'Heebo', sans-serif;
+		padding: 8px 20px;
+		text-transform: uppercase;
 
-    &:focus {
-      color: var(--scp-color-mint);
-      background-color: white;
-    }
-  }
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		cursor: pointer;
+
+		background-color: var(--scp-color-mint);
+		color: white;
+		font-weight: bold;
+		border: .2em solid white;
+
+		&:focus {
+			color: var(--scp-color-mint);
+			background-color: white;
+		}
+	}
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }

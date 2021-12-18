@@ -3,15 +3,16 @@
   border-radius: .3em;
   margin: 1em;
   width: 400px;
+  box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.46);
 
   > .card-title {
-    color: white;
+    color: black;
     padding: .75em 1.5em;
     min-height: 120px;
     h3 {
       margin: 0;
     }
-    background-color: var(--scp-color-mint);
+    background-color: white;
   }
   > .content {
     padding: 0 1.5em;
