@@ -1,8 +1,10 @@
-export default function  MobileButtons(props)  {
+
+import Link from 'next/link';
+
+export default function MobileButtons(props) {
   const navLinks = [
     {"id": 1, "to": "email", "icon" : "ri-mail-fill", "scroll": true},
     {"id": 2, "to": "phone", "icon" : "ri-phone-fill", "scroll": true}, 
-
   ]
   return (
     <div className={props.styles.mobile}>
