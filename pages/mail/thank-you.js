@@ -12,7 +12,7 @@ export default function Resources() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <p>
-        You're subscribed to our newsletter
+        You&apos;re subscribed to our newsletter
       </p>
 
     </Layout>
