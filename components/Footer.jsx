@@ -1,5 +1,5 @@
 import cn from 'classnames';
-
+import Script from 'next/script'
 import styles from '../styles/Footer.module.scss';
 
 const SocialLinks = () => {
@@ -40,7 +40,7 @@ const Footer = () => (
           width="100%"
         />
 
-        <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js" />
+        <Script src="https://app.mailjet.com/statics/js/iframeResizer.min.js" />
         <div className={cn(styles.columns, styles.contact)}>
           <div className={styles.col}>
             <h4>Contact Us</h4>
