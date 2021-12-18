@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import Layout from '../../components/Layout';
 import NewsArticle from '../../components/NewsArticle';
 import { getNewsEntryBySlug, getAllNewsEntriesWithSlug } from '../../lib/api';
 import { ARTICLE_SHAPE } from '../../shared/constants';
