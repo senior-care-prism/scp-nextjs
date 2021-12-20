@@ -15,22 +15,22 @@ function ShareWidget({route, slug }) {
     <>
       <div className={styles['share-widget']}>
         <div className={styles.sharelink}>
-          <a href={facebookURL} target="_blank">
+          <a href={facebookURL} target="_blank" rel="noreferrer">
             <FontAwesomeIcon className={styles.facebook} icon={faFacebookSquare} size="2x"/>
           </a>
         </div>
         <div className={styles.sharelink}>
-          <a href={twitterURL} target="_blank">
+          <a href={twitterURL} target="_blank" rel="noreferrer">
             <FontAwesomeIcon className={styles.twitter} icon={faTwitterSquare} size="2x" />
           </a>
         </div>
         <div className={styles.sharelink}>
-          <a href={linkedinURL} target="_blank">
+          <a href={linkedinURL} target="_blank" rel="noreferrer">
             <FontAwesomeIcon className={styles.linkedin} icon={faLinkedin} size="2x"/>
           </a>
         </div>
         <div className={styles.sharelink}>
-        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com.">
+        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com." rel="noreferrer">
             <FontAwesomeIcon className={cn(styles.mail, styles.icon)} icon={faEnvelopeSquare} size="2x" />
           </a>  
         </div>
