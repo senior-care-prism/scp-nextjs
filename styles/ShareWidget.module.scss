@@ -1,0 +1,30 @@
+.share-widget {
+  display: flex;
+  margin-top: 20px;
+  width: 120px;
+}
+
+.sharelink {
+  margin: auto;
+  width: 25px;
+}
+
+.icon {
+  margin: auto;
+}
+
+.facebook {
+  color: #4267B2;
+}
+
+.twitter {
+  color: #1DA1F2;
+}
+
+.linkedin {
+  color: #0077B5;
+}
+
+.mail {
+  color: var(--scp-color-mint);
+}

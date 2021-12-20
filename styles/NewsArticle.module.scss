@@ -1,9 +1,34 @@
 .news-article {
-    margin: 0;
+    margin: auto;
+    margin-top: 84px;
+    max-width: 1200px;
     > .content {
         max-width: 80%;
         margin: 0 auto;
         padding: 2em 0;
-        max-width: 1350px;
+        > .date {
+            font-style: italic;
+        }
+    }
+}
+
+.scpmotif{
+
+    margin: auto;
+    height: 320px;
+    padding: 5px;
+    background: url("/images/featuredImageBG.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 900px) {
+        height: 220px;
+    }
+}
+
+.imagecontainer {
+    position: relative;
+    height: 310px;
+    @media (max-width: 900px) {
+        height: 210px;
     }
 }

@@ -79,7 +79,8 @@ $logo-margin: 2em;
 			height: 6em;
 			background: var(--scp-color-sacramento);
 		}
-		@media (max-width: 1000px) {
+		@media (max-width: 900px) {
+			display: none;
 			img {
 				height: 5.5em;
 			}
@@ -97,7 +98,7 @@ $logo-margin: 2em;
 		height: 96px;
 		width: 100%;
 		background: var(--scp-color-sacramento);
-		@media (max-width: 1000px) {
+		@media (max-width: 900px) {
 			background: transparent;
 		}
 	}

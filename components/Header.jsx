@@ -41,10 +41,10 @@ function Header({ path }) {
 		window.onscroll = () => {
 			setOffset(window.pageYOffset);
 		};
-		!path.includes('news') && tw.current.getGSAP().progress(offset / 2 / 100.0);
+		tw.current.getGSAP().progress(offset / 2 / 100.0);
 
 		console.log('Current path is ', path);
-		path.includes('news') && tw.current.getGSAP().progress(1);
+		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
 	});
 
 	return (

@@ -12,14 +12,17 @@ const introText = 'We bridge the gap between the needs of equity seeking seniors
 export default function Home({ newsEntries, teamMembers, quotes }) {
 	return (
 		<>
+			<Head>
+				<title>Senior Care Prism</title>
+				<link rel="icon" href="/favicon.ico" />
+				<meta property="og:title" content="Senior Care Prism"/>
+				<meta name="og:image" content="https://seniorcareprism.com/images/seniors-in-the-park.jpg" />
+				<meta name="twitter:image" content="https://seniorcareprism.com/images/seniors-in-the-park.jpg" />
+			</Head>
 			<Hero
 				tagline="Amplifying Inclusive Voices for All Seniors in Canada"
 				intro={introText}
       />
-			<Head>
-				<title>Senior Care Prism</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
 			<PitchDeck heading="We transform aging communities into inclusive communities of care." />
 			<Team heading="Our Team" members={teamMembers} />
 			<NewsPreview newsEntries={newsEntries} />

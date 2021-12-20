@@ -9,6 +9,7 @@ function NavLinks({ styles, path, offset }) {
 		// TODO: handle nav-links from non-home locations.
 		{ id: 1, to: 'about-us', href: '/#about-us', scroll: true },
 		{ id: 2, to: 'news', href: '/news', scroll: true },
+		{ id: 2, to: 'resources', href: '/resources', scroll: true },
 		{ id: 3, to: 'our-team', href: '/#our-team', scroll: true },
 		{ id: 4, to: 'contact', href: '/#contact', scroll: true }
 	];
@@ -18,7 +19,7 @@ function NavLinks({ styles, path, offset }) {
 		tw.current.getGSAP().progress((offset/2) / 100.0);
 
 		console.log('Current navlink path is ', path);
-		path.includes('news') && tw.current.getGSAP().progress(1);
+		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
 	});
 
 	return (

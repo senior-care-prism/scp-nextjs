@@ -9,19 +9,19 @@ function Hero({ tagline, intro, home }) {
       <section  id="about-us" className={cn(styles.banner, styles.columns)}>
         <div className={cn(styles.column, styles.left)}>
           <div className={styles.logo}>
+            <img src="images/logo/scp--light-amber.svg" alt="Senior Care Prism logo" />
           </div>
           <div className={styles.tagline}>
             <div>
               <h1>{tagline}</h1>
               <p>{intro}</p>
-              <a href="/uploads/SCP-Pitch-Deck.pdf" className={cn(styles.button, styles.primary)} download>
+              <a href="/uploads/SCP-Why.pdf" target="_blank" className={cn(styles.button, styles.primary)}>
                 About Us
               </a>
             </div>
           </div>
         </div>
         <div className={cn(styles.column, styles.right)}>
-          <div className={styles.spacer}></div>
           <div className={styles.hero} />
         </div>
       </section>

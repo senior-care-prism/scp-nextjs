@@ -4,9 +4,9 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import PulseLoader from 'react-spinners/PulseLoader';
-import ArticleCard from './ArticleCard';
+import ResourceCard from './ResourceCard';
 import { cleanupQuery, formatQuerystring } from '../lib/utils';
-import { ARTICLE_SHAPE } from '../shared/constants';
+import { RESOURCE_SHAPE } from '../shared/constants';
 import styles from '../styles/NewsFeed.module.scss';
 
 const Paginator = ({ pageNum, maxPage }) => {
@@ -94,13 +94,13 @@ const Search = () => {
     </>
   );
 };
-function NewsFeed({ entries, pageNum, maxPage }) {
+function ResourceFeed({ resources, pageNum, maxPage }) {
   return (
     <section id="news-feed" className={styles['news-feed']}>
       <div className={styles.spacer}></div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>
-          <h2>News Feed</h2>
+          <h2>Resources</h2>
         </div>
         <div className={styles['page-controls']}>
           <Search />
@@ -110,8 +110,8 @@ function NewsFeed({ entries, pageNum, maxPage }) {
           ? (
             <>
               <div className={styles['card-container']}>
-                {entries.map((newsEntry) => (
-                  <ArticleCard key={newsEntry.id} entry={newsEntry} />
+                {resources.map((resource) => (
+                  <ResourceCard key={resource.id} resource={resource} />
                 ))}
               </div>
             </>
@@ -132,10 +132,10 @@ function NewsFeed({ entries, pageNum, maxPage }) {
   );
 }
 
-NewsFeed.propTypes = {
-  entries: PropTypes.arrayOf(ARTICLE_SHAPE).isRequired,
+ResourceFeed.propTypes = {
+  resources: PropTypes.arrayOf(RESOURCE_SHAPE).isRequired,
   pageNum: PropTypes.number.isRequired,
   maxPage: PropTypes.number.isRequired,
 };
 
-export default NewsFeed;
+export default ResourceFeed;

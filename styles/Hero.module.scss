@@ -1,143 +1,141 @@
-$nav-bar-height: 6em;
-$logo-margin: 2em;
-
-
 .columns {
-  display: flex;
-  min-height: 100vh;
-  .column {
-    width: 50%;
-  }  
+	display: flex;
+	min-height: 100vh;
+	.column {
+		width: 50%;
+	}
+	@media (max-width: 900px) {
+		width: 100%;
+		min-height: auto;
+	}
 }
 
 .banner {
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: var(--scp-color-sacramento);
-  }
+	.left {
+		display: flex;
+		padding-top: 120px;
+		padding-bottom: 40px;
+		flex-direction: column;
+		align-items: flex-start;
+		background: var(--scp-color-sacramento);
+	}
 
-  @media (max-width: 900px) {
-    .left {
-      width: 100%;
-      background: url("/images/seniors-in-the-park-background.jpg") top center no-repeat;
-    }
-    .right {
-      display: none;
-    }
-  }
+	@media (max-width: 900px) {
+		.left {
+			padding-top: 20px;
+			width: 100%;
+			background: url("/images/seniors-in-the-park-background.jpg") top center no-repeat;
+		}
+		.right {
+			display: none;
+		}
+	}
 
-  .logo {
-    margin: 0 auto;
-    width: 80%;
-    img {
-      margin: 2em 0;
-      padding: .25em 0;
-      height: 6em;
-    }
-    @media (max-width: 1000px) {
-      img {
-        height: 5.5em;
-      }
-    }
-    @media (max-width: 600px) {
-      img {
-        margin: 2em 0;
-        height: 5em;
-        padding: .35em 0;
-      }
-    }
-  }
-  
-  .tagline {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 0em auto;
-    max-width: 80%;
-    color: white; 
-    h1 {
-      margin-top: 0;
-      font-weight: 400;
-      font-size: 4em;
-    }
-    p {
-        margin: 1.5em 0;
-        line-height: 1.25em;
-        font-size: 1.4em;
-    }
-    @media (max-width: 1600px) {
-      h1 {
-        font-size: 3.5em;
-      }
-    }
-    @media (max-width: 1300px) {
-      h1 {
-        font-size: 3em;
-      }
-      p {
-        line-height: 1.3em;
-        font-size: 1.3em;
-      }
-    }
-    @media (max-width: 1000px) {
-      h1 {
-        font-size: 2.6em;
-      }
-      p {
-        line-height: 1.2em;
-        font-size: 1.2em;
-      }
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5em;
-        margin: .3em 0 0 0;
-      }
-      p {
-        line-height: 1.3em;
-        font-size: 1.1em;
-      }
-    }
-  }
-  
+	.logo {
+		margin: 0 auto;
+		width: 80%;
+		display: none;
+		img {
+			padding: .25em 0;
+			height: 6em;
+		}
+		@media (max-width: 900px) {
+			display: inline;
+			img {
+				margin: 0;
+				padding: 0;
+				width: 90%;
+			}
+		}
+		@media (max-width: 600px) {
+			img {
+				height: 5em;
+				padding: .35em 0;
+			}
+		}
+	}
 
+	.tagline {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		margin: 0em auto;
+		max-width: 80%;
+		color: white;
+		h1 {
+			margin-top: 0;
+			font-weight: 400;
+			font-size: 4em;
+		}
+		p {
+			margin: 1.5em 0;
+			line-height: 1.25em;
+			font-size: 1.4em;
+		}
+		@media (max-width: 1600px) {
+			h1 {
+				font-size: 3.5em;
+			}
+		}
+		@media (max-width: 1300px) {
+			h1 {
+				font-size: 3em;
+			}
+			p {
+				line-height: 1.3em;
+				font-size: 1.3em;
+			}
+		}
+		@media (max-width: 1000px) {
+			h1 {
+				font-size: 2.6em;
+			}
+			p {
+				line-height: 1.2em;
+				font-size: 1.2em;
+			}
+		}
+		@media (max-width: 600px) {
+			h1 {
+				font-size: 2.5em;
+				margin: .3em 0 0 0;
+			}
+			p {
+				line-height: 1.3em;
+				font-size: 1.1em;
+			}
+		}
+	}
 
-  .hero {
-    display: grid;
-    height: calc(100% - 6em);
-    background: url("/images/seniors-in-the-park.jpg") top center no-repeat;
-    background-size: cover;
-    
-  }
+	.hero {
+		display: grid;
+		height: 100%;
+		background: url("/images/seniors-in-the-park.jpg") top center no-repeat;
+		background-size: cover;
+	}
 }
 
 .spacer {
-  height: 96px;
+	height: 96px;
 }
 
 .button {
-  line-height: 1.3em;
-  font-family: 'Heebo', sans-serif;
-  font-weight: 500;
-  padding: 8px 50px;
-  text-transform: uppercase;
-  border: none;
-  font-size: .9em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
+	line-height: 1.3em;
+	font-family: 'Heebo', sans-serif;
+	font-weight: 500;
+	padding: 8px 50px;
+	text-transform: uppercase;
+	border: none;
+	font-size: .9em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
 }
 
 .primary.button {
-  color: black;
-  background-color: var(--scp-color-light-amber);
+	color: black;
+	background-color: var(--scp-color-light-amber);
 }
-
-
-
-
