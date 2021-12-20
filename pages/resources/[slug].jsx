@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Resource from '../../components/Resource';
+import ResourceEntry from '../../components/ResourceEntry';
 import { getResourceEntryBySlug, getAllResourceEntriesWithSlug } from '../../lib/api';
 import { RESOURCE_SHAPE } from '../../shared/constants';
 
@@ -11,7 +11,7 @@ export default function Resource({ resource }) {
         <title>Senior Care Prism - Resources</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Resource resource={resource} />
+      <ResourceEntry resource={resource} />
     </>
   );
 }
