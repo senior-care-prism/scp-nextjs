@@ -18,7 +18,7 @@ function ResourceEntry({ resource }) {
           </div>
         )
         }
-				<a className={styles.link} href={resource.downloadable.url} target="_blank" download>Download</a>
+				<a className={styles.link} href={resource.downloadable.url} target="_blank" rel="noreferrer" download>Download</a>
       </div>
       <div className={cn(styles.column, styles["column-right"])}>
         <div className={styles.content}>
