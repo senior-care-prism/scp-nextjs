@@ -4,9 +4,13 @@ import { faFacebookSquare, faLinkedin, faTwitterSquare } from '@fortawesome/free
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function ShareWidget({route, slug }) {
+function ShareWidget({ route, slug }) {
+  
+  const baseDomain = process.env.NODE_ENV === 'production' 
+    ? "seniorcareprism.com"
+    : process.env.NODE_ENV + ".seniorcareprism.com";
 
-  const url = `https://seniorcareprism.com/${route}/${slug}`;
+  const url = `https://${baseDomain}/${route}/${slug}`;
   const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   const twitterURL = `https://twitter.com/share?url=${url}`;
   const linkedinURL = `https://www.linkedin.com/shareArticle?url=${url}`;

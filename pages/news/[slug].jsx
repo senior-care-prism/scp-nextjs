@@ -5,7 +5,10 @@ import { getNewsEntryBySlug, getAllNewsEntriesWithSlug } from '../../lib/api';
 import { ARTICLE_SHAPE } from '../../shared/constants';
 
 export default function News({ article }) {
-  const defaultShareImage = "https://seniorcareprism.com/images/seniors-in-the-park.jpg";
+  const baseDomain = process.env.NODE_ENV === 'production' 
+    ? "seniorcareprism.com"
+    : process.env.NODE_ENV + ".seniorcareprism.com";
+  const defaultShareImage = `https://${baseDomain}/images/seniors-in-the-park.jpg`;
   return (
     <>
       <Head>
