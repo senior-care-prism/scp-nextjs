@@ -13,3 +13,6 @@
   # detects NextJS and redirects do not work.
   # Read more: https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
   framework = "#static"
+
+[context.staging]
+  NODE_ENV = staging
