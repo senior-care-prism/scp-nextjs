@@ -5,9 +5,9 @@ import { getNewsEntryBySlug, getAllNewsEntriesWithSlug } from '../../lib/api';
 import { ARTICLE_SHAPE } from '../../shared/constants';
 
 export default function News({ article }) {
-  const baseDomain = process.env.NODE_ENV === 'production' 
-    ? "seniorcareprism.com"
-    : process.env.APP_ENV + ".seniorcareprism.com";
+  const baseDomain = process.env.APP_ENV === 'staging' 
+    ? process.env.APP_ENV + ".seniorcareprism.com"
+    : "seniorcareprism.com";
   const defaultShareImage = `https://${baseDomain}/images/seniors-in-the-park.jpg`;
   return (
     <>
