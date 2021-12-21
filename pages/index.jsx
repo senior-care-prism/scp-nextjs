@@ -10,14 +10,18 @@ import { ARTICLE_FEED_SHAPE, TEAM_MEMBERS_SHAPE, QUOTES_SHAPE } from '../shared/
 const introText = 'We bridge the gap between the needs of equity seeking seniors groups and today’s senior sector. No organization is too small to improve inclusivity, we work with small, medium and large businesses and organizations in both the private and public sectors.';
 
 export default function Home({ newsEntries, teamMembers, quotes }) {
+	const baseDomain = process.env.APP_ENV === 'staging' 
+    ? process.env.APP_ENV + ".seniorcareprism.com"
+		: "seniorcareprism.com";
+	
 	return (
 		<>
 			<Head>
 				<title>Senior Care Prism</title>
 				<link rel="icon" href="/favicon.ico" />
 				<meta property="og:title" content="Senior Care Prism"/>
-				<meta name="og:image" content="https://seniorcareprism.com/images/seniors-in-the-park.jpg" />
-				<meta name="twitter:image" content="https://seniorcareprism.com/images/seniors-in-the-park.jpg" />
+				<meta name="og:image" content={`https://${baseDomain}/images/seniors-in-the-park.jpg`} />
+				<meta name="twitter:image" content={`https://${baseDomain}/images/seniors-in-the-park.jpg`} />
 			</Head>
 			<Hero
 				tagline="Amplifying Inclusive Voices for All Seniors in Canada"

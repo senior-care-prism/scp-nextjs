@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ShareWidget({ route, slug }) {
   
-  const baseDomain = process.env.NODE_ENV === 'production' 
-    ? "seniorcareprism.com"
-    : process.env.NODE_ENV + ".seniorcareprism.com";
+  const baseDomain = process.env.APP_ENV === 'staging' 
+    ? process.env.APP_ENV + ".seniorcareprism.com"
+    : "seniorcareprism.com";
 
   const url = `https://${baseDomain}/${route}/${slug}`;
   const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
