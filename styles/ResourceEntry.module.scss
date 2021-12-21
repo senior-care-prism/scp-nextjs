@@ -1,0 +1,48 @@
+.resource-entry {
+    margin: auto;
+    margin-top: 84px;
+    max-width: 1000px;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 2em 0;
+    > .date {
+        font-style: italic;
+    }
+}
+
+.columns {
+	display: flex;
+    flex-wrap: wrap; 
+    min-height: 50vh;
+	.column-left {
+		width: 30%;
+        text-align: center;
+	}
+    .column-right {
+		width: 70%;
+	}
+}
+
+.imagecontainer {
+    margin-top: 3.5em;
+    position: relative;
+    height: 310px;
+}
+
+.link {
+    font-family: 'Heebo', sans-serif;
+    padding: 3px 10px;
+    margin: 1em 2em;
+    text-transform: uppercase;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+
+    background-color: none;
+    font-weight: bold;
+    border: .1em solid var(--scp-color-eggplant);
+}
