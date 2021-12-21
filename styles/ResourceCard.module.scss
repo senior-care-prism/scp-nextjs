@@ -1,5 +1,5 @@
 .resource-card {
-	border: 3px solid var(--scp-color-mint);
+	border: 3px solid var(--scp-color-eggplant);
 	border-radius: .3em;
 	margin: 1em;
 	width: 400px;
@@ -27,7 +27,7 @@
 		font-size: 90%;
 		color: white;
 		padding: .5em 1.5em;
-		background-color: var(--scp-color-mint);
+		background-color: var(--scp-color-eggplant);
 
 		a {
 			font-family: 'Heebo', sans-serif;
@@ -44,7 +44,7 @@
 			border: .1em solid white;
 		}
 		a:focus {
-			color: var(--scp-color-mint);
+			color: var(--scp-color-eggplant);
 			background-color: white;
 		}
 

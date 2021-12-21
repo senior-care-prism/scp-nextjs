@@ -7,7 +7,7 @@ import PulseLoader from 'react-spinners/PulseLoader';
 import ResourceCard from './ResourceCard';
 import { cleanupQuery, formatQuerystring } from '../lib/utils';
 import { RESOURCE_SHAPE } from '../shared/constants';
-import styles from '../styles/NewsFeed.module.scss';
+import styles from '../styles/ResourceFeed.module.scss';
 
 const Paginator = ({ pageNum, maxPage }) => {
   const router = useRouter();
@@ -96,7 +96,7 @@ const Search = () => {
 };
 function ResourceFeed({ resources, pageNum, maxPage }) {
   return (
-    <section id="news-feed" className={styles['news-feed']}>
+    <section id="news-feed" className={styles['resource-feed']}>
       <div className={styles.spacer}></div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>
