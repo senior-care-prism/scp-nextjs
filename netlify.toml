@@ -14,5 +14,5 @@
   # Read more: https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
   framework = "#static"
 
-[context.staging]
+[context.staging.environment]
   NODE_ENV = staging
