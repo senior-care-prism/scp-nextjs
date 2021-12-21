@@ -28,7 +28,7 @@ function ResourceEntry({ resource }) {
           <div className={styles.date}>
             {formatDate(resource.publishedDate)}
           </div>
-          <ShareWidget route="news" slug={resource.slug} />
+          <ShareWidget route="resources" slug={resource.slug} />
           <Markdown>
             {resource?.description}
           </Markdown>
