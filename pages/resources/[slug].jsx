@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   const resources = await getAllResourceEntriesWithSlug();
   return {
     paths: resources?.map(({ slug }) => ({ params: { slug } })) ?? [],
-    fallback: false,
+    fallback: true
   };
 }
 
