@@ -31,15 +31,15 @@ News.propTypes = {
   article: ARTICLE_SHAPE.isRequired,
 };
 
-export async function getStaticPaths() {
+export async function getServerSidePaths() {
   const articles = await getAllNewsEntriesWithSlug();
   return {
     paths: articles?.map(({ slug }) => ({ params: { slug } })) ?? [],
-    fallback: true
+    fallback: true,
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const article = await getNewsEntryBySlug(params.slug);
   return {
     props: {
