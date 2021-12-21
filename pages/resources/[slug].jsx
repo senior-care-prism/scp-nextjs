@@ -5,11 +5,22 @@ import { getResourceEntryBySlug, getAllResourceEntriesWithSlug } from '../../lib
 import { RESOURCE_SHAPE } from '../../shared/constants';
 
 export default function Resource({ resource }) {
+  const baseDomain = process.env.NODE_ENV === 'production' 
+    ? "seniorcareprism.com"
+    : process.env.NODE_ENV + ".seniorcareprism.com";
+  const defaultShareImage = `https://${baseDomain}/images/seniors-in-the-park.jpg`;
   return (
     <>
       <Head>
         <title>Senior Care Prism - Resources</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={resource.title}/>
+				<meta property="og:image" content={resource.screenshot ? resource.screenshot.url : defaultShareImage} />
+        <meta name="twitter:site" content="@SeniorCarePrism"/>
+        <meta name="twitter:creator" content="@SeniorCarePrism"/>
+        <meta name="twitter:title" content={resource.title}/>
+        <meta name="twitter:description" content={resource.shortDescription}/>
+        <meta name="twitter:image" content={resource.screenshot ? resource.screenshot.url : defaultShareImage}/>
       </Head>
       <ResourceEntry resource={resource} />
     </>
