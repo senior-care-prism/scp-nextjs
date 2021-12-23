@@ -93,14 +93,14 @@ const Search = ({ categories, subjects }) => {
           <label htmlFor="category">Category:</label>
           <select className={styles['category-list']} name="category" onChange={handleSearch}>
             <option value=""> All</option>
-            {categories.map((category) => <option value={category}>{category}</option>)}
+            {categories.map((category) => <option key={category} value={category}>{category}</option>)}
           </select>
         </div>
         <div className={styles.subject}>
           <label htmlFor="cars">Subject:</label>
           <select className={styles['subject-list']} name="subject" onChange={handleSearch}>
             <option value=""> All</option>
-            {subjects.map((subject) => <option value={subject}>{subject}</option>)}
+            {subjects.map((subject) => <option key={subject} value={subject}>{subject}</option>)}
           </select>
         </div>
         <div className={styles.search}>
