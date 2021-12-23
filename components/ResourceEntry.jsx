@@ -25,6 +25,7 @@ function ResourceEntry({ resource }) {
           <div className={styles.heading}>
             <h1>{resource?.title}</h1>
           </div>
+          <hr></hr>
           <div className={styles.date}>
             {formatDate(resource.publishedDate)}
           </div>

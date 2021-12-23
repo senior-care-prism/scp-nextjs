@@ -12,6 +12,12 @@
     }
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .scpmotif{
 
     margin: auto;
@@ -33,11 +39,22 @@
     }
 }
 
-.featuredimage {
+.landscape {
     float: right;
+    margin-top: 0px;
     margin-left: 20px;
-    padding-top: 2em;
-    height: 300px;
+    width: 400px;
+    padding-top: 1em;
+    margin-bottom: 20px;
+}
+
+.portrait {
+    float: right;
+    margin-top: 0px;
+    margin-left: 20px;
+    width: 280px;
+    padding-top: 1em;
+    margin-bottom: 10px;
 }
 
 .markdown {

@@ -14,6 +14,7 @@ function ShareWidget({ route, slug }) {
   const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   const twitterURL = `https://twitter.com/share?url=${url}`;
   const linkedinURL = `https://www.linkedin.com/shareArticle?url=${url}`;
+  const mailURL = "mailto:?subject=I wanted you to see this site&body=Check out this site http://www.website.com.";
 
   return (
     <>
@@ -34,7 +35,7 @@ function ShareWidget({ route, slug }) {
           </a>
         </div>
         <div className={styles.sharelink}>
-        <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.website.com." rel="noreferrer">
+        <a href={mailURL} rel="noreferrer">
             <FontAwesomeIcon className={cn(styles.mail, styles.icon)} icon={faEnvelopeSquare} size="2x" />
           </a>  
         </div>
