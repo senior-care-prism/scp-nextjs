@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import cn from 'classnames';
 import PulseLoader from 'react-spinners/PulseLoader';
 import ResourceCard from './ResourceCard';
@@ -54,47 +54,77 @@ Paginator.propTypes = {
   maxPage: PropTypes.number.isRequired,
 };
 
-const Search = () => {
+const Search = ({ categories, subjects }) => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchCategory, setSearchCategory] = useState('');
+  const [searchSubject, setSearchSubject] = useState('');
   const [searchTimeout, setSearchTimeout] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const searchTerm = e.target.value;
+    e.target.name === 'searchTerm' && setSearchTerm(e.target.value);
+    e.target.name === 'category' && setSearchCategory(e.target.value);
+    e.target.name === 'subject' && setSearchSubject(e.target.value);
     setSearchQuery(searchTerm);
     setIsSearching(true);
-
     if (searchTimeout) {
       clearTimeout(searchTimeout);
     }
     setSearchTimeout(setTimeout(() => {
       const { query } = router;
-      query.search = searchTerm;
-      query.p = '1';
-
       router.push(router.pathname + formatQuerystring(cleanupQuery(query)));
       setIsSearching(false);
     }, 700));
   };
-
+  useEffect(() => { 
+    const { query } = router;
+    query.searchTerm = searchTerm;
+    query.searchCategory = searchCategory;
+    query.searchSubject = searchSubject;
+    query.p = '1';
+  });
   return (
     <>
       <form className={styles['search-form']}>
-        <i className="ri-search-line" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleSearch}
-          placeholder="search"
-        />
-        <PulseLoader loading={isSearching} size={8} color="#1d5085" />
+        <div className={styles.category}>
+          <label htmlFor="category">Category:</label>
+          <select className={styles['category-list']} name="category" onChange={handleSearch}>
+            <option value=""> All</option>
+            {categories.map((category) => <option value={category}>{category}</option>)}
+          </select>
+        </div>
+        <div className={styles.subject}>
+          <label htmlFor="cars">Subject:</label>
+          <select className={styles['subject-list']} name="subject" onChange={handleSearch}>
+            <option value=""> All</option>
+            {subjects.map((subject) => <option value={subject}>{subject}</option>)}
+          </select>
+        </div>
+        <div className={styles.search}>
+          <i className="ri-search-line" />
+          <input
+            type="text"
+            name="searchTerm"
+            value={searchTerm}
+            onChange={handleSearch}
+            placeholder="Keyword"
+          />
+          <PulseLoader loading={isSearching} size={8} color="#1d5085" />
+        </div>
       </form>
     </>
   );
 };
-function ResourceFeed({ resources, pageNum, maxPage }) {
+
+Search.propTypes = {
+  categories: PropTypes.arrayOf(Object).isRequired,
+  subjects: PropTypes.arrayOf(Object)
+};
+
+function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
   return (
     <section id="news-feed" className={styles['resource-feed']}>
       <div className={styles.spacer}></div>
@@ -103,10 +133,10 @@ function ResourceFeed({ resources, pageNum, maxPage }) {
           <h2>Resources</h2>
         </div>
         <div className={styles['page-controls']}>
-          <Search />
+          <Search categories={categories} subjects={subjects}/>
           <Paginator pageNum={pageNum} maxPage={maxPage} />
         </div>
-        { maxPage > 0
+        { resources.length > 0
           ? (
             <>
               <div className={styles['card-container']}>
@@ -134,6 +164,8 @@ function ResourceFeed({ resources, pageNum, maxPage }) {
 
 ResourceFeed.propTypes = {
   resources: PropTypes.arrayOf(RESOURCE_SHAPE).isRequired,
+  categories: PropTypes.arrayOf(string),
+  subjects: PropTypes.arrayOf(string),
   pageNum: PropTypes.number.isRequired,
   maxPage: PropTypes.number.isRequired,
 };

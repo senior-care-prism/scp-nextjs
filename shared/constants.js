@@ -17,6 +17,7 @@ export const ARTICLE_SHAPE = PropTypes.shape({
 	featuredImage             : PropTypes.shape({
 		url : PropTypes.string
 	}),
+	aspectRatio               : PropTypes.bool,
 	content                   : PropTypes.string,
 	relatedArticlesCollection : PropTypes.shape({
 		items : PropTypes.arrayOf(PropTypes.string)
@@ -26,20 +27,20 @@ export const ARTICLE_SHAPE = PropTypes.shape({
 export const ARTICLE_FEED_SHAPE = PropTypes.arrayOf(ARTICLE_SHAPE);
 
 export const RESOURCE_SHAPE = PropTypes.shape({
-	id           : PropTypes.string.isRequired,
-	title        : PropTypes.string.isRequired,
-	slug         : PropTypes.string.isRequired,
-	description: PropTypes.string,
-	shortDescription  : PropTypes.string,
-	screenshot   : PropTypes.shape({
+	id               : PropTypes.string.isRequired,
+	title            : PropTypes.string.isRequired,
+	slug             : PropTypes.string.isRequired,
+	description      : PropTypes.string,
+	shortDescription : PropTypes.string,
+	screenshot       : PropTypes.shape({
 		url : PropTypes.string
 	}),
-	downloadable : PropTypes.shape({
+	downloadable     : PropTypes.shape({
 		url : PropTypes.string
 	}),
-	subject      : PropTypes.string.isRequired,
-	category: PropTypes.arrayOf(PropTypes.object).isRequired,
-	publishedDate             : PropTypes.string.isRequired,
+	subject          : PropTypes.string.isRequired,
+	category         : PropTypes.arrayOf(PropTypes.object).isRequired,
+	publishedDate    : PropTypes.string.isRequired
 });
 
 export const RESOURCES_SHAPE = PropTypes.arrayOf(RESOURCE_SHAPE);
