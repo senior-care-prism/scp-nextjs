@@ -1,12 +1,16 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-
 import styles from '../styles/Hero.module.scss';
 
 function Hero({ tagline, intro, home }) {
+
+  const showSettings = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <>
-      <section  id="about-us" className={cn(styles.banner, styles.columns)}>
+      <section id="about-us" className={cn(styles.banner, styles.columns)}>
         <div className={cn(styles.column, styles.left)}>
           <div className={styles.logo}>
             <img src="images/logo/scp--light-amber.svg" alt="Senior Care Prism logo" />

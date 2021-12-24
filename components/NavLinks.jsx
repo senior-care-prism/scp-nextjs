@@ -16,34 +16,40 @@ function NavLinks({ styles, path, offset }) {
 	const sacramento = '#023534';
 
 	useEffect(() => {
-		tw.current.getGSAP().progress((offset/2) / 100.0);
+		tw.current.getGSAP().progress(offset / 2 / 100.0);
 
 		console.log('Current navlink path is ', path);
 		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
 	});
 
 	return (
-		<Tween
-			ref={tw}
-			to={{
-				backgroundColor : sacramento,
-				paused          : true
-			}}
-		>
-			<div className={styles.navbar}>
-				<nav role="navigation">
-					<ul>
-						{navLinks.map((link) => (
-							<li key={link.id} className={styles.navlink}>
-								<Link href={link.href} passHref>
-									<a>{link.to.replace('-', '\u00a0')}</a>
-								</Link>
-							</li>
-						))}
-					</ul>
+<>
+				<Tween 
+				ref={tw}
+				to={{
+					backgroundColor : sacramento,
+					paused          : true
+				}}
+			>
+			<input type="checkbox" className={styles.toggle} id={styles['nav-toggle']}></input>
+			<label htmlFor={styles['nav-toggle']} id={styles['nav-toggle-label']}>
+				<div className={styles.bar} />
+				<div className={styles.bar} />
+				<div className={styles.bar}/>
+			</label>
+			<nav className={styles.navbar} role="navigation">
+				<ul>
+					{navLinks.map((link) => (
+						<li key={link.id} className={styles.navlink}>
+							<Link href={link.href} passHref>
+								<a>{link.to.replace('-', '\u00a0')}</a>
+							</Link>
+						</li>
+					))}
+				</ul>
 				</nav>
-			</div>
-		</Tween>
+			</Tween>
+			</>
 	);
 }
 

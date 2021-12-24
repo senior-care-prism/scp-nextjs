@@ -1,4 +1,5 @@
 .resource-feed {
+	padding-top: var(--nav-bar-height);
 	margin: 0;
 	> .content {
 		max-width: 80%;
@@ -18,15 +19,17 @@
 
 		> .page-controls {
 			display: flex;
+			flex-wrap: wrap;
 			margin-right: 2.5em;
 			> .search-form {
 				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
 				margin: 0 auto 0 2.6em;
 				> .search {
-					max-height: 34px;
-					margin: 1.5em 3em 0 auto;
+					margin: 1.5rem 0 0 0;
 					border-radius: 2px;
-					width: 400px;
+					max-width: 400px;
 					border: 2px solid var(--scp-color-eggplant);
 
 					> label {
@@ -58,7 +61,7 @@
 
 				> .category {
 					max-height: 34px;
-					margin: 0 1em 0 auto;
+					margin: 0 auto 0 0rem;
 					max-width: 230px;
 					display:inline-block;
 
@@ -79,7 +82,7 @@
 
 				> .subject {
 					max-height: 34px;
-					margin: 0 1em 0 0;
+					margin: 0;
 					max-width: 230px;
 					display:inline-block;
 
@@ -91,7 +94,7 @@
 					}
 
 					> .subject-list {
-						margin: 0 0 0 .5em;
+						margin: 0;
 						width: 150px;
 						height: 34px;
 						border: 2px solid var(--scp-color-eggplant);
