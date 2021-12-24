@@ -33,9 +33,9 @@ function NavLinks({ styles, path, offset }) {
 			>
 			<input type="checkbox" className={styles.toggle} id={styles['nav-toggle']}></input>
 			<label htmlFor={styles['nav-toggle']} id={styles['nav-toggle-label']}>
-				<div class={styles.bar} />
-				<div class={styles.bar} />
-				<div class={styles.bar}/>
+				<div className={styles.bar} />
+				<div className={styles.bar} />
+				<div className={styles.bar}/>
 			</label>
 			<nav className={styles.navbar} role="navigation">
 				<ul>
