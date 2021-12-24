@@ -97,7 +97,6 @@ const Search = () => {
 function NewsFeed({ entries, pageNum, maxPage }) {
   return (
     <section id="news-feed" className={styles['news-feed']}>
-      <div className={styles.spacer}></div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>
           <h2>News Feed</h2>

@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
 import * as gtag from '../lib/gtag';
 import Layout from '../components/Layout';
-
 import '../styles/globals.css';
 import 'remixicon/fonts/remixicon.css';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -27,9 +25,9 @@ function App({ Component, pageProps }) {
 
 	/* eslint-disable react/jsx-props-no-spreading */
 	return (
-		<Layout>
-			<Component {...pageProps} />
-		</Layout>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 	);
 }
 

@@ -48,18 +48,11 @@ function Header({ path }) {
 	});
 
 	return (
-		<header className={cn(styles.header, styles.columns)}>
-			<div className={cn(styles.column, styles.left)}>
-				<div className={styles.logocontainer}>
-					<Link href="/#" passHref>
-						<div className={styles.logo}>{tween}</div>
-					</Link>
-				</div>
-				<div className={cn(styles.overflow)} />
-			</div>
-			<div className={cn(styles.column, styles.right)}>
-				<NavLinks styles={styles} path={path} offset={offset} />
-			</div>
+		<header className={styles.header}>
+			<Link href="/#" passHref>
+				<div className={styles.logocontainer}>{tween}</div>
+			</Link>
+			<NavLinks styles={styles} path={path} offset={offset} />
 		</header>
 	);
 }

@@ -127,7 +127,6 @@ Search.propTypes = {
 function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
   return (
     <section id="news-feed" className={styles['resource-feed']}>
-      <div className={styles.spacer}></div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>
           <h2>Resources</h2>

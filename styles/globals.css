@@ -12,11 +12,22 @@
 	--scp-color-grey: #949494;
 	--scp-color-light-grey: #b8b8b8;
 	--focus-color: var(--scp-color-mint);
+	--nav-bar-height: 6rem;
+	--transition: 250ms ease-out;
+	--transition-long: 500ms ease-out;
 }
 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
 
 html {
 	scroll-behavior: smooth;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	line-height: 1.5rem;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -25,13 +36,8 @@ html {
 	}
 }
 
-html,
 body {
-	padding: 0;
-	margin: 0;
-	font-family: 'Roboto Slab', serif;
-	font-weight: 300;
-	line-height: 1.5em;
+	min-height: 100vh;
 }
 
 h1,
@@ -43,17 +49,12 @@ h6,
 nav,
 button,
 a.button {
-	line-height: 1.3em;
 	font-family: 'Heebo', sans-serif;
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
-}
-
-* {
-	box-sizing: border-box;
 }
 
 .blackandwhite {
