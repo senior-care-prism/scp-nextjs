@@ -1,6 +1,6 @@
 .columns {
 	display: flex;
-	min-height: calc(100vh - var(--nav-bar-height));
+	min-height: 100vh;
 	padding-top: var(--nav-bar-height);
 	.column {
 		width: 50%;
