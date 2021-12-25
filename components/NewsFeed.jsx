@@ -82,14 +82,17 @@ const Search = () => {
   return (
     <>
       <form className={styles['search-form']}>
-        <i className="ri-search-line" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleSearch}
-          placeholder="search"
-        />
-        <PulseLoader loading={isSearching} size={8} color="#1d5085" />
+        <div className={styles.search}>
+          <i className="ri-search-line" />
+          <input
+            type="text"
+            name="search"
+            value={searchQuery}
+            onChange={handleSearch}
+            placeholder="Keyword"
+          />
+          <PulseLoader loading={isSearching} size={8} color="#1d5085" />
+        </div>
       </form>
     </>
   );
@@ -97,6 +100,9 @@ const Search = () => {
 function NewsFeed({ entries, pageNum, maxPage }) {
   return (
     <section id="news-feed" className={styles['news-feed']}>
+      <div className={styles.logo}>
+        <img src="images/logo/scp--sacramento.svg" alt="Senior Care Prism logo" />
+      </div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>
           <h2>News Feed</h2>

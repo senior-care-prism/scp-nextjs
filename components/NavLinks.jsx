@@ -23,20 +23,21 @@ function NavLinks({ styles, path, offset }) {
 	});
 
 	return (
-<>
-				<Tween 
-				ref={tw}
-				to={{
-					backgroundColor : sacramento,
-					paused          : true
-				}}
-			>
+		<>
+			<div className={styles['toggle-background']}/>
 			<input type="checkbox" className={styles.toggle} id={styles['nav-toggle']}></input>
 			<label htmlFor={styles['nav-toggle']} id={styles['nav-toggle-label']}>
 				<div className={styles.bar} />
 				<div className={styles.bar} />
 				<div className={styles.bar}/>
 			</label>
+			<Tween 
+				ref={tw}
+				to={{
+					backgroundColor : sacramento,
+					paused          : true
+				}}
+			>
 			<nav className={styles.navbar} role="navigation">
 				<ul>
 					{navLinks.map((link) => (
@@ -49,7 +50,7 @@ function NavLinks({ styles, path, offset }) {
 				</ul>
 				</nav>
 			</Tween>
-			</>
+		</>
 	);
 }
 

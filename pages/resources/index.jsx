@@ -32,7 +32,7 @@ export async function getServerSideProps({ query }) {
 	const categories = await getAllResourceCategories();
 	const subjects = await getAllResourceSubjects();
 	const resourceEntries = await getResourceEntries({ pageNum, category, subject, searchTerm });
-	const maxPage = await getResourceMaxPage({ limitPerPage: 9, searchTerm });
+	const maxPage = await getResourceMaxPage({ limitPerPage: 6, searchTerm });
 	return {
 		props : {
 			resourceEntries,

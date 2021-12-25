@@ -1,15 +1,32 @@
 .news-feed {
 	padding-top: var(--nav-bar-height);
 	margin: 0;
+	@media (max-width: 900px) {
+		padding-top: 1rem;
+	}
+
+	.logo {
+		display: none;
+		@media (max-width: 900px) {
+			display: inline;
+			img {
+				margin: 0 1rem;
+				padding: 0;
+				width: 60%;
+			}
+		}
+	}
+
 	> .content {
 		margin: 0 auto;
-		padding: 2em 0;
-		max-width: 1350px;
+		padding-bottom: 1rem;
+		max-width: 84rem;
 
 		> .section-heading {
-			margin: .75em 1.6em;
+			margin: 2rem 1rem 1rem;
+			max-width: 84rem;
 			font-size: 1.5em;
-			color: var(--scp-color-sacramento);
+			color: var(--scp-color-mint);
 
 			h2 {
 				margin: 0;
@@ -17,22 +34,51 @@
 		}
 
 		> .page-controls {
-			display: flex;
-			flex-wrap: wrap;
+			display: grid;
+			grid-auto-flow: column;
 			gap: 1rem;
-			margin-right: 2.5em;
+			justify-content: space-between;
+			max-width: 84rem;
+			@media (max-width: 900px) {
+				grid-auto-flow: row;
+				grid-template-columns: 1fr;
+				grid-template-rows: none;
+				grid-auto-rows: max-content;
+			}
 			> .search-form {
-				max-height: 34px;
-				margin: 1em auto 0 2.6em;
-				border-radius: 2px;
-				max-width: 400px;
-				border: 2px solid var(--focus-color);
+				display: grid;
+				grid-auto-flow: column;
+				gap: 1rem;
+				margin: 0 auto 0 1rem;
+				@media (max-width: 900px) {
+					grid-auto-flow: row;
+					grid-template-columns: 1fr;
+					grid-template-rows: none;
+					grid-auto-rows: max-content;
+					gap: 2rem;
+					margin: 0 1rem 0;
+				}
+				> .search {
+					margin: 1.5rem 0 0 0;
+					border: 2px solid var(--scp-color-mint);
+					@media (max-width: 900px) {
+						margin: 1.4rem 0 0 0;
+						height: 2.4rem;
+					}
+
+					> label {
+						display: block;
+						margin: 0 0 0 .5em;
+						font-family: 'Heebo', sans-serif;
+						font-size: .8em;
+					}
+				}
 
 				&:focus-within {
 					--focus-color: var(--scp-color-oxford-light);
 				}
 
-				> i {
+				i {
 					color: var(--scp-color-grey);
 					position: absolute;
 					margin-left: .5em;
@@ -42,9 +88,18 @@
 					margin: .5em;
 					margin-left: 2em;
 					border: none;
+					width: 84%;
+					font-size: 16px;
 					&:focus {
 						outline: none;
 					}
+				}
+			}
+
+			> nav {
+				padding-top: 1.4rem;
+				@media (max-width: 900px) {
+					padding-top: 0;
 				}
 			}
 
