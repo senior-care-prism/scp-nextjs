@@ -128,7 +128,7 @@ function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
   return (
     <section id="resource-feed" className={styles['resource-feed']}>
       <div className={styles.logo}>
-        <img src="images/logo/scp--eggplant.svg" alt="Senior Care Prism logo" />
+        <img src="/images/logo/scp--eggplant.svg" alt="Senior Care Prism logo" />
       </div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>

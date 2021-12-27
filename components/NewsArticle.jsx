@@ -10,10 +10,13 @@ function NewsArticle({ article }) {
   return (
     <section id="news-article" className={styles['news-article']}>
       <div className={cn(styles.content, styles.clearfix)}>
+        <div className={styles.logo}>
+          <img src="/images/logo/scp--sacramento.svg" alt="Senior Care Prism logo" />
+        </div>
         <div className={styles.heading}>
           <h1>{article?.headline}</h1>
         </div>
-        <hr></hr>
+        <hr className={styles.separator}/>
         <div className={styles.date}>
           {formatDate(article.publishedDate)}
         </div>
