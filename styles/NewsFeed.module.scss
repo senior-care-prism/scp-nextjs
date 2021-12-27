@@ -12,7 +12,7 @@
 			img {
 				margin: 0 1rem;
 				padding: 0;
-				width: 60%;
+				width: 60vw;
 			}
 		}
 	}
@@ -24,7 +24,6 @@
 
 		> .section-heading {
 			margin: 2rem 1rem 1rem;
-			max-width: 84rem;
 			font-size: 1.5em;
 			color: var(--scp-color-mint);
 
@@ -38,7 +37,6 @@
 			grid-auto-flow: column;
 			gap: 1rem;
 			justify-content: space-between;
-			max-width: 84rem;
 			@media (max-width: 900px) {
 				grid-auto-flow: row;
 				grid-template-columns: 1fr;
@@ -88,7 +86,7 @@
 					margin: .5em;
 					margin-left: 2em;
 					border: none;
-					width: 84%;
+					width: 70%;
 					font-size: 16px;
 					&:focus {
 						outline: none;
