@@ -5,6 +5,7 @@
     grid-auto-flow: column;
     gap: 4rem;
     max-width: 55rem;
+    align-items: flex-start;
     @media (max-width: 900px) {
         padding-top: 1rem;
         grid-auto-flow: row;
@@ -44,8 +45,9 @@
     display: grid;
     grid-auto-flow: row;
     gap: 1rem;
+    align-items: flex-start;
     @media (max-width: 900px) {
-        grid-row: 3;
+        grid-row: 2;
     }
 }
 
@@ -65,8 +67,15 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-
     background-color: none;
     font-weight: bold;
     border: .1em solid var(--scp-color-eggplant);
+}
+
+.markdown {
+    text-align: justify;
+    text-justify: inter-word;
+    p {
+        margin-top: 1.5rem;
+    }
 }

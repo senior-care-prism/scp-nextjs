@@ -154,6 +154,43 @@
 					}
 				}
 			}
+
+			> .top-paginator {
+				@media (max-width: 900px) {
+					display: none;
+				}
+				> nav {
+					padding-top: 1.4rem;
+					@media (max-width: 900px) {
+						padding-top: 0;
+					}
+				}
+				> nav .pagination {
+					display: flex;
+					flex-grow: 2;
+					padding-left: 0;
+					list-style: none;
+	
+					> .page-item {
+						color: black;
+						padding: 8px 16px;
+						transition: background-color .5s;
+					}
+	
+					> .page-item.active {
+						background-color: var(--scp-color-eggplant);
+						color: white;
+					}
+	
+					> .page-item.disabled {
+						color: var(--scp-color-light-grey);
+					}
+	
+					> .page-item:hover:not(.active):not(.disabled) {
+						background-color: #ddd;
+					}
+				}
+			}
 			> nav {
 				padding-top: 1.4rem;
 				@media (max-width: 900px) {

@@ -109,7 +109,9 @@ function NewsFeed({ entries, pageNum, maxPage }) {
         </div>
         <div className={styles['page-controls']}>
           <Search />
-          <Paginator pageNum={pageNum} maxPage={maxPage} />
+          <div className={styles['top-paginator']}>
+            <Paginator pageNum={pageNum} maxPage={maxPage} />
+          </div>
         </div>
         { maxPage > 0
           ? (
