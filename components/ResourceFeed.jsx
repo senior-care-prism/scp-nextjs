@@ -85,7 +85,7 @@ const Search = ({ categories, subjects }) => {
       <span className="subject-label">{option.label}</span>
     </div>
   );
-  const multiselectClear = <></>;
+  const multiselectArrow = () => ( <></> );
   
   const handleSearch = (e) => {
     e.target && e.preventDefault();
@@ -126,6 +126,7 @@ const Search = ({ categories, subjects }) => {
         <div className={styles.subject}>
         <label htmlFor="subject">Subject:</label>
           <MultiSelect
+            ArrowRenderer={multiselectArrow}
             ItemRenderer={multiselectItemRenderer}
             options={subjectOptions}
             value={selectedSubjectsArray}
