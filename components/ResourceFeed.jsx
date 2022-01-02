@@ -8,6 +8,7 @@ import ResourceCard from './ResourceCard';
 import { cleanupQuery, formatQuerystring } from '../lib/utils';
 import { RESOURCE_SHAPE } from '../shared/constants';
 import styles from '../styles/ResourceFeed.module.scss';
+import { MultiSelect } from "react-multi-select-component";
 
 const Paginator = ({ pageNum, maxPage }) => {
   const router = useRouter();
@@ -59,15 +60,41 @@ const Search = ({ categories, subjects }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
-  const [searchSubject, setSearchSubject] = useState('');
+  const [selectedSubjects, setSelectedSubjects] = useState([]);
+  const [selectedSubjectsArray, setSelectedSubjectsArray] = useState([]);
   const [searchTimeout, setSearchTimeout] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
-
+  const subjectOptions = subjects.map((s) => { return ({ label: s, value: s }) });
+  
+  //Multiselect overrides for default renderers
+  const multiselectItemRenderer = ({
+    checked,
+    option,
+    onClick,
+    disabled,
+  }) => (
+    <div className={`subject-item ${disabled && "disabled"}`}>
+      <input
+        className="subject-checkbox"
+        type="checkbox"
+        onChange={onClick}
+        checked={checked}
+        tabIndex={-1}
+        disabled={disabled}
+      />
+      <span className="subject-label">{option.label}</span>
+    </div>
+  );
+  const multiselectClear = <></>;
+  
   const handleSearch = (e) => {
-    e.preventDefault();
-    e.target.name === 'searchTerm' && setSearchTerm(e.target.value);
-    e.target.name === 'category' && setSearchCategory(e.target.value);
-    e.target.name === 'subject' && setSearchSubject(e.target.value);
+    e.target && e.preventDefault();
+    e.target?.name === 'searchTerm' && setSearchTerm(e.target.value);
+    e.target?.name === 'category' && setSearchCategory(e.target.value);
+    if (!e.target) {
+      setSelectedSubjectsArray(e);
+      setSelectedSubjects(e.map(s => s.value));
+    }
     setSearchQuery(searchTerm);
     setIsSearching(true);
     if (searchTimeout) {
@@ -83,7 +110,7 @@ const Search = ({ categories, subjects }) => {
     const { query } = router;
     query.searchTerm = searchTerm;
     query.searchCategory = searchCategory;
-    query.searchSubject = searchSubject;
+    query.searchSubject = selectedSubjects;
     query.p = '1';
   });
   return (
@@ -97,14 +124,18 @@ const Search = ({ categories, subjects }) => {
           </select>
         </div>
         <div className={styles.subject}>
-          <label htmlFor="cars">Subject:</label>
-          <select className={styles['subject-list']} name="subject" onChange={handleSearch}>
-            <option value=""> All</option>
-            {subjects.map((subject) => <option key={subject} value={subject}>{subject}</option>)}
-          </select>
+        <label htmlFor="subject">Subject:</label>
+          <MultiSelect
+            ItemRenderer={multiselectItemRenderer}
+            options={subjectOptions}
+            value={selectedSubjectsArray}
+            onChange={handleSearch}
+            labelledBy="subject"
+            disableSearch
+          />
         </div>
-        <div className={styles.search}>
-          <i className="ri-search-line" />
+        <div className={styles.search}> 
+          <i className="ri-search-line" name="search" />
           <input
             type="text"
             name="searchTerm"

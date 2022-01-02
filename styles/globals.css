@@ -61,3 +61,51 @@ a {
 	filter: gray;
 	filter: grayscale(100%);
 }
+
+.rmsc {
+	--rmsc-main: #var(--scp-color-eggplant) !important;;
+	--rmsc-hover: #f1f3f5;
+	--rmsc-selected: #e2e6ea;
+	--rmsc-border: var(--scp-color-eggplant) !important;
+	--rmsc-gray: #aaa;
+	--rmsc-bg: #fff;
+	--rmsc-p: .3rem !important; /* Spacing */
+	--rmsc-radius: 0px !important; /* Radius */
+	--rmsc-h: 2.2rem !important; /* Height */
+	font-family: 'Heebo', sans-serif;
+}
+
+.subject-item {
+	appearance: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.subject-checkbox {
+	appearance: none !important;
+	margin: .2rem !important;
+	padding: 0.3rem !important;
+	border-radius: 0px !important;
+	display: inline !important;
+}
+
+.subject-checkbox:active, .regular-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.subject-checkbox:checked {
+	background-color: #e9ecee !important;
+}
+
+.subject-checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: relative;
+	top: 0px;
+	left: 3px;
+	color: var(--scp-color-eggplant);
+}
+
+.subject-label {
+	color: black;
+}
