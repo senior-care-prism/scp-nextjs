@@ -135,8 +135,10 @@ function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
           <h2>Resources</h2>
         </div>
         <div className={styles['page-controls']}>
-          <Search categories={categories} subjects={subjects}/>
-          <Paginator pageNum={pageNum} maxPage={maxPage} />
+          <Search categories={categories} subjects={subjects} />
+          <div className={styles['top-paginator']}>
+            <Paginator pageNum={pageNum} maxPage={maxPage} />
+          </div>
         </div>
         { resources.length > 0
           ? (
