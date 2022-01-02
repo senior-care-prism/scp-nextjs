@@ -107,5 +107,10 @@ a {
 }
 
 .subject-label {
+	display: inline-block;
+  width: 11rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 	color: black;
 }
