@@ -1,9 +1,10 @@
 .news-preview {
-	max-width: 80%;
+	max-width: 84rem;
 	margin: 4rem auto;
 
 	h2 {
 		margin-bottom: 1rem;
+		margin-left: 1rem;
 	}
 
 	.button::before {
@@ -13,6 +14,7 @@
 	.button {
 		font-family: 'Heebo', sans-serif;
 		padding: 8px 20px;
+		margin-left: 1rem;
 		text-transform: uppercase;
 
 		text-align: center;
@@ -23,7 +25,7 @@
 		background-color: var(--scp-color-mint);
 		color: white;
 		font-weight: bold;
-		border: .2em solid white;
+
 
 		&:focus {
 			color: var(--scp-color-mint);

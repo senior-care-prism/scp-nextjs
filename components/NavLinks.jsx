@@ -10,16 +10,14 @@ function NavLinks({ styles, path, offset }) {
 		// TODO: handle nav-links from non-home locations.
 		{ id: 1, to: 'about-us', href: '/#about-us', scroll: true },
 		{ id: 2, to: 'news', href: '/news', scroll: true },
-		{ id: 2, to: 'resources', href: '/resources', scroll: true },
-		{ id: 3, to: 'our-team', href: '/#our-team', scroll: true },
-		{ id: 4, to: 'contact', href: '/#contact', scroll: true }
+		{ id: 3, to: 'resources', href: '/resources', scroll: true },
+		{ id: 4, to: 'our-team', href: '/#our-team', scroll: true },
+		{ id: 5, to: 'contact', href: '/#contact', scroll: true }
 	];
 	const sacramento = '#023534';
 
 	useEffect(() => {
 		tw.current.getGSAP().progress(offset / 2 / 100.0);
-
-		console.log('Current navlink path is ', path);
 		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
 	});
 

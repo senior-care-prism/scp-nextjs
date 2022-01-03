@@ -52,7 +52,7 @@ const Paginator = ({ pageNum, maxPage }) => {
 
 Paginator.propTypes = {
   pageNum: PropTypes.number.isRequired,
-  maxPage: PropTypes.number.isRequired,
+  maxPage: PropTypes.object.isRequired,
 };
 
 const Search = ({ categories, subjects, resourcesTotal }) => {
@@ -187,7 +187,7 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
 
 Search.propTypes = {
   categories: PropTypes.arrayOf(Object).isRequired,
-  subjects: PropTypes.arrayOf(Object)
+  subjects: PropTypes.arrayOf(Object).isRequired
 };
 
 function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
@@ -238,7 +238,7 @@ ResourceFeed.propTypes = {
   categories: PropTypes.arrayOf(string),
   subjects: PropTypes.arrayOf(string),
   pageNum: PropTypes.number.isRequired,
-  maxPage: PropTypes.number.isRequired,
+  maxPage: PropTypes.object.isRequired,
 };
 
 export default ResourceFeed;

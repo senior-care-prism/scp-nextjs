@@ -247,6 +247,9 @@
 	.card-container {
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: 1400px) {
+			justify-content: center;
+		}
 	}
 }
 

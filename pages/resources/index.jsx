@@ -21,7 +21,7 @@ Resources.propTypes = {
 	categories: PropTypes.arrayOf(string),
   subjects: PropTypes.arrayOf(string),
 	pageNum     : PropTypes.number.isRequired,
-	maxPage     : PropTypes.number.isRequired
+	maxPage     : PropTypes.object.isRequired
 };
 
 export async function getServerSideProps({ query }) {
