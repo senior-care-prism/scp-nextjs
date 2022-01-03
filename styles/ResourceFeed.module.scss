@@ -21,7 +21,22 @@
 		margin: 0 auto;
 		padding-bottom: 1rem;
 		max-width: 84rem;
-
+		> .total {
+			font-family: 'Heebo', sans-serif;
+			font-weight: 400;
+			appearance: none;
+			color: var(--scp-color-eggplant);
+			background-color: white;
+			margin: 1.5rem 0 0 1rem;
+			padding: .2rem;
+			height: 2.3rem;
+			border: 0px;
+			font-size: 16px;
+			opacity: .4;
+			@media (max-width: 900px) {
+				display: none;
+			}
+		}
 		> .section-heading {
 			margin: 2rem 1rem 1rem;
 			max-width: 84rem;
@@ -60,23 +75,7 @@
 					gap: 2rem;
 					margin: 0 1rem 0;
 				}
-				> .reset {
-					appearance: none;
-					color: var(--scp-color-eggplant);
-					background-color: white;
-					margin: 1.5rem 0 0 0;
-					padding: .2rem;
-					height: 2.3rem;
-					border: 0px;
-					font-size: 16px;
-					opacity: .7;
-					@media (max-width: 900px) {
-						justify-self:right;
-						padding: 0;
-						width: 6rem;
-						margin-top: -2rem;
-					}
-				}
+				
 				> .search {
 					margin: 1.5rem 0 0 0;
 					border: 1px solid var(--scp-color-eggplant);
@@ -169,6 +168,48 @@
 						@media (max-width: 900px) {
 							margin: 0;
 							width: 100%;
+						}
+					}
+				}
+				> .total-reset {
+					display: grid;
+					grid-auto-flow: column;
+					> .total {
+						display: none;
+						font-family: 'Heebo', sans-serif;
+						font-weight: 400;
+						appearance: none;
+						color: var(--scp-color-eggplant);
+						background-color: white;
+						margin: 1.5rem 0 0 0;
+						padding: .2rem;
+						height: 2.3rem;
+						border: 0px;
+						font-size: 16px;
+						opacity: .4;
+						@media (max-width: 900px) {
+							display: inline;
+							justify-self:left;
+							padding: .3rem;
+							width: 10rem;
+							margin-top: -2rem;
+						}
+					}
+					> .reset {
+						appearance: none;
+						color: var(--scp-color-eggplant);
+						background-color: white;
+						margin: 1.5rem 0 0 0;
+						padding: .2rem;
+						height: 2.3rem;
+						border: 0px;
+						font-size: 16px;
+						opacity: .7;
+						@media (max-width: 900px) {
+							justify-self:right;
+							padding: 0;
+							width: 6rem;
+							margin-top: -2rem;
 						}
 					}
 				}
