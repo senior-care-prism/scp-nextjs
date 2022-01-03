@@ -20,7 +20,7 @@ export default function News({ newsEntries, pageNum, maxPage }) {
 News.propTypes = {
 	newsEntries : ARTICLE_FEED_SHAPE.isRequired,
 	pageNum     : PropTypes.number.isRequired,
-	maxPage     : PropTypes.number.isRequired
+	maxPage     : PropTypes.object.isRequired
 };
 
 export async function getServerSideProps({ query }) {

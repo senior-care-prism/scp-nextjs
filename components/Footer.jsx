@@ -63,7 +63,7 @@ const Footer = () => (
       </div>
       <div className={cn(styles.column, styles.desktop)}>
         <div className={styles.map}>
-          <Image src="/images/map-canada.png" alt="Map of Canada" width="800px" height="658px" />
+          <Image src="/images/map-canada.png" alt="Map of Canada" layout="fill" />
         </div>
       </div>
     </div>

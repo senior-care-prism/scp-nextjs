@@ -43,7 +43,6 @@ function Header({ path }) {
 		};
 		tw.current.getGSAP().progress(offset / 2 / 100.0);
 
-		console.log('Current path is ', path);
 		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
 	});
 

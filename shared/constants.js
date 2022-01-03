@@ -38,8 +38,8 @@ export const RESOURCE_SHAPE = PropTypes.shape({
 	downloadable     : PropTypes.shape({
 		url : PropTypes.string
 	}),
-	subject          : PropTypes.string.isRequired,
-	category         : PropTypes.arrayOf(PropTypes.object).isRequired,
+	subject          : PropTypes.arrayOf(PropTypes.string).isRequired,
+	category         : PropTypes.arrayOf(PropTypes.string).isRequired,
 	publishedDate    : PropTypes.string.isRequired
 });
 

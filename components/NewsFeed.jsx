@@ -153,7 +153,7 @@ function NewsFeed({ entries, pageNum, maxPage }) {
 NewsFeed.propTypes = {
   entries: PropTypes.arrayOf(ARTICLE_SHAPE).isRequired,
   pageNum: PropTypes.number.isRequired,
-  maxPage: PropTypes.number.isRequired,
+  maxPage: PropTypes.object.isRequired,
 };
 
 export default NewsFeed;
