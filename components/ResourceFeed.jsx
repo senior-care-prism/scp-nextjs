@@ -59,7 +59,6 @@ const Search = ({ categories, subjects }) => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchCategory, setSearchCategory] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
@@ -90,13 +89,21 @@ const Search = ({ categories, subjects }) => {
   );
   const multiselectArrow = () => ( <></> );
   
+  const handleReset = async (e) => {
+    e.preventDefault();
+    setSearchTerm('');
+    setSelectedCategories([]);
+    setSelectedCategoriesArray([]);
+    setSelectedSubjects([]);
+    setSelectedSubjectsArray([]);
+    handleSearch(e);
+  }
+
   const handleSearch = (e) => {
     e.preventDefault && e.preventDefault();
     e.target?.name === 'searchTerm' && setSearchTerm(e.target.value);
     e.target?.name === 'categories' && setSelectedCategories(e.target.value.map(s => s.value));
     e.target?.name === 'subjects' && setSelectedSubjects(e.target.value.map(s => s.value));
-   
-    setSearchQuery(searchTerm);
     setIsSearching(true);
     if (searchTimeout) {
       clearTimeout(searchTimeout);
@@ -165,6 +172,7 @@ const Search = ({ categories, subjects }) => {
           />
           <PulseLoader loading={isSearching} size={8} color="#1d5085" />
         </div>
+        <button className={styles.reset} onClick={handleReset}>reset search</button>
       </form>
     </>
   );
