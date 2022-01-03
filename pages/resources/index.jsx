@@ -29,8 +29,8 @@ export async function getServerSideProps({ query }) {
 	const searchTerm = query.searchTerm !== undefined ? query.searchTerm : '';
 	const category = query.searchCategory !== undefined ? query.searchCategory : '';
 	const subject = query.searchSubject !== undefined ? query.searchSubject : '';
-	const categories = await getAllResourceCategories();
-	const subjects = await getAllResourceSubjects();
+	const categories = await getAllResourceCategories(subject);
+	const subjects = await getAllResourceSubjects(category);
 	const resourceEntries = await getResourceEntries({ pageNum, category, subject, searchTerm });
 	const maxPage = await getResourceMaxPage({ limitPerPage: 6, category, subject, searchTerm });
 	return {

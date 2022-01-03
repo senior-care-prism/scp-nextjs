@@ -13,9 +13,9 @@ import { MultiSelect } from "react-multi-select-component";
 const Paginator = ({ pageNum, maxPage }) => {
   const router = useRouter();
   const { query } = router;
-  const isDisabled = maxPage === 0;
+  const isDisabled = maxPage.maxPage === 0;
   const isFirstPage = isDisabled || pageNum === 1;
-  const isLastPage = isDisabled || pageNum === maxPage;
+  const isLastPage = isDisabled || pageNum === maxPage.maxPage;
 
   const getPageHref = (targetPage) => router.pathname + formatQuerystring(
     cleanupQuery(query, { p: encodeURIComponent(targetPage) }),
@@ -29,7 +29,7 @@ const Paginator = ({ pageNum, maxPage }) => {
             ? 'Previous'
             : <Link href={getPageHref(pageNum - 1)} scroll={false}>Previous</Link>}
         </li>
-        {Array(maxPage).fill().map((_, idx) => (
+        {Array(maxPage.maxPage).fill().map((_, idx) => (
           /* eslint-disable react/no-array-index-key */
           <Link key={idx} href={getPageHref(idx + 1)} scroll={false} passHref>
             <a
@@ -55,11 +55,9 @@ Paginator.propTypes = {
   maxPage: PropTypes.number.isRequired,
 };
 
-const Search = ({ categories, subjects }) => {
+const Search = ({ categories, subjects, resourcesTotal }) => {
   const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchCategory, setSearchCategory] = useState('');
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
@@ -90,13 +88,21 @@ const Search = ({ categories, subjects }) => {
   );
   const multiselectArrow = () => ( <></> );
   
+  const handleReset = async (e) => {
+    e.preventDefault();
+    setSearchTerm('');
+    setSelectedCategories([]);
+    setSelectedCategoriesArray([]);
+    setSelectedSubjects([]);
+    setSelectedSubjectsArray([]);
+    handleSearch(e);
+  }
+
   const handleSearch = (e) => {
     e.preventDefault && e.preventDefault();
     e.target?.name === 'searchTerm' && setSearchTerm(e.target.value);
     e.target?.name === 'categories' && setSelectedCategories(e.target.value.map(s => s.value));
     e.target?.name === 'subjects' && setSelectedSubjects(e.target.value.map(s => s.value));
-   
-    setSearchQuery(searchTerm);
     setIsSearching(true);
     if (searchTimeout) {
       clearTimeout(searchTimeout);
@@ -165,6 +171,11 @@ const Search = ({ categories, subjects }) => {
           />
           <PulseLoader loading={isSearching} size={8} color="#1d5085" />
         </div>
+        <div className={styles['total-reset']}>
+          <span className={styles.total}>Total: {resourcesTotal}</span>
+          <button className={styles.reset} onClick={handleReset}>reset search</button>
+        </div>
+        
       </form>
     </>
   );
@@ -186,11 +197,12 @@ function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
           <h2>Resources</h2>
         </div>
         <div className={styles['page-controls']}>
-          <Search categories={categories} subjects={subjects} />
+          <Search categories={categories} subjects={subjects} resourcesTotal={maxPage.total}/>
           <div className={styles['top-paginator']}>
             <Paginator pageNum={pageNum} maxPage={maxPage} />
           </div>
         </div>
+        <span className={styles.total}>Total: {maxPage.total}</span>
         { resources.length > 0
           ? (
             <>
