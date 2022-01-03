@@ -112,6 +112,8 @@
 	.team-bio {
 		display: none;
 		overflow: hidden;
+		text-align: justify;
+		text-justify: inter-word;
 		// TODO: resolve transition
 		// max-height: 0;
 		// transition: max-height 0.2s ease-out;
