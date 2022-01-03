@@ -60,11 +60,14 @@ const Search = ({ categories, subjects }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [selectedSubjectsArray, setSelectedSubjectsArray] = useState([]);
   const [searchTimeout, setSearchTimeout] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const subjectOptions = subjects.map((s) => { return ({ label: s, value: s }) });
+  const categoryOptions = categories.map((s) => { return ({ label: s, value: s }) });
   
   //Multiselect overrides for default renderers
   const multiselectItemRenderer = ({
@@ -88,13 +91,11 @@ const Search = ({ categories, subjects }) => {
   const multiselectArrow = () => ( <></> );
   
   const handleSearch = (e) => {
-    e.target && e.preventDefault();
+    e.preventDefault && e.preventDefault();
     e.target?.name === 'searchTerm' && setSearchTerm(e.target.value);
-    e.target?.name === 'category' && setSearchCategory(e.target.value);
-    if (!e.target) {
-      setSelectedSubjectsArray(e);
-      setSelectedSubjects(e.map(s => s.value));
-    }
+    e.target?.name === 'categories' && setSelectedCategories(e.target.value.map(s => s.value));
+    e.target?.name === 'subjects' && setSelectedSubjects(e.target.value.map(s => s.value));
+   
     setSearchQuery(searchTerm);
     setIsSearching(true);
     if (searchTimeout) {
@@ -106,10 +107,23 @@ const Search = ({ categories, subjects }) => {
       setIsSearching(false);
     }, 700));
   };
+
+  const handleSubjects = (selectedItems) => {
+    const payload = { target: { name: 'subjects', value: selectedItems } };
+    setSelectedSubjectsArray(selectedItems);
+    handleSearch(payload);
+  }
+
+  const handleCategories = (selectedItems) => {
+    const payload = { target: { name: 'categories', value: selectedItems } };
+    setSelectedCategoriesArray(selectedItems);
+    handleSearch(payload);
+  }
+
   useEffect(() => { 
     const { query } = router;
     query.searchTerm = searchTerm;
-    query.searchCategory = searchCategory;
+    query.searchCategory = selectedCategories;
     query.searchSubject = selectedSubjects;
     query.p = '1';
   });
@@ -117,21 +131,26 @@ const Search = ({ categories, subjects }) => {
     <>
       <form className={styles['search-form']}>
         <div className={styles.category}>
-          <label htmlFor="category">Category:</label>
-          <select className={styles['category-list']} name="category" onChange={handleSearch}>
-            <option value=""> All</option>
-            {categories.map((category) => <option key={category} value={category}>{category}</option>)}
-          </select>
+          <label htmlFor="category">Categories:</label>
+            <MultiSelect
+              ArrowRenderer={multiselectArrow}
+              ItemRenderer={multiselectItemRenderer}
+              options={categoryOptions}
+              value={selectedCategoriesArray}
+              onChange={handleCategories}
+              labelledBy="categories"
+              disableSearch
+            />
         </div>
         <div className={styles.subject}>
-        <label htmlFor="subject">Subject:</label>
+        <label htmlFor="subject">Subject(s):</label>
           <MultiSelect
             ArrowRenderer={multiselectArrow}
             ItemRenderer={multiselectItemRenderer}
             options={subjectOptions}
             value={selectedSubjectsArray}
-            onChange={handleSearch}
-            labelledBy="subject"
+            onChange={handleSubjects}
+            labelledBy="subjects"
             disableSearch
           />
         </div>
