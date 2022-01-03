@@ -83,10 +83,11 @@ a {
 
 .subject-checkbox {
 	appearance: none !important;
-	margin: .2rem !important;
-	padding: 0.3rem !important;
+	margin: 0 .3rem !important;
+	padding: 0 !important;
 	border-radius: 0px !important;
 	display: inline !important;
+	height: .4rem;
 }
 
 .subject-checkbox:active, .regular-checkbox:checked:active {
@@ -94,15 +95,17 @@ a {
 }
 
 .subject-checkbox:checked {
-	background-color: #e9ecee !important;
+	background-color: #e2e6ea !important;
 }
 
 .subject-checkbox:checked:after {
 	content: '\2714';
-	font-size: 14px;
+	font-size: 10px;
+	margin: 0;
+	padding: 0;
 	position: relative;
-	top: 0px;
-	left: 3px;
+	top: -8px;
+	left: 1px;
 	color: var(--scp-color-eggplant);
 }
 

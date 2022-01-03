@@ -12,9 +12,9 @@ import styles from '../styles/NewsFeed.module.scss';
 const Paginator = ({ pageNum, maxPage }) => {
   const router = useRouter();
   const { query } = router;
-  const isDisabled = maxPage === 0;
+  const isDisabled = maxPage.maxPage === 0;
   const isFirstPage = isDisabled || pageNum === 1;
-  const isLastPage = isDisabled || pageNum === maxPage;
+  const isLastPage = isDisabled || pageNum === maxPage.maxPage;
 
   const getPageHref = (targetPage) => router.pathname + formatQuerystring(
     cleanupQuery(query, { p: encodeURIComponent(targetPage) }),
@@ -28,7 +28,7 @@ const Paginator = ({ pageNum, maxPage }) => {
             ? 'Previous'
             : <Link href={getPageHref(pageNum - 1)} scroll={false}>Previous</Link>}
         </li>
-        {Array(maxPage).fill().map((_, idx) => (
+        {Array(maxPage.maxPage).fill().map((_, idx) => (
           /* eslint-disable react/no-array-index-key */
           <Link key={idx} href={getPageHref(idx + 1)} scroll={false} passHref>
             <a
@@ -51,10 +51,10 @@ const Paginator = ({ pageNum, maxPage }) => {
 
 Paginator.propTypes = {
   pageNum: PropTypes.number.isRequired,
-  maxPage: PropTypes.number.isRequired,
+  maxPage: PropTypes.object.isRequired,
 };
 
-const Search = () => {
+const Search = ({newsTotal}) => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchTimeout, setSearchTimeout] = useState(false);
@@ -78,7 +78,13 @@ const Search = () => {
       setIsSearching(false);
     }, 700));
   };
-
+  const handleReset = (e) => {
+    e.preventDefault();
+    if (searchQuery !== '') {
+      setSearchQuery('');
+      handleSearch(e);
+    }
+  }
   return (
     <>
       <form className={styles['search-form']}>
@@ -92,6 +98,10 @@ const Search = () => {
             placeholder="Keyword"
           />
           <PulseLoader loading={isSearching} size={8} color="#1d5085" />
+        </div>
+        <div className={styles['total-reset']}>
+          <span className={styles.total}>Total: {newsTotal}</span>
+          <button className={styles.reset} onClick={handleReset}>reset search</button>
         </div>
       </form>
     </>
@@ -108,12 +118,13 @@ function NewsFeed({ entries, pageNum, maxPage }) {
           <h2>News Feed</h2>
         </div>
         <div className={styles['page-controls']}>
-          <Search />
+          <Search newsTotal={maxPage.total} />
           <div className={styles['top-paginator']}>
             <Paginator pageNum={pageNum} maxPage={maxPage} />
           </div>
         </div>
-        { maxPage > 0
+        <span className={styles.total}>Total: {maxPage.total}</span>
+        { maxPage.maxPage > 0
           ? (
             <>
               <div className={styles['card-container']}>

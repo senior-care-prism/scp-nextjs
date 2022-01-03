@@ -37,19 +37,13 @@
 	}
 
 	.logo {
-		margin: 0 auto;
-		width: 80%;
 		display: none;
-		img {
-			padding: .25em 0;
-			height: 6em;
-		}
 		@media (max-width: 900px) {
 			display: inline;
 			img {
-				margin: 0;
+				margin: 1rem 1rem;
 				padding: 0;
-				width: 70%;
+				width: 60vw;
 			}
 		}
 	}
@@ -67,12 +61,16 @@
 			margin-top: 0;
 			font-weight: 400;
 			font-size: 4rem;
-			line-height: 5rem
+			line-height: 5rem;
+			max-width: 38rem;
 		}
 		p {
 			margin: 1.5em 0;
 			line-height: 1.25em;
 			font-size: 1.4em;
+			text-align: justify;
+			text-justify: inter-word;
+			max-width: 38rem;
 		}
 		@media (max-width: 1600px) {
 			h1 {

@@ -88,14 +88,16 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
   );
   const multiselectArrow = () => ( <></> );
   
-  const handleReset = async (e) => {
+  const handleReset = (e) => {
     e.preventDefault();
-    setSearchTerm('');
-    setSelectedCategories([]);
-    setSelectedCategoriesArray([]);
-    setSelectedSubjects([]);
-    setSelectedSubjectsArray([]);
-    handleSearch(e);
+    if (searchTerm !== '' || selectedCategories.length !== 0 || selectedSubjects.length !== 0) {
+      setSearchTerm('');
+      setSelectedCategories([]);
+      setSelectedCategoriesArray([]);
+      setSelectedSubjects([]);
+      setSelectedSubjectsArray([]);
+      handleSearch(e);
+    }
   }
 
   const handleSearch = (e) => {
@@ -138,7 +140,8 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
       <form className={styles['search-form']}>
         <div className={styles.category}>
           <label htmlFor="category">Categories:</label>
-            <MultiSelect
+          <MultiSelect
+              debounceDuration = {700}
               ArrowRenderer={multiselectArrow}
               ItemRenderer={multiselectItemRenderer}
               options={categoryOptions}
@@ -151,6 +154,7 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
         <div className={styles.subject}>
         <label htmlFor="subject">Subject(s):</label>
           <MultiSelect
+            debounceDuration = {700}
             ArrowRenderer={multiselectArrow}
             ItemRenderer={multiselectItemRenderer}
             options={subjectOptions}
