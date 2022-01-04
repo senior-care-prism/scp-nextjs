@@ -43,14 +43,14 @@ function NewsPreview({ newsEntries }) {
       </div>
       <div className={styles['card-slider']}>
         <CarouselProvider
-          naturalSlideWidth={1}
-          naturalSlideHeight={1}
+          naturalSlideWidth={viewportWidth*0.9/16}
+          naturalSlideHeight={19}
           totalSlides={newsEntries.length + 1}
-          visibleSlides={viewportWidth/290.0}
+          visibleSlides={viewportWidth / (viewportWidth/1.1)}
         >
           <Slider>
             {renderedSlides}
-            <Slide>
+            <Slide key={newsEntries.length} index={newsEntries.length}>
               <Link href="/news" passHref>
                 <a href="#ref" className={styles['last-slide-link']}>
                   See all news posts
