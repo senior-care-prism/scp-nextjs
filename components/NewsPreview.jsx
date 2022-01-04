@@ -13,7 +13,7 @@ function NewsPreview({ newsEntries }) {
   ));
 
   const renderedSlides = (newsEntries || []).map((newsEntry, idx) => (
-    <Slide index={idx}>
+    <Slide key={newsEntry.id} index={idx}>
       <ArticleCard key={newsEntry.id} entry={newsEntry} />
     </Slide>
   ));
