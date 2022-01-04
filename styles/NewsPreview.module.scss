@@ -44,14 +44,12 @@
 		@media (max-width: 900px) {
 			display: inline-block;
 			margin-top: 7.8rem;
-			margin-left: 2rem;
+			margin-left: 1.2rem;
 			height: 2.4rem;
 		}
 		font-family: 'Heebo', sans-serif;
 		padding: 8px 20px;
-		margin-left: 1rem;
 		text-transform: uppercase;
-
 		text-align: center;
 		text-decoration: none;
 		cursor: pointer;
@@ -78,7 +76,7 @@
 		display: none;
 		@media (max-width: 900px) {
 			display: block;
-			height: 22rem;
+			height: 23rem;
 		}
 		.buttons {
 			display: none;
