@@ -1,11 +1,19 @@
 .article-card {
+	display: grid;
+	grid-auto-flow: row;
 	border: 2px solid var(--scp-color-mint);
 	margin: 0 1rem 1rem;
 	width: 26rem;
+	height: 22rem;
+	@media (max-width: 900px) {
+		width: 90vw;
+		height: 80vw;
+		margin: 0 5vw 0;
+	}
 	> .card-title {
 		color: black;
 		padding: 1rem 1rem;
-		min-height: 7rem;
+		min-height: 4rem;
 		h3 {
 			margin: 0;
 		}
@@ -14,12 +22,17 @@
 	> .content {
 		padding: 0 1rem;
 		> .excerpt {
-			min-height: 11rem;
 			text-align: justify;
 			text-justify: inter-word;
 		}
+		@media (max-width: 900px) {
+			white-space: wrap; 
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
 	}
 	> .card-end {
+		align-self: flex-end;
 		display: flex;
 		font-size: 90%;
 		color: white;
