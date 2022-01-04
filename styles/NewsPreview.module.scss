@@ -2,7 +2,7 @@
 	max-width: 84rem;
 	margin: 4rem auto;
 	@media (max-width: 900px) {
-		margin: 2rem auto;
+		margin: 2rem auto 0;
 	}
 	h2 {
 		margin-bottom: 1rem;
@@ -31,10 +31,34 @@
 		color: white;
 		font-weight: bold;
 		@media (max-width: 900px) {
-			width: 15rem;
-			display: block;
-			margin: 0 auto;
+			display: none;
 		}
+
+		&:focus {
+			color: var(--scp-color-mint);
+			background-color: white;
+		}
+	}
+	.last-slide-link {
+		display: none;
+		@media (max-width: 900px) {
+			display: inline-block;
+			margin-top: 7.8rem;
+			margin-left: 2rem;
+			height: 2.4rem;
+		}
+		font-family: 'Heebo', sans-serif;
+		padding: 8px 20px;
+		margin-left: 1rem;
+		text-transform: uppercase;
+
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+
+		background-color: var(--scp-color-mint);
+		color: white;
+		font-weight: bold;
 
 		&:focus {
 			color: var(--scp-color-mint);
@@ -54,6 +78,7 @@
 		display: none;
 		@media (max-width: 900px) {
 			display: block;
+			height: 22rem;
 		}
 		.buttons {
 			display: none;
@@ -80,27 +105,6 @@
 						color: var(--scp-color-mint);
 					}
 				}
-				.dotgroup {
-					display: grid;
-					grid-auto-flow: column;
-					padding-top: .2rem;
-					align-items: center;
-				
-					button {
-						flex: 0;
-						background:var(--scp-color-eggplant);
-						height: 8px;
-						min-width: 8px;
-						padding: 0;
-						border: 0;
-						justify-self: center;
-						border-radius: 2px;
-						margin: 0 2px 2px 0;
-					}
-					button:disabled {
-						background: var(--scp-color-mint);
-					}
-				 }
 			}
 		}
 	}
