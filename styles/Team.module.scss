@@ -2,6 +2,9 @@
 	margin: 0;
 	background: var(--scp-color-oxford);
 	color: white;
+	@media (max-width: 900px) {
+		display: none;
+	}
 
 	.content {
 		max-width: 84rem;
