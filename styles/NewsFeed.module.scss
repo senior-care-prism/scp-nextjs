@@ -248,6 +248,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		@media (max-width: 1400px) {
+			gap: 1rem;
+			margin-bottom: 1rem;
 			justify-content: center;
 		}
 	}
