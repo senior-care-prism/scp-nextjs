@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ArticleCard from './ArticleCard';
 import { useState, useEffect } from 'react';
 import styles from '../styles/NewsPreview.module.scss';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

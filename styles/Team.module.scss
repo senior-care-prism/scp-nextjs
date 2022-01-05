@@ -3,13 +3,22 @@
 	background: var(--scp-color-oxford);
 	color: white;
 	@media (max-width: 900px) {
-		display: none;
+		height: 29rem;
+	}
+	@media (max-width: 600px) {
+		height: 28rem;
 	}
 
 	.content {
 		max-width: 84rem;
 		margin: 0 auto;
 		padding-top: 2em;
+		@media (max-width: 900px) {
+			margin: 0 2.5vw;
+		}
+		@media (max-width: 600px) {
+			margin: 0 5vw;
+		}
 	}
 
 	.heading {
@@ -21,11 +30,56 @@
 		color: var(--scp-color-light-amber);
 		padding-left: 9px;
 		margin: 0 0 1em 0;
+		@media (max-width: 900px) {
+			padding-left: 0;
+		}
 	}
 
 	.cards {
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: 900px) {
+			display: none;
+		}
+	}
+
+	.slides {
+		display: none;
+		@media (max-width: 900px) {
+			display: block;
+		}
+		.buttons {
+			display: none;
+			@media (max-width: 900px) {
+				display: grid;
+				margin: 0 5vw;
+				grid-auto-flow: column;
+				justify-content:space-between;
+				@media (max-width: 600px) {
+					margin: 0;
+				}
+				.button-back {
+					border: none;
+					height: auto;
+					width: 2rem;
+					background-color: var(--scp-color-oxford);
+					.back-arrow {
+						height: 2rem;
+						color: var(--scp-color-light-amber);
+					}
+				}
+				.button-next {
+					border: none;
+					height: 2rem;
+					width: 2rem;
+					background-color: var(--scp-color-oxford);
+					.next-arrow {
+						height: 2rem;
+						color: var(--scp-color-light-amber);
+					}
+				}
+			}
+		}
 	}
 
 	.member.card {
@@ -34,45 +88,44 @@
 		padding-left: 9px;
 		flex: 0 0 25%;
 		max-width: 25%;
-		@media (max-width: 1000px) {
-			flex: 0 0 50%;
-			max-width: 50%;
-		}
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
+			height: 20rem;
+			padding-right: 2.5vw;
+			padding-left: 0;
 			flex: 0 0 100%;
-			max-width: 100%;
+			max-width: 19rem;
+			margin: 0;
 		}
-	}
-
-	img {
-		object-fit: cover;
-		width: 100%;
-		height: auto;
-	}
-
-	h4 {
-		font-size: 1.6rem;
-		font-weight: 400;
-		letter-spacing: 1px;
-		margin-top: 0.5rem;
-		margin-bottom: 0.25rem;
-		display: flex;
-
-		@media (max-width: 600px) {
-			font-size: 1.3em;
-			margin-bottom: 0;
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: auto;
 		}
-		.pronouns {
-			color: var(--scp-color-light-amber);
-			font-size: .8rem;
-			text-transform: uppercase;
-			padding-left: .5rem;
-			margin-left: auto;
-			@media (max-width: 600px) {
-				font-size: .6em;
+		h4 {
+			font-size: 1.6rem;
+			font-weight: 400;
+			letter-spacing: 1px;
+			margin-top: 0.5rem;
+			margin-bottom: 0.25rem;
+			display: flex;
+	
+			@media (max-width: 900px) {
+				font-size: 1.3rem;
+				margin-bottom: 0;
+			}
+			.pronouns {
+				color: var(--scp-color-light-amber);
+				font-size: .8rem;
+				text-transform: uppercase;
+				padding-left: .5rem;
+				margin-left: auto;
+				@media (max-width: 900px) {
+					font-size: .6em;
+				}
 			}
 		}
 	}
+
 
 	.position {
 		font-size: .8rem;
@@ -82,12 +135,13 @@
 		padding-bottom: .25rem;
 		margin-top: 0;
 		min-height: 2rem;
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
+			min-height: 3.3rem;
 			font-size: .8em;
 		}
 	}
 
-	button {
+	.read-more {
 		display: flex;
 		background: none;
 		text-transform: uppercase;
@@ -106,7 +160,7 @@
 			flex: 1;
 			justify-content: flex-end;
 		}
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
 			font-size: .8em;
 		}
 	}
@@ -119,7 +173,7 @@
 		// TODO: resolve transition
 		// max-height: 0;
 		// transition: max-height 0.2s ease-out;
-		@media (max-width: 600px) {
+		@media (max-width: 900px) {
 			font-size: .95em;
 		}
 	}

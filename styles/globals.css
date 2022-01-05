@@ -117,3 +117,44 @@ a {
   text-overflow: ellipsis;
 	color: black;
 }
+
+.popover-name {
+	font-family: 'Heebo', sans-serif;
+	font-size: 1.3rem;
+			font-weight: 400;
+			letter-spacing: 1px;
+			margin-top: 0.5rem;
+			margin-bottom: 0.25rem;
+			display: flex;
+}
+
+.popover-bio {
+	font-family: 'Roboto Slab', serif;
+	color: white;
+	background-color: var(--scp-color-oxford);
+	height: 17.2rem;
+	width: 17.2rem;
+	padding: 0;
+	font-size: 0.8rem;
+}
+
+.popover-pronouns {
+	font-family: 'Heebo', sans-serif;
+	font-weight: 400;
+	color: var(--scp-color-light-amber);
+	font-size: .8rem;
+	text-transform: uppercase;
+	padding-left: .5rem;
+	margin-left: auto;
+}
+
+.popover-position {
+	font-family: 'Roboto Slab', serif;
+	font-size: .8rem;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-bottom: .25rem;
+	margin-top: 0;
+	min-height: 2rem;
+}
