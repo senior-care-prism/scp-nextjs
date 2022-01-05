@@ -51,6 +51,7 @@
 		margin: 0 1rem 1rem;
 		width: 26rem;
 		height: 22rem;
+		background-color: var(--scp-color-mint);
 		@media (max-width: 900px) {
 			width: 45vw;
 			height: 19.2rem;
@@ -70,6 +71,7 @@
 			margin: 0 auto;
 			align-self: center;
 			height: 2.4rem;
+			border: 1px solid white;
 		}
 		font-family: 'Heebo', sans-serif;
 		padding: 8px 20px;
