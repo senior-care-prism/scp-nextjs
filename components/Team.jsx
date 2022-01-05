@@ -105,7 +105,7 @@ const BioCard = ({ i, member, isMobile }) => (
 const BioCards = ({ members }) => (
   <div className={styles.cards}>
     {members.map((member, i) => (
-      <BioCard i={i} member={member} isMobile= {false}/>
+      <BioCard key={i} i={i} member={member} isMobile= {false}/>
     ))}
   </div>
 );
@@ -123,7 +123,7 @@ export default function Team(props) {
   );
 
   const renderedSlides = (props.members || []).map((member, i) => (
-    <Slide key={member.id} index={idx}>
+    <Slide key={i} index={i}>
       <BioCard key={i} member={member} isMobile />
     </Slide>
   ));
