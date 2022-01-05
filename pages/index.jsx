@@ -19,6 +19,7 @@ export default function Home({ newsEntries, teamMembers, quotes }) {
 			<Head>
 				<title>Senior Care Prism</title>
 				<link rel="icon" href="/favicon.ico" />
+				<meta name="theme-color" content="#023534"/>
 				<meta property="og:title" content="Senior Care Prism" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 				<meta name="og:image" content={`https://${baseDomain}/images/seniors-in-the-park.jpg`} />
