@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import Image from 'next/image';
-import { Popover } from 'react-tiny-popover'
+import Popover from 'react-bootstrap/Popover';
+import Overlay from 'react-bootstrap/Overlay';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import styles from '../styles/Team.module.scss';
 import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
@@ -46,34 +47,41 @@ const Collapsible = ({ num, name, bio, isMobile }) => {
 };
 
 const BioPopOver = ({ member }) => {
-
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setIsPopoverOpen(!isPopoverOpen);
+    setTarget(event.target);
+  };
 
   return (
-  <Popover
-    isOpen={isPopoverOpen}
-    onClickOutside={() => setIsPopoverOpen(false)}
-    positions={['top']} // preferred positions by priority
-      content={
-      <div className='popover-bio'>
-        <h4 className='popover-name'>
-          { member.name }{" "}
-          { member.pronouns
-          && <span className="popover-pronouns">{member.pronouns.join(" / ")}</span> }
-        </h4>
-      <div className="popover-position">{member.position}</div>
-      <p>
-        {member.bio}
-      </p>
-    </div>}
-    >
-      <div className={styles['read-more'] } onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
-      <span className={styles.text}> read bio </span>
-      <span className={styles.icon}>
-        <i className="ri-arrow-up-s-line" />
-      </span>
+    <div ref={ref} className={styles['read-more'] }>
+      <span className={styles.text} onClick={handleClick}> read bio </span>
+        <Overlay
+          show={isPopoverOpen}
+          target={target}
+          placement='top-start'
+          container={ref}
+        >
+          <Popover id="popover-basic" className={cn(styles.bootstrap, "popover-bio")}>
+            <Popover.Header>
+              <h4 className='popover-name'>
+                { member.name }{" "}
+                { member.pronouns
+                && <span className="popover-pronouns">{member.pronouns.join(" / ")}</span> }
+              </h4>
+              <div className="popover-position">{member.position}</div>
+            </Popover.Header>
+            <Popover.Body>
+              <p>
+                {member.bio}
+            </p>
+          </Popover.Body>
+          </Popover>
+        </Overlay>
     </div>
-  </Popover>
   )}
 
 const BioCard = ({ i, member, isMobile }) => (
@@ -137,10 +145,10 @@ export default function Team(props) {
         <BioCards members={props.members} />
         <div className={styles.slides}>
           <CarouselProvider
-            naturalSlideWidth={19}
-            naturalSlideHeight={21}
+            naturalSlideWidth={(viewportWidth)/(1 + Math.trunc(viewportWidth/600))}
+            naturalSlideHeight={(viewportWidth*0.669)/(1 + Math.trunc(viewportWidth/600)) + 130}
             totalSlides={props.members.length}
-            visibleSlides={viewportWidth/16/19}
+            visibleSlides={ Math.trunc(viewportWidth/600) + (viewportWidth / (viewportWidth/1.1))}
           >
             <Slider>
               {renderedSlides}
