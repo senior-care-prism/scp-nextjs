@@ -122,9 +122,9 @@ export default function Team(props) {
     }
   );
 
-  const renderedSlides = (props.members || []).map((member, idx) => (
+  const renderedSlides = (props.members || []).map((member, i) => (
     <Slide key={member.id} index={idx}>
-      <BioCard key={member.idx} member={member} isMobile />
+      <BioCard key={i} member={member} isMobile />
     </Slide>
   ));
 
