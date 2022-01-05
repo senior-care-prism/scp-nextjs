@@ -1,14 +1,15 @@
 .columns {
 	display: flex;
-	min-height: 100vh;
 	padding-top: var(--nav-bar-height);
+	@media (max-height: 900px) {
+		height: 100vh;
+	}
 	.column {
 		width: 50%;
 	}
 	@media (max-width: 900px) {
 		padding-top: 0;
 		width: 100%;
-		min-height: auto;
 		.column {
 			padding-top: 0;
 		}
@@ -18,8 +19,6 @@
 .banner {
 	.left {
 		display: flex;
-		padding-top: 120px;
-		padding-bottom: 40px;
 		flex-direction: column;
 		align-items: flex-start;
 		background: var(--scp-color-sacramento);
@@ -28,8 +27,14 @@
 	@media (max-width: 900px) {
 		.left {
 			padding-top: 0;
+			height: 100vh;
 			width: 100%;
-			background: url("/images/seniors-in-the-park-background.jpg") top center no-repeat;
+			background-image: url("/images/seniors-in-the-park-background.jpg");
+			background-color: #var(--scp-color-sacramento);
+			height: 100vh;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 		.right {
 			display: none;
@@ -74,16 +79,18 @@
 		}
 		@media (max-width: 1600px) {
 			h1 {
-				font-size: 3.5em;
+				line-height: 3.5rem;
+				font-size: 3.5rem;
 			}
 		}
 		@media (max-width: 1300px) {
 			h1 {
-				font-size: 3em;
+				line-height: 3rem;
+				font-size: 3rem;
 			}
 			p {
-				line-height: 1.3em;
-				font-size: 1.3em;
+				line-height: 1.3rem;
+				font-size: 1.3rem;
 			}
 		}
 		@media (max-width: 1000px) {
@@ -104,6 +111,17 @@
 			p {
 				line-height: 1.3em;
 				font-size: 1.1em;
+			}
+		}
+		@media (max-width: 340px) {
+			h1 {
+				font-size: 1.8rem;
+				line-height: 1.8rem;
+				margin: .3em 0 0 0;
+			}
+			p {
+				line-height: 1.1rem;
+				font-size: 1rem;
 			}
 		}
 	}

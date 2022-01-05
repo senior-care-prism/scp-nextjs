@@ -121,23 +121,37 @@ a {
 .popover-name {
 	font-family: 'Heebo', sans-serif;
 	font-size: 1.3rem;
-			font-weight: 400;
-			letter-spacing: 1px;
-			margin-top: 0.5rem;
-			margin-bottom: 0.25rem;
-			display: flex;
+	font-weight: 400;
+	letter-spacing: 1px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.25rem;
+	display: flex;
+	text-transform:capitalize;
 }
 
 .popover-bio {
 	font-family: 'Roboto Slab', serif;
 	color: white;
 	background-color: var(--scp-color-oxford);
-	height: 17.2rem;
-	width: 17.2rem;
-	padding: 0.4rem;
-	font-size: 0.8rem;
+	height:fit-content;
+	width: 90vw;
+	padding: .6rem;
+	font-size: .9rem;
 	text-align: justify;
 	text-justify: inter-word;
+	text-transform:none;
+}
+
+@media (max-width: 900px) {
+	.popover-bio {
+		width: 45vw;
+	}
+}
+
+@media (max-width: 600px) {
+	.popover-bio {
+		width: 90vw;
+	}
 }
 
 .popover-pronouns {
@@ -155,8 +169,22 @@ a {
 	font-size: .8rem;
 	letter-spacing: 1px;
 	font-weight: 700;
+	text-align:initial;
 	text-transform: uppercase;
 	padding-bottom: .25rem;
 	margin-top: 0;
 	min-height: 2rem;
+}
+
+.popover-close {
+	display: flex;
+	background: none;
+	text-transform: uppercase;
+	border: none;
+	padding: 0;
+	border-top: 1px solid var(--scp-color-light-amber);
+	padding-top: .2em;
+	font-size: .8rem;
+	width: 100%;
+	color: var(--scp-color-light-amber);
 }

@@ -30,11 +30,6 @@ function NewsPreview({ newsEntries }) {
     </Slide>
   ));
 
-  const lastSlide =
-    < Slide >
-      Last Slide
-    </Slide>;
-
   return (
     <section id="news" className={styles['news-preview']}>
       <h2>Latest News</h2>
@@ -51,11 +46,13 @@ function NewsPreview({ newsEntries }) {
           <Slider>
             {renderedSlides}
             <Slide key={newsEntries.length} index={newsEntries.length}>
-              <Link href="/news" passHref>
-                <a href="#ref" className={styles['last-slide-link']}>
-                  See all news posts
-                </a>
-              </Link>
+              <div className={styles['last-slide']}>
+                <Link href="/news" passHref>
+                  <a href="#ref" className={styles['last-slide-link']}>
+                    See all news posts
+                  </a>
+                </Link>
+              </div>
             </Slide>
           </Slider>
           <div className={styles['buttons']} >
