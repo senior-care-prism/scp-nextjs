@@ -32,7 +32,12 @@ function NewsPreview({ newsEntries }) {
 
   return (
     <section id="news" className={styles['news-preview']}>
-      <h2>Latest News</h2>
+      <Link href="/news" passHref>
+        <a href="#ref">
+          <h2>Latest News</h2>
+        </a>
+      </Link>
+      
       <div className={styles['card-container']}>
         { renderedEntries }
       </div>
@@ -41,7 +46,7 @@ function NewsPreview({ newsEntries }) {
           naturalSlideWidth={(viewportWidth*0.9/16)/(1 + Math.trunc(viewportWidth/600))}
           naturalSlideHeight={19}
           totalSlides={newsEntries.length + 1}
-          visibleSlides={ Math.trunc(viewportWidth/600) + (viewportWidth / (viewportWidth/1.1))}
+          visibleSlides={ Math.trunc(viewportWidth/600) + 1}
         >
           <Slider>
             {renderedSlides}

@@ -87,11 +87,10 @@ const BioPopOver = ({ member }) => {
 const BioCard = ({ i, member, isMobile }) => (
   <div className={cn(styles.member, styles.card)} key={member.id}>
     <picture>
-      <source srcSet={member.photo.url} type="image/jpeg" />
       <Image
         width="1000"
         height="670"
-        src={member.photo.url}
+        src={`${member.photo.url}?fm=webp&w=600`}
         alt={member.position}
       />
     </picture>
@@ -148,7 +147,7 @@ export default function Team(props) {
             naturalSlideWidth={(viewportWidth)/(1 + Math.trunc(viewportWidth/600))}
             naturalSlideHeight={(viewportWidth*0.669)/(1 + Math.trunc(viewportWidth/600)) + 130}
             totalSlides={props.members.length}
-            visibleSlides={ Math.trunc(viewportWidth/600) + (viewportWidth / (viewportWidth/1.1))}
+            visibleSlides={ Math.trunc(viewportWidth/600) + 1}
           >
             <Slider>
               {renderedSlides}
