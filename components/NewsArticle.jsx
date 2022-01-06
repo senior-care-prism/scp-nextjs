@@ -1,10 +1,37 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import cn from 'classnames';
 import Markdown from 'markdown-to-jsx';
 import ShareWidget from './ShareWidget';
 import styles from '../styles/NewsArticle.module.scss';
 import { formatDate } from '../lib/utils';
 import { ARTICLE_SHAPE } from '../shared/constants';
+
+function RelatedArticle({ item }) {
+  const articleRef = {
+    pathname: '/news/[slug]',
+    query: { slug: item.slug },
+  };
+  return (
+    <div className={styles['related-article']}>
+      <Link href={articleRef}>
+        <a>
+          <h4>{item.headline}</h4>
+        </a>
+      </Link>
+    </div>
+  )
+}
+
+function RelatedArticles({ items }) {
+  return (
+    <aside className={styles['related-articles']}>
+      <h3>Related Articles: </h3>
+      <hr className={styles.separator}/>
+      { items.map(item => <RelatedArticle item={item} />) }
+    </aside>
+  )
+}
 
 function NewsArticle({ article }) {
   return (
@@ -26,6 +53,9 @@ function NewsArticle({ article }) {
         <Markdown className={styles.markdown}>
           {article?.content}
         </Markdown>
+        <div className={styles.related}>
+          {article.relatedArticlesCollection.items.length > 0 && <RelatedArticles items={article.relatedArticlesCollection.items}/>}
+        </div>
       </div>
     </section>
   );

@@ -76,3 +76,12 @@
         margin-top: 1.5rem;
     }
 }
+
+.related-articles {
+    margin: 1rem 0 .5rem;
+    color: var(--scp-color-sacramento);
+    .related-article {
+        color: var(--scp-color-mint);
+        margin: .5rem 0 0;
+    }
+}

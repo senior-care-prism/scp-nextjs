@@ -36,6 +36,10 @@ function ResourceEntry({ resource }) {
         <div className={styles.date}>
           {formatDate(resource.publishedDate)}
         </div>
+        <div className={styles['cat-sub']}>
+          <p>{`Category: ${resource.category.join(', ')}`}</p>
+          <p>{`Subject: ${resource.subject.join(', ')}`}</p>
+        </div>
         <ShareWidget route="resources" slug={resource.slug} />
         <Markdown className={styles.markdown}>
           {resource?.description}
