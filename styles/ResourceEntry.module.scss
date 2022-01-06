@@ -49,6 +49,23 @@
     @media (max-width: 900px) {
         grid-row: 2;
     }
+    .files {
+        display: grid;
+        gap: .5rem;
+        .link {
+            justify-self: center;
+            font-family: 'Heebo', sans-serif;
+            padding: 3px 10px;
+            text-transform: uppercase;
+            width: 8rem;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: none;
+            font-weight: bold;
+            border: .1em solid var(--scp-color-eggplant);
+        }
+    }
 }
 
 .imagecontainer {
@@ -57,19 +74,6 @@
         margin: 0;
         width: 90vw;
     }
-}
-
-.link {
-    font-family: 'Heebo', sans-serif;
-    padding: 3px 10px;
-    text-transform: uppercase;
-
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: none;
-    font-weight: bold;
-    border: .1em solid var(--scp-color-eggplant);
 }
 
 .markdown {
