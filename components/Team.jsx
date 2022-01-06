@@ -145,7 +145,7 @@ export default function Team(props) {
         <div className={styles.slides}>
           <CarouselProvider
             naturalSlideWidth={(viewportWidth)/(1 + Math.trunc(viewportWidth/600))}
-            naturalSlideHeight={(viewportWidth*0.669)/(1 + Math.trunc(viewportWidth/600)) + 130}
+            naturalSlideHeight={(viewportWidth*0.669)/(1 + Math.trunc(viewportWidth/600)) + 96}
             totalSlides={props.members.length}
             visibleSlides={ Math.trunc(viewportWidth/600) + 1}
           >

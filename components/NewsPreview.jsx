@@ -44,7 +44,7 @@ function NewsPreview({ newsEntries }) {
       <div className={styles['card-slider']}>
         <CarouselProvider
           naturalSlideWidth={(viewportWidth*0.9/16)/(1 + Math.trunc(viewportWidth/600))}
-          naturalSlideHeight={19}
+          naturalSlideHeight={17.4}
           totalSlides={newsEntries.length + 1}
           visibleSlides={ Math.trunc(viewportWidth/600) + 1}
         >

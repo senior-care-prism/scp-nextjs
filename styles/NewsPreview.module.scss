@@ -107,7 +107,7 @@
 			display: none;
 			@media (max-width: 900px) {
 				display: grid;
-				margin: 0 2.5vw;
+				margin: 0 2.5vw 1rem;
 				grid-auto-flow: column;
 				justify-content:space-between;
 				.button-back {
@@ -138,7 +138,7 @@
 				}
 			}
 			@media (max-width: 600px) {
-				margin: 0 5vw;
+				margin: 0 5vw 1rem;
 			}
 		}
 	}
