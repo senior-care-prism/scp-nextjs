@@ -66,7 +66,8 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
   const [isSearching, setIsSearching] = useState(false);
   const subjectOptions = subjects.map((s) => { return ({ label: s, value: s }) });
   const categoryOptions = categories.map((s) => { return ({ label: s, value: s }) });
-  
+
+
   //Multiselect overrides for default renderers
   const multiselectItemRenderer = ({
     checked,
@@ -173,13 +174,15 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
             onChange={handleSearch}
             placeholder="Keyword"
           />
-          <PulseLoader loading={isSearching} size={8} color="#1d5085" />
         </div>
         <div className={styles['total-reset']}>
           <span className={styles.total}>Total: {resourcesTotal}</span>
           <button className={styles.reset} onClick={handleReset}>reset search</button>
+          <div className={styles.pulseloader}><PulseLoader loading={isSearching} size={4} color="#30173a" /></div>
         </div>
-        
+        <div className={styles['pulseloader-mob']}>
+          <PulseLoader loading={isSearching} size={4} color="#30173a" />
+        </div>
       </form>
     </>
   );
