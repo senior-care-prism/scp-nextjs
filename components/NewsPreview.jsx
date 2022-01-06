@@ -4,7 +4,7 @@ import ArticleCard from './ArticleCard';
 import { useState, useEffect } from 'react';
 import styles from '../styles/NewsPreview.module.scss';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -57,10 +57,10 @@ function NewsPreview({ newsEntries }) {
           </Slider>
           <div className={styles['buttons']} >
             <ButtonBack className={styles['button-back']}>
-              <FontAwesomeIcon className={styles['back-arrow']} icon={faCaretSquareLeft} size="2x"/>
+              <FontAwesomeIcon className={styles['back-arrow']} icon={faLongArrowAltLeft} size="2x"/>
             </ButtonBack>
             <ButtonNext className={styles['button-next']}>
-              <FontAwesomeIcon className={styles['next-arrow']} icon={faCaretSquareRight} size="2x"/>
+              <FontAwesomeIcon className={styles['next-arrow']} icon={faLongArrowAltRight} size="2x"/>
             </ButtonNext>
           </div>
         </CarouselProvider>

@@ -45,12 +45,16 @@
 	.logo {
 		display: none;
 		@media (max-width: 900px) {
-			display: inline;
+			display: inline-block;
+			height: fit-content;
 			img {
 				margin: 1rem 1rem;
 				padding: 0;
 				width: 60vw;
 			}
+		}
+		.logolink {
+			height: 100%;
 		}
 	}
 

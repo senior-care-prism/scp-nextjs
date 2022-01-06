@@ -5,7 +5,7 @@ import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import styles from '../styles/Team.module.scss';
-import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowAltLeft, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Collapsible = ({ num, name, bio, isMobile }) => {
@@ -155,10 +155,10 @@ export default function Team(props) {
             </Slider>
             <div className={styles['buttons']} >
               <ButtonBack className={styles['button-back']}>
-                <FontAwesomeIcon className={styles['back-arrow']} icon={faCaretSquareLeft} size="2x"/>
+                <FontAwesomeIcon className={styles['back-arrow']} icon={faLongArrowAltLeft} size="2x"/>
               </ButtonBack>
               <ButtonNext className={styles['button-next']}>
-                <FontAwesomeIcon className={styles['next-arrow']} icon={faCaretSquareRight} size="2x"/>
+                <FontAwesomeIcon className={styles['next-arrow']} icon={faLongArrowAltRight} size="2x"/>
               </ButtonNext>
             </div>
           </CarouselProvider>

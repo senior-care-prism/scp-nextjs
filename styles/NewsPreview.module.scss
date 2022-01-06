@@ -107,15 +107,9 @@
 			display: none;
 			@media (max-width: 900px) {
 				display: grid;
-				margin: 1rem 5vw;
+				margin: 0 2.5vw;
 				grid-auto-flow: column;
 				justify-content:space-between;
-				@media (max-width: 900px) {
-					margin: 1rem 2.5vw;
-				}
-				@media (max-width: 600px) {
-					margin: 1rem 5vw;
-				}
 				.button-back {
 					border: none;
 					height: auto;
@@ -124,6 +118,10 @@
 					.back-arrow {
 						color: var(--scp-color-mint);
 					}
+				}
+				.button-back:disabled {
+					.back-arrow {
+						visibility: hidden;					}
 				}
 				.button-next {
 					border: none;
@@ -134,6 +132,13 @@
 						color: var(--scp-color-mint);
 					}
 				}
+				.button-next:disabled {
+					.next-arrow {
+						visibility: hidden;					}
+				}
+			}
+			@media (max-width: 600px) {
+				margin: 0 5vw;
 			}
 		}
 	}
