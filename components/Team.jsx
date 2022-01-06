@@ -90,7 +90,7 @@ const BioCard = ({ i, member, isMobile }) => (
       <Image
         width="1000"
         height="670"
-        src={`${member.photo.url}?fm=webp&w=600`}
+        src={`${member.photo.url}?&w=600`}
         alt={member.position}
       />
     </picture>
