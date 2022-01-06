@@ -2,7 +2,7 @@ import Markdown from 'markdown-to-jsx';
 import ShareWidget from './ShareWidget';
 import styles from '../styles/ResourceEntry.module.scss';
 import { formatDate } from '../lib/utils';
-import { ARTICLE_SHAPE } from '../shared/constants';
+import { RESOURCE_SHAPE } from '../shared/constants';
 import download from 'downloadjs';
 
 function ResourceEntry({ resource }) {
@@ -50,7 +50,7 @@ function ResourceEntry({ resource }) {
 }
 
 ResourceEntry.propTypes = {
-  resource: ARTICLE_SHAPE.isRequired,
+  resource: RESOURCE_SHAPE.isRequired,
 };
 
 export default ResourceEntry;

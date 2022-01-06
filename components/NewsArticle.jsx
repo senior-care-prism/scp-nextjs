@@ -28,7 +28,7 @@ function RelatedArticles({ items }) {
     <aside className={styles['related-articles']}>
       <h3>Related Articles: </h3>
       <hr className={styles.separator}/>
-      { items.map(item => <RelatedArticle item={item} />) }
+      {items.map((item, i) => <RelatedArticle key={i} item={item} />) }
     </aside>
   )
 }
