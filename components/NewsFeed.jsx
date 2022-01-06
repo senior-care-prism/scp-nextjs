@@ -97,11 +97,16 @@ const Search = ({newsTotal}) => {
             onChange={handleSearch}
             placeholder="Keyword"
           />
-          <PulseLoader loading={isSearching} size={8} color="#1d5085" />
         </div>
         <div className={styles['total-reset']}>
           <span className={styles.total}>Total: {newsTotal}</span>
           <button className={styles.reset} onClick={handleReset}>reset search</button>
+          <div className={styles.pulseloader}>
+            <PulseLoader loading={isSearching} size={4} color="#023534" />
+          </div>
+        </div>
+        <div className={styles['pulseloader-mob']}>
+          <PulseLoader loading={isSearching} size={4} color="#023534" />
         </div>
       </form>
     </>

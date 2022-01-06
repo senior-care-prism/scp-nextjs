@@ -70,7 +70,7 @@
 					grid-template-columns: 1fr;
 					grid-template-rows: none;
 					grid-auto-rows: max-content;
-					gap: 2rem;
+					gap: 0rem;
 					margin: 0 1rem 0;
 				}
 				> .search {
@@ -113,6 +113,10 @@
 				> .total-reset {
 					display: grid;
 					grid-auto-flow: column;
+					@media (max-width: 900px) {
+						margin-top: 2rem;
+						margin-bottom: .0rem;
+					}
 					> .total {
 						display: none;
 						font-family: 'Heebo', sans-serif;
@@ -149,6 +153,13 @@
 							padding: 0;
 							width: 6rem;
 							margin-top: -2rem;
+						}
+					}
+					> .pulseloader {
+						margin-top: 1.8rem;
+						margin-left: 1rem;
+						@media (max-width: 900px) {
+							display: none;
 						}
 					}
 				}
@@ -257,4 +268,15 @@
 
 .spacer {
 	height: 96px;
+}
+
+.pulseloader-mob {
+	display: none;
+	@media (max-width: 900px) {
+		display: inline-block;
+		position: relative;
+		margin: 0;
+		margin-top: -1.9rem;
+		justify-self: center;
+	}
 }

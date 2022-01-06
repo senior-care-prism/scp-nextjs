@@ -178,7 +178,9 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
         <div className={styles['total-reset']}>
           <span className={styles.total}>Total: {resourcesTotal}</span>
           <button className={styles.reset} onClick={handleReset}>reset search</button>
-          <div className={styles.pulseloader}><PulseLoader loading={isSearching} size={4} color="#30173a" /></div>
+          <div className={styles.pulseloader}>
+            <PulseLoader loading={isSearching} size={4} color="#30173a" />
+          </div>
         </div>
         <div className={styles['pulseloader-mob']}>
           <PulseLoader loading={isSearching} size={4} color="#30173a" />
