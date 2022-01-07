@@ -17,30 +17,30 @@ function ResourceEntry({ resource }) {
       <div className={styles.logo}>
         <img src="/images/logo/scp--eggplant.svg" alt="Senior Care Prism logo" />
       </div>
-      <div className={styles['download-section']}>
-        {
-        resource.screenshot && (
-            <img className={styles.imagecontainer} src={resource.screenshot.url}/>
-        )
-        }
-        <div className={styles.files}>
-          <a className={styles.link} href={resource.downloadable.url} target="_blank" rel="noreferrer">Open</a>
-          <a className={styles.link} target="_blank" onClick={handleDownload} rel="noreferrer" download>Download</a>
-        </div>
-      </div>
-      <div className={styles.content}>
-        <div className={styles.heading}>
+      <div className={styles.heading}>
           <h1>{resource?.title}</h1>
+      </div>
+      <hr className={styles.separator}/>
+      <div className={styles.date}>
+        {formatDate(resource.publishedDate)}
+      </div>
+      <div className={styles['cat-sub']}>
+        <p>{`Category: ${resource.category.join(', ')}`}</p>
+        <p>{`Subject: ${resource.subject.join(', ')}`}</p>
+      </div>
+      <ShareWidget route="resources" slug={resource.slug} />
+      <div className={styles.content}>
+        <div className={styles['download-section']}>
+          {
+          resource.screenshot && (
+              <img className={styles.imagecontainer} src={resource.screenshot.url}/>
+          )
+          }
+          <div className={styles.files}>
+            <a className={styles.link} href={resource.downloadable.url} target="_blank" rel="noreferrer">Open</a>
+            <a className={styles.link} target="_blank" onClick={handleDownload} rel="noreferrer" download>Download</a>
+          </div>
         </div>
-        <hr className={styles.separator}/>
-        <div className={styles.date}>
-          {formatDate(resource.publishedDate)}
-        </div>
-        <div className={styles['cat-sub']}>
-          <p>{`Category: ${resource.category.join(', ')}`}</p>
-          <p>{`Subject: ${resource.subject.join(', ')}`}</p>
-        </div>
-        <ShareWidget route="resources" slug={resource.slug} />
         <Markdown className={styles.markdown}>
           {resource?.description}
         </Markdown>

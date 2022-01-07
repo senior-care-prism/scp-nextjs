@@ -1,9 +1,6 @@
 .resource-entry {
 	padding: var(--nav-bar-height) 1rem 1rem;
 	margin: 0 auto;
-    display: grid;
-    grid-auto-flow: column;
-    gap: 4rem;
     max-width: 55rem;
     align-items: flex-start;
     @media (max-width: 900px) {
@@ -15,6 +12,13 @@
 
 .content {
     margin: 0 auto;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 4rem;
+    @media (max-width: 900px) {
+        grid-auto-flow: row;
+        gap: 0;
+    }
     > .date {
         font-style: italic;
     }
@@ -33,11 +37,12 @@
 }
 
 .heading {
-    margin: 1rem 0 1rem;
+    margin: 1.8rem 0 1rem;
 }
 
 .cat-sub{
-    margin-top: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     font-family: 'Heebo', sans-serif;
     font-weight: 300;
     font-size: .9rem;
@@ -51,29 +56,27 @@
 }
 
 .download-section {
-    margin: 2rem 0 1rem;
+    margin: .5rem 0 1rem;
     display: grid;
     grid-auto-flow: row;
     gap: 1rem;
-    align-items: flex-start;
-    @media (max-width: 900px) {
-        grid-row: 2;
-    }
+    align-self: flex-start;
     .files {
-        display: grid;
+        align-self: flex-start;
+        display: flex;
         gap: .5rem;
+        margin: 0 auto;
         .link {
-            justify-self: center;
             font-family: 'Heebo', sans-serif;
-            padding: 3px 10px;
+            padding: 6px 10px;
             text-transform: uppercase;
-            width: 8rem;
+            width: fit-content;
             text-align: center;
             text-decoration: none;
             cursor: pointer;
-            background-color: none;
+            color: white;
+            background-color: var(--scp-color-eggplant);
             font-weight: bold;
-            border: .1em solid var(--scp-color-eggplant);
         }
     }
 }
@@ -81,8 +84,9 @@
 .imagecontainer {
     width: 16rem;
     @media (max-width: 900px) {
+        justify-self: center;
         margin: 0;
-        width: 90vw;
+        width: 70vw;
     }
 }
 
@@ -90,6 +94,6 @@
     text-align: justify;
     text-justify: inter-word;
     p {
-        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
