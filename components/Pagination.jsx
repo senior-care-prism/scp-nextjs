@@ -37,16 +37,16 @@ const Pagination = props => {
       <li >
         <div onClick={onPrevious} className={cn(styles['pagination-item'], styles.prev, { [styles.disabled]: currentPage === 1 })}>Previous</div>
       </li>
-      {paginationRange.map(pageNumber => {
+      {paginationRange.map( (pageNumber, i)=> {
          
         // If the pageItem is a DOT, render the DOTS unicode character
         if (pageNumber === DOTS) {
-          return <li className={cn(styles["pagination-item"], styles.dots)}>&#8230;</li>;
+          return <li key={i} className={cn(styles["pagination-item"], styles.dots)}>&#8230;</li>;
         }
 		
         // Render our Page Pills
         return (
-          <li onClick={() => onPageChange(pageNumber)}>
+          <li key={i} onClick={() => onPageChange(pageNumber)}>
             <div className={cn(styles['pagination-item'], { [styles.selected]: pageNumber === currentPage})}>{pageNumber}</div>
           </li>
         );
