@@ -51,6 +51,7 @@
 			grid-auto-flow: column;
 			gap: 1rem;
 			justify-content: space-between;
+			margin-top: 2.5rem;
 			margin-bottom: 1rem;
 			@media (max-width: 900px) {
 				margin-bottom: 0;
@@ -74,7 +75,7 @@
 					margin: 0 1rem 0;
 				}
 				> .search {
-					margin: 1.5rem 0 0 0;
+					margin: 0 0 0 0;
 					border: 1px solid var(--scp-color-sacramento);
 					min-width: 14rem;
 					@media (max-width: 900px) {
@@ -124,7 +125,7 @@
 						appearance: none;
 						color: var(--scp-color-sacramento);
 						background-color: white;
-						margin: 1.5rem 0 0 0;
+						margin: 0;
 						padding: .2rem;
 						height: 2.3rem;
 						border: 0px;
@@ -142,7 +143,7 @@
 						appearance: none;
 						color: var(--scp-color-sacramento);
 						background-color: white;
-						margin: 1.5rem 0 0 0;
+						margin: 0;
 						padding: .2rem;
 						height: 2.3rem;
 						border: 0px;
@@ -156,7 +157,7 @@
 						}
 					}
 					> .pulseloader {
-						margin-top: 1.8rem;
+						margin-top: .3rem;
 						margin-left: 1rem;
 						@media (max-width: 900px) {
 							display: none;
@@ -165,41 +166,9 @@
 				}
 			}
 			> .top-paginator {
+				margin-right: 1rem;
 				@media (max-width: 900px) {
 					display: none;
-				}
-				> nav {
-					padding-top: 1.4rem;
-					@media (max-width: 900px) {
-						padding-top: 0;
-					}
-				}
-	
-				> nav .pagination {
-					display: flex;
-					flex-grow: 2;
-					padding-left: 0;
-					list-style: none;
-					border-radius: .5rem;
-	
-					> .page-item {
-						color: black;
-						padding: 8px 16px;
-						transition: background-color .5s;
-					}
-	
-					> .page-item.active {
-						background-color: var(--scp-color-mint);
-						color: white;
-					}
-	
-					> .page-item.disabled {
-						color: var(--scp-color-light-grey);
-					}
-	
-					> .page-item:hover:not(.active):not(.disabled) {
-						background-color: #ddd;
-					}
 				}
 			}
 			> nav {
@@ -208,35 +177,16 @@
 					padding-top: 0;
 				}
 			}
-
-			> nav .pagination {
-				display: flex;
-				flex-grow: 2;
-				padding-left: 0;
-				list-style: none;
-				border-radius: .5rem;
-
-				> .page-item {
-					color: black;
-					padding: 8px 16px;
-					transition: background-color .5s;
-				}
-
-				> .page-item.active {
-					background-color: var(--scp-color-mint);
-					color: white;
-				}
-
-				> .page-item.disabled {
-					color: var(--scp-color-light-grey);
-				}
-
-				> .page-item:hover:not(.active):not(.disabled) {
-					background-color: #ddd;
-				}
+		}
+		> .bottom-paginator {
+			display: flex;
+			margin-top: 1.4rem;
+			margin-bottom: 1rem;
+			margin-left: 1rem;
+			@media (max-width: 900px) {
+				justify-content: center;
 			}
 		}
-
 		> .no-results {
 			padding-top: 5em;
 			// vertical-align: ce;

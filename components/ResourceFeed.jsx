@@ -13,10 +13,10 @@ import { MultiSelect } from "react-multi-select-component";
 const Paginator = ({ pageNum, maxPage }) => {
   const router = useRouter();
   const { query } = router;
-  const isDisabled = maxPage.maxPage === 0;
+  const isDisabled = maxPage.maxPage ? false : true;
   const isFirstPage = isDisabled || pageNum === 1;
   const isLastPage = isDisabled || pageNum === maxPage.maxPage;
-
+  console.log('isDisabled is: ', isDisabled);
   const getPageHref = (targetPage) => router.pathname + formatQuerystring(
     cleanupQuery(query, { p: encodeURIComponent(targetPage) }),
   );
@@ -29,7 +29,7 @@ const Paginator = ({ pageNum, maxPage }) => {
             ? 'Previous'
             : <Link href={getPageHref(pageNum - 1)} scroll={false}>Previous</Link>}
         </li>
-        {Array(maxPage.maxPage).fill().map((_, idx) => (
+        {maxPage.maxPage && Array(maxPage.maxPage).fill().map((_, idx) => (
           /* eslint-disable react/no-array-index-key */
           <Link key={idx} href={getPageHref(idx + 1)} scroll={false} passHref>
             <a
