@@ -44,20 +44,13 @@ Home.propTypes = {
 	quotes      : QUOTES_SHAPE.isRequired
 };
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps() {
+	const teamMembers = await getTeamMembers({ limit: 6 });
+	const quotes = await getQuotes({ limit: 6 });
 	const newsEntries = await getNewsEntries({ limit: 6 });
 	return {
 		props : {
-			newsEntries
-		}
-	};
-}
-
-export async function getStaticProps() {
-	const teamMembers = await getTeamMembers({ limit: 6 });
-	const quotes = await getQuotes({ limit: 6 });
-	return {
-		props : {
+			newsEntries,
 			teamMembers,
 			quotes
 		}
