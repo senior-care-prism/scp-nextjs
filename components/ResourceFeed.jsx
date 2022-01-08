@@ -1,59 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import PropTypes, { string } from 'prop-types';
-import cn from 'classnames';
 import PulseLoader from 'react-spinners/PulseLoader';
 import ResourceCard from './ResourceCard';
+import Pagination from './Pagination';
 import { cleanupQuery, formatQuerystring } from '../lib/utils';
 import { RESOURCE_SHAPE } from '../shared/constants';
 import styles from '../styles/ResourceFeed.module.scss';
 import { MultiSelect } from "react-multi-select-component";
-
-const Paginator = ({ pageNum, maxPage }) => {
-  const router = useRouter();
-  const { query } = router;
-  const isDisabled = maxPage.maxPage ? false : true;
-  const isFirstPage = isDisabled || pageNum === 1;
-  const isLastPage = isDisabled || pageNum === maxPage.maxPage;
-  console.log('isDisabled is: ', isDisabled);
-  const getPageHref = (targetPage) => router.pathname + formatQuerystring(
-    cleanupQuery(query, { p: encodeURIComponent(targetPage) }),
-  );
-
-  return (
-    <nav>
-      <ul className={styles.pagination}>
-        <li className={cn(styles['page-item'], { [styles.disabled]: isFirstPage })}>
-          { isFirstPage
-            ? 'Previous'
-            : <Link href={getPageHref(pageNum - 1)} scroll={false}>Previous</Link>}
-        </li>
-        {maxPage.maxPage && Array(maxPage.maxPage).fill().map((_, idx) => (
-          /* eslint-disable react/no-array-index-key */
-          <Link key={idx} href={getPageHref(idx + 1)} scroll={false} passHref>
-            <a
-              className={cn(styles['page-item'], { [styles.active]: idx + 1 === pageNum })}
-              href="#page"
-            >
-              {`${idx + 1}`}
-            </a>
-          </Link>
-        ))}
-        <li className={cn(styles['page-item'], { [styles.disabled]: isLastPage })}>
-          { isLastPage
-            ? 'Next'
-            : <Link href={getPageHref(pageNum + 1)} scroll={false}>Next</Link>}
-        </li>
-      </ul>
-    </nav>
-  );
-};
-
-Paginator.propTypes = {
-  pageNum: PropTypes.number.isRequired,
-  maxPage: PropTypes.object.isRequired,
-};
 
 const Search = ({ categories, subjects, resourcesTotal }) => {
   const router = useRouter();
@@ -176,7 +130,7 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
           />
         </div>
         <div className={styles['total-reset']}>
-          <span className={styles.total}>Total: {resourcesTotal}</span>
+          <span className={styles.total}>Total: {resourcesTotal || 0}</span>
           <button className={styles.reset} onClick={handleReset}>reset search</button>
           <div className={styles.pulseloader}>
             <PulseLoader loading={isSearching} size={4} color="#30173a" />
@@ -196,6 +150,7 @@ Search.propTypes = {
 };
 
 function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
+
   return (
     <section id="resource-feed" className={styles['resource-feed']}>
       <div className={styles.logo}>
@@ -208,10 +163,10 @@ function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
         <div className={styles['page-controls']}>
           <Search categories={categories} subjects={subjects} resourcesTotal={maxPage.total}/>
           <div className={styles['top-paginator']}>
-            <Paginator pageNum={pageNum} maxPage={maxPage} />
+            <Pagination maxPage={maxPage.maxPage || 0} siblingCount={1}/>
           </div>
         </div>
-        <span className={styles.total}>Total: {maxPage.total}</span>
+        <span className={styles.total}>Total: {maxPage.total || 0}</span>
         { resources.length > 0
           ? (
             <>
@@ -229,8 +184,8 @@ function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
               <p className={styles['help-text']}>Please try a different search.</p>
             </div>
           )}
-        <div className={styles['page-controls']}>
-          <Paginator pageNum={pageNum} maxPage={maxPage} />
+        <div className={styles['bottom-paginator']}>
+          <Pagination maxPage={maxPage.maxPage || 0} siblingCount={1}/>
         </div>
 
       </div>

@@ -49,7 +49,7 @@ function Header({ path }) {
 	return (
 		<header className={styles.header}>
 			<Link href="/#" passHref>
-				<a><div className={styles.logocontainer}>{tween}</div></a>
+				<a className={styles.logolink} ><div className={styles.logocontainer}>{tween}</div></a>
 			</Link>
 			<NavLinks styles={styles} path={path} offset={offset} />
 		</header>

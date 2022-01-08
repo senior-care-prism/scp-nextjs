@@ -71,7 +71,7 @@ function NewsPreview({ newsEntries }) {
         </CarouselProvider>
       </div>
       <Link href="/news" passHref>
-        <a href="#ref" className={styles.button}>
+        <a className={styles.button}>
           See all news posts
         </a>
       </Link>

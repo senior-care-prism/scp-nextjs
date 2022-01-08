@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 export const ARTICLE_SHAPE = PropTypes.shape({
 	id                        : PropTypes.string.isRequired,
-	tags                      : PropTypes.arrayOf(PropTypes.object).isRequired,
 	headline                  : PropTypes.string.isRequired,
 	slug                      : PropTypes.string.isRequired,
 	publishedDate             : PropTypes.string.isRequired,

@@ -32,6 +32,13 @@
 		}
 	}
 
+	.logolink {
+		pointer-events: fill;
+		@media (max-width: 900px) {
+			width: 65%;
+			height: 20vw;
+		}
+	}
 	.logocontainer {
 		height: 96px;
 		width: 100%;
@@ -43,6 +50,7 @@
 		}
 		@media (max-width: 900px) {
 			display: none;
+			pointer-events: none;
 		}
 	}
 

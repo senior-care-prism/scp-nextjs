@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import PulseLoader from 'react-spinners/PulseLoader';
@@ -53,7 +53,7 @@ const Search = ({newsTotal}) => {
           />
         </div>
         <div className={styles['total-reset']}>
-          <span className={styles.total}>Total: {newsTotal}</span>
+          <span className={styles.total}>Total: {newsTotal || 0}</span>
           <button className={styles.reset} onClick={handleReset}>reset search</button>
           <div className={styles.pulseloader}>
             <PulseLoader loading={isSearching} size={4} color="#023534" />
@@ -67,22 +67,7 @@ const Search = ({newsTotal}) => {
   );
 };
 
-function NewsFeed({ entries, pageNum, maxPage }) {
-  const router = useRouter();
-  const [currentPage, setCurrentPage] = useState(1);
-  
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  }
-
-  useEffect(
-    () => {
-      const { query } = router;
-      query.p = currentPage;
-      router.push(router.pathname + formatQuerystring(cleanupQuery(query)), undefined, { scroll: false });
-    }, [currentPage]
-  );
-
+function NewsFeed({ entries, maxPage }) {
   return (
     <section id="news-feed" className={styles['news-feed']}>
       <div className={styles.logo}>
@@ -95,10 +80,10 @@ function NewsFeed({ entries, pageNum, maxPage }) {
         <div className={styles['page-controls']}>
           <Search newsTotal={maxPage.total} />
           <div className={styles['top-paginator']}>
-            <Pagination currentPage={currentPage} maxPage={maxPage.maxPage || 0} onPageChange={handlePageChange} siblingCount={1}/>
+            <Pagination maxPage={maxPage.maxPage || 0} siblingCount={1}/>
           </div>
         </div>
-        <span className={styles.total}>Total: {maxPage.total}</span>
+        <span className={styles.total}>Total: {maxPage.total || 0}</span>
         { maxPage.maxPage > 0
           ? (
             <>
@@ -117,7 +102,7 @@ function NewsFeed({ entries, pageNum, maxPage }) {
             </div>
           )}
         <div className={styles['bottom-paginator']}>
-          <Pagination currentPage={currentPage} maxPage={maxPage.maxPage || 0} onPageChange={handlePageChange} siblingCount={1}/>
+          <Pagination maxPage={maxPage.maxPage || 0} siblingCount={1}/>
         </div>
       </div>
     </section>

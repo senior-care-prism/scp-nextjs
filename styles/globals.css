@@ -9,6 +9,7 @@
 	--scp-color-oxford: #0e263f;
 	--scp-color-oxford-light: #4d91d7;
 	--scp-color-eggplant: #30173a;
+	--scp-color-dark-grey: #252525;
 	--scp-color-grey: #949494;
 	--scp-color-light-grey: #b8b8b8;
 	--focus-color: var(--scp-color-mint);
@@ -50,6 +51,7 @@ nav,
 button,
 a.button {
 	font-family: 'Heebo', sans-serif;
+	color: var(--scp-color-dark-grey);
 }
 
 a {
@@ -71,7 +73,8 @@ a {
 	--rmsc-bg: #fff;
 	--rmsc-p: .3rem !important; /* Spacing */
 	--rmsc-radius: 0px !important; /* Radius */
-	--rmsc-h: 2.2rem !important; /* Height */
+	--rmsc-h: 2.4rem !important; /* Height */
+	box-sizing: border-box;
 	font-family: 'Heebo', sans-serif;
 }
 
