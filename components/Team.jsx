@@ -88,9 +88,9 @@ const BioCard = ({ i, member, isMobile }) => (
   <div className={cn(styles.member, styles.card)} key={member.id}>
     <picture>
       <Image
-        width="1000"
-        height="670"
-        src={`${member.photo.url}?&w=600`}
+        width="530"
+        height="355"
+        src={`${member.photo.url}?w=530`}
         alt={member.position}
       />
     </picture>
