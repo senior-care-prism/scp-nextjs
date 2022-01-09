@@ -29,16 +29,16 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
     onClick,
     disabled,
   }) => (
-    <div className={`subject-item ${disabled && "disabled"}`}>
+    <div className={`multiselect-item ${disabled && "disabled"}`}>
       <input
-        className="subject-checkbox"
+        className="multiselect-checkbox"
         type="checkbox"
         onChange={onClick}
         checked={checked}
         tabIndex={-1}
         disabled={disabled}
       />
-      <span className="subject-label">{option.label}</span>
+      <span className="multiselect-label">{option.label}</span>
     </div>
   );
   const multiselectArrow = () => ( <></> );
