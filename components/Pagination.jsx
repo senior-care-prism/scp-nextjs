@@ -21,8 +21,7 @@ const Pagination = props => {
   const {
     maxPage,
     siblingCount = 1,
-    className,
-    themeColor
+    className
   } = props;
 
   const paginationRange = usePagination({

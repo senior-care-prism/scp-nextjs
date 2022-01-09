@@ -12,10 +12,10 @@ function RelatedArticle({ item }) {
     query: { slug: item.slug },
   };
   return (
-    <div className={styles['related-article']}>
+    <div>
       <Link href={articleRef}>
         <a>
-          <h4>{item.headline}</h4>
+          <h4 className={styles['related-article']}>{item.headline}</h4>
         </a>
       </Link>
     </div>
@@ -42,7 +42,6 @@ function NewsArticle({ article }) {
         <div className={styles.heading}>
           <h1>{article?.headline}</h1>
         </div>
-        <hr className={styles.separator}/>
         <div className={styles.date}>
           {formatDate(article.publishedDate)}
         </div>
