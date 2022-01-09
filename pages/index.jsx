@@ -44,7 +44,7 @@ Home.propTypes = {
 	quotes      : QUOTES_SHAPE.isRequired
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const teamMembers = await getTeamMembers({ limit: 6 });
 	const quotes = await getQuotes({ limit: 6 });
 	const newsEntries = await getNewsEntries({ limit: 6 });
@@ -54,6 +54,5 @@ export async function getStaticProps() {
 			teamMembers,
 			quotes
 		},
-		revalidate: 60,
 	};
 }
