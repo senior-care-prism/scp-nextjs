@@ -7,7 +7,6 @@ function NavLinks({ styles, path, offset }) {
 	const [checked, setChecked] = useState(false);
 	const tw = React.useRef(null);
 	const navLinks = [
-		// TODO: handle nav-links from non-home locations.
 		{ id: 1, to: 'about-us', href: '/#about-us', scroll: true },
 		{ id: 2, to: 'news', href: '/news', scroll: true },
 		{ id: 3, to: 'resources', href: '/resources', scroll: true },

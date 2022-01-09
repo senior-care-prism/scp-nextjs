@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { cleanupQuery, formatQuerystring } from '../lib/utils';
 import cn from 'classnames';
@@ -30,7 +30,6 @@ const Pagination = props => {
     currentPage
   });
 
-  // If there are less than 2 times in pagination range we don't render the component
   if (currentPage === 0 || paginationRange.length < 2) {
     return null;
   }
@@ -47,7 +46,6 @@ const Pagination = props => {
 
   return (
     <ul className={cn(styles['pagination-container'], { [className]: className })} >
-       {/* Left navigation */}
       <li >
         <div onClick={onPrevious} className={cn(styles['pagination-item'], styles.prev, { [styles.disabled]: currentPage === 1 })}>
           <i className="ri-arrow-left-line"/>
@@ -55,12 +53,10 @@ const Pagination = props => {
       </li>
       {paginationRange.map( (pageNumber, i)=> {
          
-        // If the pageItem is a DOT, render the DOTS unicode character
         if (pageNumber === DOTS) {
           return <li key={i} className={cn(styles["pagination-item"], styles.dots)}>&#8230;</li>;
         }
 		
-        // Render our Page Pills
         return (
           <li key={i} onClick={() => setCurrentPage(pageNumber)}>
             <div className={cn(styles['pagination-item'], { [styles.selected]: pageNumber === currentPage })}>{pageNumber}</div>
@@ -68,7 +64,6 @@ const Pagination = props => {
         );
       })}
 
-      {/*  Right Navigation */}
       <li>
         <div onClick={onNext} className={cn(styles['pagination-item'], styles.next, { [styles.disabled]: currentPage === lastPage })}>
           <i className="ri-arrow-right-line"/>

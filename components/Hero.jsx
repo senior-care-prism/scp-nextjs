@@ -2,14 +2,8 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import styles from '../styles/Hero.module.scss';
 
-function Hero({ tagline, intro, home }) {
-
-  const showSettings = (e) => {
-    e.preventDefault();
-  }
-
+function Hero({ tagline, intro }) {
   return (
-    <>
       <section id="about-us" className={cn(styles.banner, styles.columns)}>
         <div className={cn(styles.column, styles.left)}>
           <div className={styles.logo}>
@@ -29,7 +23,6 @@ function Hero({ tagline, intro, home }) {
           <div className={styles.hero} />
         </div>
       </section>
-    </>
   );
 }
 

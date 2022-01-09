@@ -41,14 +41,13 @@ function Header({ path }) {
 		window.onscroll = () => {
 			setOffset(window.pageYOffset);
 		};
-		tw.current.getGSAP().progress(offset / 2 / 100.0);
-
+		tw.current.getGSAP().progress(offset / 200.0);
 		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
 	});
 
 	return (
 		<header className={styles.header}>
-			<Link href="/#" passHref>
+			<Link href="/" passHref>
 				<a className={styles.logolink} ><div className={styles.logocontainer}>{tween}</div></a>
 			</Link>
 			<NavLinks styles={styles} path={path} offset={offset} />
