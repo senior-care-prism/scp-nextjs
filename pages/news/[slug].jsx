@@ -36,7 +36,7 @@ export async function getStaticPaths() {
   return {
     paths: articles?.map(({ slug }) => ({ params: { slug } })) ?? [],
     fallback: 'blocking',
-  }
+  };
 }
 
 export async function getStaticProps({ params }) {
@@ -45,6 +45,6 @@ export async function getStaticProps({ params }) {
     props: {
       article,
     },
-    revalidate: 10,
-  }
+    revalidate: 60,
+  };
 }
