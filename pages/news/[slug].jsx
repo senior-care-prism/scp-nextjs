@@ -35,7 +35,6 @@ export async function getServerSidePaths() {
   const articles = await getAllNewsEntriesWithSlug();
   return {
     paths: articles?.map(({ slug }) => ({ params: { slug } })) ?? [],
-    fallback: 'blocking',
   };
 }
 
@@ -45,6 +44,5 @@ export async function getServerSideProps({ params }) {
     props: {
       article,
     },
-    revalidate: 60,
   };
 }

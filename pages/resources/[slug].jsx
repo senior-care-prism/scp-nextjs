@@ -34,7 +34,6 @@ export async function getServerSidePaths() {
   const resources = await getAllResourceEntriesWithSlug();
   return {
     paths: resources?.map(({ slug }) => ({ params: { slug } })) ?? [],
-    fallback: 'blocking',
   };
 }
 
@@ -44,6 +43,5 @@ export async function getServerSideProps({ params }) {
     props: {
       resource,
     },
-    revalidate: 60,
   };
 }
