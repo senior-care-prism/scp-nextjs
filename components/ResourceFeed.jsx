@@ -9,18 +9,27 @@ import { RESOURCE_SHAPE } from '../shared/constants';
 import styles from '../styles/ResourceFeed.module.scss';
 import { MultiSelect } from "react-multi-select-component";
 
-const Search = ({ categories, subjects, resourcesTotal }) => {
+const Search = ({ categories, subjects, allCategories, allSubjects, resourcesTotal }) => {
+ 
+  // if available get initial values from router
   const router = useRouter();
+  const { query } = router;
+  const searchSubject = query.searchSubject ? [decodeURIComponent(query.searchSubject)] : [];
+  const searchSubjectArray = query.searchSubject ? [{ label: decodeURIComponent(query.searchSubject), value: decodeURIComponent(query.searchSubject) }] : [];
+  const searchCategory = query.searchCategory ? [decodeURIComponent(query.searchCategory)] : [];
+  const searchCategoryArray = query.searchCategory ? [{ label: decodeURIComponent(query.searchCategory), value: decodeURIComponent(query.searchCategory) }] : [];
+
+  // set initial values
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [selectedCategoriesArray, setSelectedCategoriesArray] = useState([]);
-  const [selectedSubjects, setSelectedSubjects] = useState([]);
-  const [selectedSubjectsArray, setSelectedSubjectsArray] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(searchCategory);
+  const [selectedCategoriesArray, setSelectedCategoriesArray] = useState(searchCategoryArray);
+  const [selectedSubjects, setSelectedSubjects] = useState(searchSubject);
+  const [selectedSubjectsArray, setSelectedSubjectsArray] = useState(searchSubjectArray);
   const [searchTimeout, setSearchTimeout] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
-  const subjectOptions = subjects.map((s) => { return ({ label: s, value: s }) });
-  const categoryOptions = categories.map((s) => { return ({ label: s, value: s }) });
-
+  
+  const filteredCategories = allCategories.map((cat) => categories.includes(cat) ? { label: cat, value: cat } : { label: cat, value: cat, disabled: true });
+  const filteredSubjects = allSubjects.map((sub) => subjects.includes(sub) ? { label: sub, value: sub } : { label: sub, value: sub, disabled: true });
 
   //Multiselect overrides for default renderers
   const multiselectItemRenderer = ({
@@ -31,14 +40,14 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
   }) => (
     <div className={`multiselect-item ${disabled && "disabled"}`}>
       <input
-        className="multiselect-checkbox"
+        className={`multiselect-checkbox ${disabled && "disabled"}`}
         type="checkbox"
         onChange={onClick}
         checked={checked}
         tabIndex={-1}
         disabled={disabled}
       />
-      <span className="multiselect-label">{option.label}</span>
+      <span className={`multiselect-label ${disabled && "disabled"}`} >{option.label}</span>
     </div>
   );
   const multiselectArrow = () => (<></>);
@@ -109,9 +118,9 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
           <MultiSelect
               debounceDuration = {700}
               ArrowRenderer={multiselectArrow}
-            ItemRenderer={multiselectItemRenderer}
-            overrideStrings={overrideStrings}
-              options={categoryOptions}
+              ItemRenderer={multiselectItemRenderer}
+              overrideStrings={overrideStrings}
+              options={filteredCategories}
               value={selectedCategoriesArray}
               onChange={handleCategories}
               labelledBy="categories"
@@ -125,7 +134,7 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
             ArrowRenderer={multiselectArrow}
             ItemRenderer={multiselectItemRenderer}
             overrideStrings={overrideStrings}
-            options={subjectOptions}
+            options={filteredSubjects}
             value={selectedSubjectsArray}
             onChange={handleSubjects}
             labelledBy="subjects"
@@ -162,7 +171,7 @@ Search.propTypes = {
   subjects: PropTypes.arrayOf(Object).isRequired
 };
 
-function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
+function ResourceFeed({ resources, categories, subjects, allCategories, allSubjects, maxPage }) {
 
   return (
     <section id="resource-feed" className={styles['resource-feed']}>
@@ -174,7 +183,7 @@ function ResourceFeed({ resources, categories, subjects, pageNum, maxPage }) {
           <h2>Resources</h2>
         </div>
         <div className={styles['page-controls']}>
-          <Search categories={categories} subjects={subjects} resourcesTotal={maxPage.total}/>
+          <Search categories={categories} subjects={subjects} allCategories={allCategories} allSubjects={allSubjects} resourcesTotal={maxPage.total}/>
           <div className={styles['top-paginator']}>
             <Pagination maxPage={maxPage.maxPage || 0} siblingCount={1}/>
           </div>

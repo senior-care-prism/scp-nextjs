@@ -37,6 +37,7 @@ export const RESOURCE_SHAPE = PropTypes.shape({
 	downloadable     : PropTypes.shape({
 		url : PropTypes.string
 	}),
+	video						 : PropTypes.string,
 	subject          : PropTypes.arrayOf(PropTypes.string).isRequired,
 	category         : PropTypes.arrayOf(PropTypes.string).isRequired,
 	publishedDate    : PropTypes.string.isRequired

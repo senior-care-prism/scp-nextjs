@@ -30,18 +30,20 @@ Resource.propTypes = {
   resource: RESOURCE_SHAPE.isRequired,
 };
 
-export async function getServerSidePaths() {
+export async function getStaticPaths() {
   const resources = await getAllResourceEntriesWithSlug();
   return {
     paths: resources?.map(({ slug }) => ({ params: { slug } })) ?? [],
+    fallback: 'blocking',
   };
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const resource = await getResourceEntryBySlug(params.slug);
   return {
     props: {
       resource,
     },
+    revalidate: 60,
   };
 }

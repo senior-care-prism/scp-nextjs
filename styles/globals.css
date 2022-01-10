@@ -84,6 +84,14 @@ a {
 	padding: 0 !important;
 }
 
+.multiselect-item.disabled{
+	pointer-events: none !important;
+	opacity: 40%;
+	appearance: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 .multiselect-checkbox {
 	appearance: none !important;
 	margin: 0 .3rem !important;
@@ -107,13 +115,13 @@ a {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	top: -8px;
+	top: 0px;
 	left: 1px;
 	color: var(--scp-color-eggplant);
 }
 
 .multiselect-label {
-	display: inline-block;
+	display: inline;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
