@@ -6,12 +6,12 @@ import { usePagination, DOTS } from '../hooks/usePagination';
 import styles from '../styles/Pagination.module.scss';
 
 const Pagination = props => {
-
+  
+  const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(
     () => {
-      const router = useRouter();
       const { query } = router;
       query.p = currentPage;
       router.push(router.pathname + formatQuerystring(cleanupQuery(query)), undefined, { scroll: false });
