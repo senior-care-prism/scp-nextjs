@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import ResourceEntry from '../../components/ResourceEntry';
 import { getResourceEntryBySlug, getAllResourceEntriesWithSlug } from '../../lib/api';
 import { RESOURCE_SHAPE } from '../../shared/constants';
