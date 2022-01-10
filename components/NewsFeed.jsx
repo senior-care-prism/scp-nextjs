@@ -25,7 +25,7 @@ const Search = ({newsTotal}) => {
     }
     setSearchTimeout(setTimeout(() => {
       const { query } = router;
-      query.search = searchTerm;
+      query.search = encodeURIComponent(searchTerm);
       query.p = '1';
 
       router.push(router.pathname + formatQuerystring(cleanupQuery(query)));

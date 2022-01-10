@@ -6,7 +6,7 @@
     }
     > .content {
         margin: 0 auto;
-		padding:0 1rem 1rem 1rem;
+		padding:0 1rem 1.5rem 1rem;
 		max-width: 55rem;
         > .date {
             font-style: italic;
@@ -68,8 +68,9 @@
 .markdown {
     text-align: justify;
     text-justify: inter-word;
+    margin-top: 1rem;
     p {
-        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 }
 

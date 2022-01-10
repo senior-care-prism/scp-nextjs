@@ -41,7 +41,18 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
       <span className="multiselect-label">{option.label}</span>
     </div>
   );
-  const multiselectArrow = () => ( <></> );
+  const multiselectArrow = () => (<></>);
+  const overrideStrings = {
+    "allItemsAreSelected": "All items are selected.",
+    "clearSearch": "Clear Search",
+    "clearSelected": "Clear Selected",
+    "noOptions": "No options",
+    "search": "Search",
+    "selectAll": "Any",
+    "selectAllFiltered": "Select All (Filtered)",
+    "selectSomeItems": "Select...",
+    "create": "Create",
+  };
   
   const handleReset = (e) => {
     e.preventDefault();
@@ -85,9 +96,9 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
 
   useEffect(() => { 
     const { query } = router;
-    query.searchTerm = searchTerm;
-    query.searchCategory = selectedCategories;
-    query.searchSubject = selectedSubjects;
+    query.searchTerm = encodeURIComponent(searchTerm);
+    query.searchCategory = encodeURIComponent(selectedCategories);
+    query.searchSubject = encodeURIComponent(selectedSubjects);
     query.p = '1';
   });
   return (
@@ -98,7 +109,8 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
           <MultiSelect
               debounceDuration = {700}
               ArrowRenderer={multiselectArrow}
-              ItemRenderer={multiselectItemRenderer}
+            ItemRenderer={multiselectItemRenderer}
+            overrideStrings={overrideStrings}
               options={categoryOptions}
               value={selectedCategoriesArray}
               onChange={handleCategories}
@@ -112,6 +124,7 @@ const Search = ({ categories, subjects, resourcesTotal }) => {
             debounceDuration = {700}
             ArrowRenderer={multiselectArrow}
             ItemRenderer={multiselectItemRenderer}
+            overrideStrings={overrideStrings}
             options={subjectOptions}
             value={selectedSubjectsArray}
             onChange={handleSubjects}

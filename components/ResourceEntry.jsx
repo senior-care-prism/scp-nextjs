@@ -32,7 +32,7 @@ function ResourceEntry({ resource }) {
         <div className={styles['download-section']}>
           {
           resource.screenshot && (
-              <img className={styles.imagecontainer} src={resource.screenshot.url}/>
+              <img className={styles.imagecontainer} src={`${resource.screenshot.url}?fm=jpg&fl=progressive&w=600`}/>
           )
           }
           <div className={styles.files}>
