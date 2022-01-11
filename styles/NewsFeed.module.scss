@@ -1,0 +1,232 @@
+.news-feed {
+	padding-top: var(--nav-bar-height);
+	margin: 0;
+	@media (max-width: 900px) {
+		padding-top: 1rem;
+	}
+
+	.logo {
+		display: none;
+		@media (max-width: 900px) {
+			display: inline;
+			img {
+				margin: 0 1rem;
+				padding: 0;
+				width: 60vw;
+			}
+		}
+	}
+
+	> .content {
+		margin: 0 auto;
+		padding-bottom: 1rem;
+		max-width: 84rem;
+		> .total {
+			font-family: 'Heebo', sans-serif;
+			font-weight: 400;
+			appearance: none;
+			color: var(--scp-color-sacramento);
+			background-color: white;
+			margin: 1.5rem 0 0 1rem;
+			padding: 0;
+			border: 0px;
+			font-size: 16px;
+			opacity: .4;
+			@media (max-width: 900px) {
+				display: none;
+			}
+		}
+		> .section-heading {
+			margin: 2rem 1rem 1.1rem;
+			font-size: 1.5em;
+			color: var(--scp-color-sacramento);
+
+			h2 {
+				color: var(--scp-color-sacramento);
+				margin: 0;
+			}
+		}
+
+		> .page-controls {
+			display: grid;
+			grid-auto-flow: column;
+			gap: 1rem;
+			justify-content: space-between;
+			margin-top: 2.5rem;
+			margin-bottom: 1rem;
+			@media (max-width: 900px) {
+				margin-top: 0rem;
+				margin-bottom: 0;
+				grid-auto-flow: row;
+				grid-template-columns: 1fr;
+				grid-template-rows: none;
+				grid-auto-rows: max-content;
+			}
+			> .search-form {
+				display: grid;
+				grid-auto-flow: column;
+				gap: 1rem;
+				margin: 0 auto 0 1rem;
+				min-width: 14rem;
+				@media (max-width: 900px) {
+					grid-auto-flow: row;
+					grid-template-columns: 1fr;
+					grid-template-rows: none;
+					grid-auto-rows: max-content;
+					gap: 0rem;
+					margin: 0 1rem 0;
+				}
+				> .search {
+					margin: 0 0 0 0;
+					border: 1px solid var(--scp-color-sacramento);
+					min-width: 14rem;
+					@media (max-width: 900px) {
+						margin: 1.4rem 0 0 0;
+						height: 2.4rem;
+					}
+
+					> label {
+						display: block;
+						margin: 0 0 0 .5em;
+						font-family: 'Heebo', sans-serif;
+						font-size: .8em;
+					}
+				}
+
+				&:focus-within {
+					--focus-color: var(--scp-color-oxford-light);
+				}
+
+				i {
+					color: var(--scp-color-grey);
+					position: absolute;
+					margin-left: .5em;
+					margin-top: .2em;
+				}
+				input {
+					margin: .5em;
+					margin-left: 2em;
+					border: none;
+					width: 70%;
+					font-size: 16px;
+					&:focus {
+						outline: none;
+					}
+				}
+				> .total-reset {
+					display: grid;
+					grid-auto-flow: column;
+					@media (max-width: 900px) {
+						margin-top: 2rem;
+						margin-bottom: .0rem;
+					}
+					> .total {
+						display: none;
+						font-family: 'Heebo', sans-serif;
+						font-weight: 400;
+						appearance: none;
+						color: var(--scp-color-sacramento);
+						background-color: white;
+						margin: 0;
+						padding: .2rem;
+						height: 2.3rem;
+						border: 0px;
+						font-size: 16px;
+						opacity: .4;
+						@media (max-width: 900px) {
+							display: inline;
+							justify-self:left;
+							padding: .3rem;
+							width: 10rem;
+							margin-top: -2rem;
+						}
+					}
+					> .reset {
+						appearance: none;
+						color: var(--scp-color-sacramento);
+						background-color: white;
+						margin: 0;
+						padding: .2rem;
+						height: 2.3rem;
+						border: 0px;
+						font-size: 16px;
+						opacity: .7;
+						@media (max-width: 900px) {
+							justify-self:right;
+							padding: 0;
+							width: 6rem;
+							margin-top: -2rem;
+						}
+					}
+					> .pulseloader {
+						margin-top: .3rem;
+						margin-left: 1rem;
+						@media (max-width: 900px) {
+							display: none;
+						}
+					}
+				}
+			}
+			> .top-paginator {
+				@media (max-width: 900px) {
+					display: none;
+				}
+			}
+			> nav {
+				padding-top: 1.4rem;
+				@media (max-width: 900px) {
+					padding-top: 0;
+				}
+			}
+		}
+		> .bottom-paginator {
+			display: flex;
+			margin-top: 1.4rem;
+			margin-bottom: 1rem;
+			@media (max-width: 900px) {
+				margin-left: 0;
+				justify-content: center;
+			}
+		}
+		> .no-results {
+			padding-top: 5em;
+			// vertical-align: ce;
+			i {
+				font-size: 1.5em;
+				margin: 0 .5em;
+				vertical-align: bottom;
+			}
+			min-height: 400px;
+			font-size: 1.7em;
+			color: var(--scp-color-grey);
+			text-align: center;
+			> .help-text {
+				padding-top: .5em;
+				font-size: .7em;
+			}
+		}
+	}
+	.card-container {
+		display: flex;
+		flex-wrap: wrap;
+		@media (max-width: 1400px) {
+			gap: 1rem;
+			justify-content: center;
+		}
+	}
+}
+
+.spacer {
+	height: 96px;
+}
+
+.pulseloader-mob {
+	display: none;
+	@media (max-width: 900px) {
+		display: inline-block;
+		position: relative;
+		margin: 0;
+		margin-top: -1.9rem;
+		justify-self: center;
+	}
+}

@@ -1,176 +1,165 @@
-$nav-bar-height: 6em;
-$logo-margin: 2em;
-
-
 .columns {
-  display: flex;
-  min-height: 100vh;
-  .column {
-    width: 50%;
-  }  
+	display: flex;
+	height: 100vh;
+	padding-top: var(--nav-bar-height);
+	@media (max-height: 900px) {
+		height: 100vh;
+	}
+	.column {
+		width: 50%;
+	}
+	@media (max-width: 900px) {
+		padding-top: 0;
+		width: 100%;
+		.column {
+			padding-top: 0;
+		}
+	}
 }
 
 .banner {
-  .left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: var(--scp-color-sacramento);
-  }
+	.left {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		background: var(--scp-color-sacramento);
+	}
 
-  @media (max-width: 800px) {
-    .left {
-      width: 100%;
-      background: url("/images/seniors-in-the-park-background.jpg") top center no-repeat;
-    }
-    .right {
-      display: none;
-    }
-  }
+	@media (max-width: 900px) {
+		.left {
+			padding-top: 0;
+			height: 100vh;
+			width: 100%;
+			background-image: url("/images/seniors-in-the-park-background.jpg");
+			background-color: var(--scp-color-sacramento);
+			height: 100vh;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.right {
+			display: none;
+		}
+	}
 
-  .logo {
-    margin: 0 auto;
-    width: 80%;
-    img {
-      margin: 2em 0;
-      padding: .25em 0;
-      height: 6em;
-    }
-    @media (max-width: 1000px) {
-      img {
-        height: 5.5em;
-      }
-    }
-    @media (max-width: 600px) {
-      img {
-        margin: 2em 0;
-        height: 5em;
-        padding: .35em 0;
-      }
-    }
-  }
-  
-  .tagline {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 0em auto;
-    padding-bottom: $nav-bar-height;
-    max-width: 80%;
-    color: white; 
-    h1 {
-      margin-top: 0;
-      font-weight: 400;
-      font-size: 4em;
-    }
-    p {
-        margin: 1.5em 0;
-        line-height: 1.25em;
-        font-size: 1.4em;
-    }
-    @media (max-width: 1600px) {
-      h1 {
-        font-size: 3.5em;
-      }
-    }
-    @media (max-width: 1300px) {
-      h1 {
-        font-size: 3em;
-      }
-      p {
-        line-height: 1.3em;
-        font-size: 1.3em;
-      }
-    }
-    @media (max-width: 1000px) {
-      h1 {
-        font-size: 2.6em;
-      }
-      p {
-        line-height: 1.2em;
-        font-size: 1.2em;
-      }
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.5em;
-        margin: .3em 0 0 0;
-      }
-      p {
-        line-height: 1.3em;
-        font-size: 1.1em;
-      }
-      padding-bottom: $nav-bar-height + $logo-margin;
-    }
-  }
-  
-  .navbar {
-    margin:0;
-    padding: 0;
-    height: $nav-bar-height;
-    background: var(--scp-color-mint);
-    text-transform: uppercase;
-  }
+	.logo {
+		display: none;
+		@media (max-width: 900px) {
+			display: inline-block;
+			height: fit-content;
+			img {
+				margin: 1rem 1rem;
+				padding: 0;
+				width: 60vw;
+			}
+		}
+		.logolink {
+			height: 100%;
+		}
+	}
 
-  nav ul {
-    display: flex;
-    height: $nav-bar-height;
-    list-style-type: none;
-    margin: 0 2em 0 0;
-    align-items: center;
-    justify-content: flex-end;
-    li {
-      margin: 0 1.5em;
-      font-weight: 500;
-    }
+	.tagline {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		margin: 0rem auto;
+		max-width: 80%;
+		color: white;
+		h1 {
+			margin-top: 0;
+			font-weight: 400;
+			font-size: 4rem;
+			line-height: 5rem;
+			max-width: 38rem;
+			color: white;
+		}
+		p {
+			margin: 1.5em 0;
+			line-height: 1.25em;
+			font-size: 1.4em;
+			text-align: justify;
+			text-justify: inter-word;
+			max-width: 38rem;
+		}
+		@media (max-width: 1600px) {
+			h1 {
+				line-height: 3.5rem;
+				font-size: 3.5rem;
+			}
+		}
+		@media (max-width: 1300px) {
+			h1 {
+				line-height: 3rem;
+				font-size: 3rem;
+			}
+			p {
+				line-height: 1.3rem;
+				font-size: 1.3rem;
+			}
+		}
+		@media (max-width: 1000px) {
+			h1 {
+				font-size: 2.6em;
+			}
+			p {
+				line-height: 1.2em;
+				font-size: 1.2em;
+			}
+		}
+		@media (max-width: 600px) {
+			h1 {
+				font-size: 2rem;
+				line-height: 2.4rem;
+				margin: .3em 0 0 0;
+			}
+			p {
+				line-height: 1.3em;
+				font-size: 1.1em;
+			}
+		}
+		@media (max-width: 340px) {
+			h1 {
+				font-size: 1.8rem;
+				line-height: 1.8rem;
+				margin: .3em 0 0 0;
+			}
+			p {
+				line-height: 1.1rem;
+				font-size: 1rem;
+			}
+		}
+	}
 
-    @media (max-width: 1200px) {
-      li {
-        margin: 0 1.25em;
-      }
-    }
-
-    @media (max-width: 1000px) {
-      // li:first-child {
-      //   display: none;
-      // }
-      li {
-        margin: 0 1.15em;
-      }
-    }
-  }
-
-  .hero {
-    display: grid;
-    height: calc(100% - 6em);
-    background: url("/images/seniors-in-the-park.jpg") top center no-repeat;
-    background-size: cover;
-    
-  }
+	.hero {
+		display: grid;
+		height: 100%;
+		background: url("/images/seniors-in-the-park.jpg") top center no-repeat;
+		background-size: cover;
+	}
 }
 
+.spacer {
+	height: 96px;
+}
 
 .button {
-  line-height: 1.3em;
-  font-family: 'Heebo', sans-serif;
-  font-weight: 500;
-  padding: 8px 50px;
-  text-transform: uppercase;
-  border: none;
-  font-size: .9em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
+	line-height: 1.3em;
+	font-family: 'Heebo', sans-serif;
+	font-weight: 500;
+	padding: 8px 50px;
+	text-transform: uppercase;
+	border: none;
+	font-size: .9em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
 }
 
 .primary.button {
-  color: black;
-  background-color: var(--scp-color-light-amber);
+	color: black;
+	background-color: var(--scp-color-light-amber);
 }
-
-
-
 

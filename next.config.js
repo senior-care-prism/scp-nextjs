@@ -1,3 +1,12 @@
 module.exports = {
-  target: 'serverless'
+	images : {
+		domains : [
+			'images.ctfassets.net'
+		]
+	},
+	assets: {
+		domains: [
+			'assets.ctfassets.net'
+		]
+	}
 };

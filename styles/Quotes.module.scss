@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: row;
   padding-top: 1em;
- justify-content: center;
+  justify-content: center;
 
   button {
     flex: 0;
@@ -73,38 +73,30 @@
     }
 
     
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
       .quote {
-        font-size: 2em;
-        line-height: 1.2em;
-      }
-    }
-    @media (max-width: 700px) {
-      .quote {
-        font-size: 1.6em;
-      }
-    }
-    @media (max-width: 600px) {
-      .quote {
-        font-size: 1.3em;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
       }
       .byline {
-        font-size: 1em;
+        font-size: 1.2rem;
 
       }
     }
     @media (max-width: 600px) {
       .quote {
-        font-size: 1.3em;
+        font-size: 1em;
+        line-height: 1rem;
       }
       .byline {
-        font-size: 1em;
+        font-size: .9rem;
 
       }
     }
-    @media (max-width: 400px) {
+    @media (max-width: 360px) {
       .quote {
-        font-size: 1em;
+        font-size: .9em;
+        line-height: .9rem;
       }
       .byline {
         font-size: .8em;

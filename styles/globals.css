@@ -2,40 +2,200 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&display=swap');
 
 :root {
-  --scp-color-blush: #f2b3b1;
-  --scp-color-light-amber: #f9cf74;
-  --scp-color-mint: #98d4c5;
-  --scp-color-sacramento: #023534;
-  --scp-color-oxford: #0e263f;
-  --scp-color-eggplant: #30173a;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 300;
-  line-height: 1.5em;
-}
-
-h1,h2,h3,h4,h5,h6,nav,button,a.button {
-  line-height: 1.3em;
-  font-family: 'Heebo', sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+	--scp-color-blush: #f2b3b1;
+	--scp-color-light-amber: #f9cf74;
+	--scp-color-mint: #54a18e;
+	--scp-color-sacramento: #023534;
+	--scp-color-oxford: #0e263f;
+	--scp-color-oxford-light: #4d91d7;
+	--scp-color-eggplant: #30173a;
+	--scp-color-dark-grey: #252525;
+	--scp-color-grey: #949494;
+	--scp-color-light-grey: #b8b8b8;
+	--focus-color: var(--scp-color-mint);
+	--nav-bar-height: 6rem;
+	--transition: 250ms ease-out;
+	--transition-long: 500ms ease-out;
 }
 
 * {
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	line-height: 1.5rem;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+button,
+a.button {
+	font-family: 'Heebo', sans-serif;
+	color: var(--scp-color-dark-grey);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
 
 .blackandwhite {
-  filter: gray;
-  filter: grayscale(100%);
+	filter: gray;
+	filter: grayscale(100%);
 }
 
+.rmsc {
+	--rmsc-main: #var(--scp-color-eggplant) !important;;
+	--rmsc-hover: #f1f3f5;
+	--rmsc-selected: #e2e6ea;
+	--rmsc-border: var(--scp-color-eggplant) !important;
+	--rmsc-gray: #aaa;
+	--rmsc-bg: #fff;
+	--rmsc-p: .3rem !important; /* Spacing */
+	--rmsc-radius: 0px !important; /* Radius */
+	--rmsc-h: 2.4rem !important; /* Height */
+	box-sizing: border-box;
+	font-family: 'Heebo', sans-serif;
+}
 
+.multiselect-item {
+	appearance: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.multiselect-item.disabled{
+	pointer-events: none !important;
+	opacity: 40%;
+	appearance: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.multiselect-checkbox {
+	appearance: none !important;
+	margin: 0 .3rem !important;
+	padding: 0 !important;
+	border-radius: 0px !important;
+	display: inline !important;
+	height: .4rem;
+}
+
+.multiselect-checkbox:active, .regular-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.multiselect-checkbox:checked {
+	background-color: #e2e6ea !important;
+}
+
+.multiselect-checkbox:checked:after {
+	content: '\2714';
+	font-size: 10px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 0px;
+	left: 1px;
+	color: var(--scp-color-eggplant);
+}
+
+.multiselect-label {
+	display: inline;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+	color: black;
+}
+
+.popover-name {
+	font-family: 'Heebo', sans-serif;
+	font-size: 1.3rem;
+	font-weight: 400;
+	letter-spacing: 1px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.25rem;
+	display: flex;
+	text-transform:capitalize;
+}
+
+.popover-bio {
+	font-family: 'Roboto Slab', serif;
+	color: white;
+	background-color: var(--scp-color-oxford);
+	height:fit-content;
+	width: 90vw;
+	padding: .6rem;
+	font-size: .9rem;
+	text-align: justify;
+	text-justify: inter-word;
+	text-transform:none;
+}
+
+@media (max-width: 900px) {
+	.popover-bio {
+		width: 45vw;
+	}
+}
+
+@media (max-width: 600px) {
+	.popover-bio {
+		width: 90vw;
+	}
+}
+
+.popover-pronouns {
+	font-family: 'Heebo', sans-serif;
+	font-weight: 400;
+	color: var(--scp-color-light-amber);
+	font-size: .8rem;
+	text-transform: uppercase;
+	padding-left: .5rem;
+	margin-left: auto;
+}
+
+.popover-position {
+	font-family: 'Roboto Slab', serif;
+	font-size: .8rem;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-align:initial;
+	text-transform: uppercase;
+	padding-bottom: .25rem;
+	margin-top: 0;
+	min-height: 2rem;
+}
+
+.popover-close {
+	display: flex;
+	background: none;
+	text-transform: uppercase;
+	border: none;
+	padding: 0;
+	border-top: 1px solid var(--scp-color-light-amber);
+	padding-top: .2em;
+	font-size: .8rem;
+	width: 100%;
+	color: var(--scp-color-light-amber);
+}

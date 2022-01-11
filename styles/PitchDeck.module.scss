@@ -15,25 +15,22 @@
   
   .container {
     max-width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
     flex: 1;
     padding-bottom: 3em;
   }
   h2 {
-    font-size: 2em;
+    font-size: 2rem;
+    line-height: 2.5rem;
     max-width: 50%;
   }
 
   @media (max-width: 600px)  {
     background: var(--scp-color-blush);
     h2 {
-      font-size: 1.6em;
+      font-size: 1.6rem;
+      line-height: 2rem;
       max-width: 100%;
-    }
-  }
-  @media (max-width: 400px)  {
-    h2 {
-      font-size: 1.5em;
     }
   }
 }
@@ -48,7 +45,6 @@
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  
 }
 
 .button.inverted {

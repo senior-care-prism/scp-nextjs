@@ -1,6 +1,7 @@
 import cn from 'classnames';
-
+import Script from 'next/script'
 import styles from '../styles/Footer.module.scss';
+import Image from 'next/image';
 
 const SocialLinks = () => {
   const iconSize = 'ri-lg';
@@ -20,7 +21,7 @@ const SocialLinks = () => {
   );
 };
 
-const Team = () => (
+const Footer = () => (
   <footer id="contact" className={styles.footer}>
     <div className={cn(styles.container, styles.columns)}>
       <div className={styles.column}>
@@ -40,7 +41,7 @@ const Team = () => (
           width="100%"
         />
 
-        <script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js" />
+        <Script src="https://app.mailjet.com/statics/js/iframeResizer.min.js" />
         <div className={cn(styles.columns, styles.contact)}>
           <div className={styles.col}>
             <h4>Contact Us</h4>
@@ -62,11 +63,11 @@ const Team = () => (
       </div>
       <div className={cn(styles.column, styles.desktop)}>
         <div className={styles.map}>
-          <img src="images/map-canada.png" alt="Map of Canada" width="800px" height="658px" />
+          <Image src="/images/map-canada.png" alt="Map of Canada" layout="fill" />
         </div>
       </div>
     </div>
   </footer>
 );
 
-export default Team;
+export default Footer;

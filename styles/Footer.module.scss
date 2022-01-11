@@ -7,11 +7,16 @@
   }
   h4 {
     font-size: 1.2em;
-    margin: 1.5em 0 .5em 0;
+    margin: .5em 0 .5em 0;
   }
   .container {
     margin: 0 auto;
-    max-width: 80%;
+    padding: 0 1rem;
+    max-width: 84rem;
+    @media (max-width: 900px) {
+      margin: 0 1rem;
+      max-width: 100%;
+    }
   }
   .columns {
     display: flex;
@@ -19,8 +24,9 @@
   .column {
     margin: 0 auto;
     max-width: 50%;
-    @media (max-width: 800px) {
-      max-width: 85%;
+    @media (max-width: 900px) {
+      max-width: 100%;
+      margin: 0;
     }
   }
   
@@ -33,17 +39,19 @@
         flex: 1;
         max-width: 100%;
       }
+    }
   }
-}
 .contact.columns {
   flex-wrap: wrap;
 
 }
   .map {
+    position: relative;
     margin: 0 auto;
     display: flex;
     padding: 2em 0 0 .5em;
-    height: auto;
+    min-width: 30rem;
+    min-height: 23rem;
     img {
       // margin: 0 auto;
       align-self: flex-start;
@@ -64,7 +72,7 @@
   }
   
   .desktop {
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       display: none; 
     }
   }

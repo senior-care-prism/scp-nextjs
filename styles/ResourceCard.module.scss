@@ -1,0 +1,55 @@
+.resource-card {
+	border: 2px solid var(--scp-color-eggplant);
+	margin:  0 1rem 1rem;
+	width: 26rem;
+	> .card-title {
+		color: black;
+		padding: 1rem 1rem;
+		min-height: 7rem;
+		h3 {
+			margin: 0;
+		}
+		background-color: white;
+	}
+	> .content {
+		padding: 0 1rem;
+		> .excerpt {
+			min-height: 11rem;
+			text-align: justify;
+			text-justify: inter-word;
+
+		}
+	}
+	> .card-end {
+		display: flex;
+		font-size: 90%;
+		color: white;
+		padding: .5em 1.5em;
+		background-color: var(--scp-color-eggplant);
+
+		a {
+			font-family: 'Heebo', sans-serif;
+			padding: 3px 10px;
+			text-transform: uppercase;
+
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+
+			background-color: none;
+			font-weight: bold;
+			border: .1em solid white;
+		}
+		a:focus {
+			color: var(--scp-color-eggplant);
+			background-color: white;
+		}
+
+		> .published-date {
+			vertical-align: center;
+			margin-left: auto;
+			font-weight: bold;
+		}
+	}
+}
