@@ -6,15 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ShareWidget({ route, slug }) {
   
-  const baseDomain = process.env.APP_ENV === 'staging' 
-    ? process.env.APP_ENV + ".seniorcareprism.com"
-    : "seniorcareprism.com";
-
+  const baseDomain = "seniorcareprism.com";
   const url = `https://${baseDomain}/${route}/${slug}`;
+  const item = route === 'news' ? 'news article' : 'resource';
   const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   const twitterURL = `https://twitter.com/share?url=${url}`;
   const linkedinURL = `https://www.linkedin.com/shareArticle?url=${url}`;
-  const mailURL = "mailto:?subject=I wanted you to see this site&body=Check out this site http://www.website.com.";
+  const mailURL = `mailto:?subject=Senior Care Prism - Shared Link&body=Check out this ${item} at %0D%0A%0D%0A ${url}`;
 
   return (
     <>
