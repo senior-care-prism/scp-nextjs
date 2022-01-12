@@ -1,6 +1,7 @@
 
 
 import Head from "next/head";
+import ThankYou from '../../components/ThankYou';
 
 export default function Resources() {
   return (
@@ -10,10 +11,7 @@ export default function Resources() {
         <meta name="robots" content="noindex"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <p>
-        You&apos;re subscribed to our newsletter
-      </p>
-
+      <ThankYou/>
     </>
   );
-}
+};

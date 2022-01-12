@@ -42,7 +42,7 @@ function Header({ path }) {
 			setOffset(window.pageYOffset);
 		};
 		tw.current.getGSAP().progress(offset / 200.0);
-		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
+		(path.includes('news') || path.includes('resources')) || path.includes('mail') && tw.current.getGSAP().progress(1);
 	});
 
 	return (

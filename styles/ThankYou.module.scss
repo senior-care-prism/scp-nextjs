@@ -1,0 +1,39 @@
+.thank-you {
+	display: grid;
+	height: 60vh;
+	padding-top: var(--nav-bar-height);
+	@media (max-width: 900px) {
+		padding-top: 1rem;
+	}
+	.logo {
+		display: none;
+		@media (max-width: 900px) {
+			display: inline;
+		}
+		img {
+			margin: 0 1rem;
+			padding: 0;
+			width: 60vw;
+		}
+	}
+	.message-container {
+		display: grid;
+		@media (max-width: 900px) {
+			display: block;
+		}
+		.message {
+			font-family: 'Heebo', sans-serif;
+			font-weight: 400;
+			font-size: 3.2rem;
+			text-align: center;
+			line-height: 3.2rem;
+			align-self:center;
+			padding: 0 2rem;
+			color: var(--scp-color-sacramento);
+			@media (max-width: 900px) {
+				font-size: 1.8rem;
+				line-height: 1.8rem;
+			}
+		}
+	}
+}
