@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import PulseLoader from 'react-spinners/PulseLoader';
@@ -71,7 +72,9 @@ function NewsFeed({ entries, maxPage }) {
   return (
     <section id="news-feed" className={styles['news-feed']}>
       <div className={styles.logo}>
-        <img src="images/logo/scp--sacramento.svg" alt="Senior Care Prism logo" />
+        <Link href="/" passHref>
+          <img src="images/logo/scp--sacramento.svg" alt="Senior Care Prism logo" />
+        </Link>
       </div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>

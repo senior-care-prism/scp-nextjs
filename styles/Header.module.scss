@@ -11,6 +11,7 @@
 	z-index: 1;
 	
 	@media (max-width: 900px) {
+		width: 0;
 		grid-auto-columns: 100%;
 	}
 
@@ -35,8 +36,7 @@
 	.logolink {
 		pointer-events: fill;
 		@media (max-width: 900px) {
-			width: 65%;
-			height: 20vw;
+			display: none;
 		}
 	}
 	.logocontainer {

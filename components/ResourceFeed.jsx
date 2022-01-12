@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes, { string } from 'prop-types';
 import PulseLoader from 'react-spinners/PulseLoader';
@@ -176,7 +177,9 @@ function ResourceFeed({ resources, categories, subjects, allCategories, allSubje
   return (
     <section id="resource-feed" className={styles['resource-feed']}>
       <div className={styles.logo}>
-        <img src="/images/logo/scp--eggplant.svg" alt="Senior Care Prism logo" />
+        <Link href="/" passHref>
+          <img src="/images/logo/scp--eggplant.svg" alt="Senior Care Prism logo" />
+        </Link>
       </div>
       <div className={styles.content}>
         <div className={styles['section-heading']}>
