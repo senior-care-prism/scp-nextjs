@@ -17,7 +17,7 @@ function NavLinks({ styles, path, offset }) {
 
 	useEffect(() => {
 		tw.current.getGSAP().progress(offset / 2 / 100.0);
-		(path.includes('news') || path.includes('resources')) && tw.current.getGSAP().progress(1);
+		(path.includes('news') || path.includes('resources')) || path.includes('mail') && tw.current.getGSAP().progress(1);
 	});
 
 	const toggleMenu = (e) =>  {
