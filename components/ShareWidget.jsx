@@ -8,11 +8,11 @@ function ShareWidget({ route, slug }) {
   
   const baseDomain = "seniorcareprism.com";
   const url = `https://${baseDomain}/${route}/${slug}`;
-  const item = route === 'news' ? 'news article' : 'resource';
+  const itemType = route === 'news' ? 'news article' : 'resource';
   const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   const twitterURL = `https://twitter.com/share?url=${url}`;
   const linkedinURL = `https://www.linkedin.com/shareArticle?url=${url}`;
-  const mailURL = `mailto:?subject=Senior Care Prism - Shared Link&body=Check out this ${item} at %0D%0A%0D%0A ${url}`;
+  const mailURL = `mailto:?subject=Senior Care Prism - Shared Link&body=Check out this ${itemType} at %0D%0A%0D%0A ${url}`;
 
   return (
     <>

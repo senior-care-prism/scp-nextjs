@@ -92,6 +92,8 @@ const BioCard = ({ i, member, isMobile }) => (
         height="355"
         src={`${member.photo.url}?w=530`}
         alt={member.position}
+        blurDataURL="data:..."
+        placeholder="blur"
       />
     </picture>
     <div className={cn(styles.container, styles.text)}>
