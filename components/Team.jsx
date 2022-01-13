@@ -84,7 +84,7 @@ const BioPopOver = ({ member }) => {
     </div>
   )}
 
-const BioCard = ({ i, member, isMobile }) => (
+const BioCard = ({ member, isMobile, i}) => (
   <div className={cn(styles.member, styles.card)} key={member.id}>
     <picture>
       <Image
@@ -92,7 +92,7 @@ const BioCard = ({ i, member, isMobile }) => (
         height="355"
         src={`${member.photo.url}?w=530`}
         alt={member.position}
-        blurDataURL="data:..."
+        blurDataURL={`${member.photo.url}?w=20`}
         placeholder="blur"
       />
     </picture>
@@ -136,7 +136,7 @@ export default function Team(props) {
       <BioCard key={i} member={member} isMobile />
     </Slide>
   ));
-
+  console.log(`${props.members[0].photo.url}?w=20`);
   return (
     <section id="our-team" className={styles.team}>
       <div className={styles.content}>
